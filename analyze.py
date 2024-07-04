@@ -12,7 +12,7 @@ a = 1
 
 # create ASE atoms
 for i in range(n):
-    at = io.read("Si({}).cif".format(a))
+    at = io.read("CIFS/Si({}).cif".format(a))
     a = a + 1
 
     # Create calculator attach it to the Atmos
@@ -50,11 +50,9 @@ for i in range(n):
         E.append(energy2)
         f.write("{} {}\n".format(i, energy2))
 
-        print(E)
 
         continue
-    continue
-
+    print(E)
 
 #print(cell)
 
