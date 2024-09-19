@@ -1,0 +1,1161 @@
+2024-09-12 12:21:47,559 I - Start pacemaker
+2024-09-12 12:21:47,559 I - Hostname: Simons-MacBook-Air.local
+2024-09-12 12:21:47,559 I - Username: simonkratochvil
+2024-09-12 12:21:47,559 I - pacemaker/pyace version: 0.2.7+158.g636a42a
+2024-09-12 12:21:47,560 I - ace_evaluator   version: 2023.11.25
+2024-09-12 12:21:47,560 I - Loading input.yaml... 
+2024-09-12 12:21:47,567 I - Set numpy random seed to 42
+2024-09-12 12:21:47,663 I - Number of functions in target potential is limited to maximum 700 functions per element  for 1 elements (1 blocks)
+2024-09-12 12:21:47,663 I - Resulted potential contains 700 functions
+2024-09-12 12:21:47,663 I - Target potential shape constructed from dictionary, it contains 700 functions
+2024-09-12 12:21:50,215 I - tensorpot_version: 0+untagged.18.g8776209.dirty
+2024-09-12 12:21:50,216 I - User name automatically identified: simonkratochvil
+2024-09-12 12:21:50,216 I - Search for dataset file(s): ['my_test_data.pckl.gzip']
+2024-09-12 12:21:50,216 I - #1/1: try to load my_test_data.pckl.gzip
+2024-09-12 12:21:50,216 I - Loading dataframe from pickle file my_test_data.pckl.gzip (1.6KiB)
+2024-09-12 12:21:50,217 I -  41 structures found
+2024-09-12 12:21:50,221 I - Processing structures dataframe. Shape: (41, 6)
+2024-09-12 12:21:50,221 I - Total number of atoms: 78
+2024-09-12 12:21:50,221 I - Mean number of atoms per structure: 1.9
+2024-09-12 12:21:50,221 I - Min/max energy per atom: [-7872.024, -7776.530] eV/atom
+2024-09-12 12:21:50,221 I - Min/max abs energy per atom: [7776.530, 7872.024] eV/atom
+2024-09-12 12:21:50,221 W - 
+######################################################################
+#                                                                    #
+# Some values of corrected energy -7.87e+03 eV/atom are too extreme, #
+# i.e. <-20 eV/atom or >250 eV/atom                                  #
+# `reference_energy` will be computed automatically.                 #
+#                                                                    #
+######################################################################
+2024-09-12 12:21:50,222 I - Processing structures dataframe. Shape: (41, 8)
+2024-09-12 12:21:50,222 I - Total number of atoms: 78
+2024-09-12 12:21:50,222 I - Mean number of atoms per structure: 1.9
+2024-09-12 12:21:50,222 I - Reference energy is provided, constructing 'energy_corrected'
+2024-09-12 12:21:50,222 I - Computing least-square energy shift and correction
+2024-09-12 12:21:50,224 I - Computed single-atom reference energy: {'Si': -7860.845440057512, 'shift': 0}
+2024-09-12 12:21:50,225 I - Min/max energy per atom: [-11.179, 84.316] eV/atom
+2024-09-12 12:21:50,225 I - Min/max abs energy per atom: [6.300, 84.316] eV/atom
+2024-09-12 12:21:50,226 I - Attaching SinglePointCalculator to ASE atoms...done
+2024-09-12 12:21:50,226 I - Construction of neighbour lists...
+2024-09-12 12:21:50,226 I - Building 'tp_atoms' (dataset size 41, cutoff=7.000A)...
+2024-09-12 12:21:50,238 I - Dataframe size after transform: 37
+2024-09-12 12:21:50,238 I - Construction of neighbour lists...done within 0.0122 sec (0.156 ms/atom)
+2024-09-12 12:21:50,238 I - No weighting policy is specified, setting default weighting policy
+2024-09-12 12:21:50,238 I - Apply weights policy: UniformWeightingPolicy()
+2024-09-12 12:21:50,266 I - Saving 'reference_energy' to potential metadata
+2024-09-12 12:21:50,270 I - Dataset saved into fitting_data_info.pckl.gzip
+2024-09-12 12:21:50,270 I - Plotting train energy-forces distribution
+2024-09-12 12:21:50,688 I - Fitting dataset size: 37 structures / 74 atoms
+2024-09-12 12:21:50,688 I - 'Single-shot' fitting
+2024-09-12 12:21:50,688 I - Cycle fitting loop
+2024-09-12 12:21:50,689 I - Number of fit attempts: 0/1
+2024-09-12 12:21:50,689 I - Total number of functions: 700 / number of parameters: 1760
+2024-09-12 12:21:50,689 I - Running fit backend
+2024-09-12 12:21:50,701 I - Trainable parameters: {('Si',): ['func', 'radial']}
+2024-09-12 12:21:50,702 I - Loss function specification: LossFunctionSpecification(kappa=0.9, L1=1e-08, L2=1e-08, DeltaRad=(0, 0, 0), w_orth=0)
+2024-09-12 12:21:50,702 I - Batch size: 100
+2024-09-12 12:21:50,782 I - Minimizer options: {'gtol': 1e-08, 'disp': True, 'maxiter': 2000}
+2024-09-12 12:21:53,004 W - Calling GradientTape.gradient on a persistent tape inside its context is significantly less efficient than calling it outside the context (it causes the gradient ops to be recorded on the tape, leading to increased CPU and memory usage). Only call GradientTape.gradient inside the context if you actually want to trace the gradient in order to compute higher order derivatives.
+2024-09-12 12:22:01,782 I - Initial state:#0    (1 evals):        Loss: 6.9515e+01 | RMSE Energy(low): 26197.38 (10810.42) meV/at | Forces(low): 572.39 (478.95) meV/A | Time/eval: 148638.85 mcs/at
+2024-09-12 12:22:01,782 I - 
+--------------------------------------------INIT STATS--------------------------------------------
+Iteration:  #0   Loss:    Total:  6.9515e+01 (100%) 
+                         Energy:  6.8630e+01 ( 99%) 
+                          Force:  8.8461e-01 (  1%) 
+                             L1:  0.0000e+00 (  0%) 
+                             L2:  0.0000e+00 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:  148638.85 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        26197.38             10810.42               572.39                  478.95
+    MAE:        16496.12             10805.93               297.58                  258.08
+ MAX_AE:        84315.62             11178.82              2091.49                 1038.08
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:22:01,894 I - Iteration   #1    (3 evals):        Loss: 6.9306e+01 | RMSE Energy(low): 26204.37 (10860.97) meV/at | Forces(low): 486.56 (343.58) meV/A | Time/eval: 521.73 mcs/at
+2024-09-12 12:22:02,254 I - Iteration   #2    (5 evals):        Loss: 6.9250e+01 | RMSE Energy(low): 26203.09 (10912.38) meV/at | Forces(low): 467.33 (367.36) meV/A | Time/eval: 458.08 mcs/at
+2024-09-12 12:22:02,583 I - Iteration   #3    (6 evals):        Loss: 6.9199e+01 | RMSE Energy(low): 26198.86 (11018.14) meV/at | Forces(low): 455.69 (431.59) meV/A | Time/eval: 768.50 mcs/at
+2024-09-12 12:22:03,009 I - Iteration   #4    (8 evals):        Loss: 6.9189e+01 | RMSE Energy(low): 26199.70 (11040.55) meV/at | Forces(low): 449.94 (419.16) meV/A | Time/eval: 494.38 mcs/at
+2024-09-12 12:22:03,336 I - Iteration   #5    (9 evals):        Loss: 6.9186e+01 | RMSE Energy(low): 26199.77 (11082.29) meV/at | Forces(low): 448.42 (425.56) meV/A | Time/eval: 681.42 mcs/at
+2024-09-12 12:22:03,698 I - Iteration   #6    (10 evals):       Loss: 6.9180e+01 | RMSE Energy(low): 26199.59 (11083.10) meV/at | Forces(low): 446.38 (426.26) meV/A | Time/eval: 1238.46 mcs/at
+2024-09-12 12:22:04,080 I - Iteration   #7    (11 evals):       Loss: 6.9169e+01 | RMSE Energy(low): 26199.49 (11118.56) meV/at | Forces(low): 442.23 (424.17) meV/A | Time/eval: 1174.62 mcs/at
+2024-09-12 12:22:04,470 I - Iteration   #8    (12 evals):       Loss: 6.9154e+01 | RMSE Energy(low): 26198.51 (11170.41) meV/at | Forces(low): 438.09 (431.28) meV/A | Time/eval: 636.04 mcs/at
+2024-09-12 12:22:04,830 I - Iteration   #9    (13 evals):       Loss: 6.9136e+01 | RMSE Energy(low): 26200.35 (11284.66) meV/at | Forces(low): 426.22 (393.24) meV/A | Time/eval: 1014.19 mcs/at
+2024-09-12 12:22:05,204 I - Iteration   #10   (14 evals):       Loss: 6.9099e+01 | RMSE Energy(low): 26201.79 (11398.65) meV/at | Forces(low): 406.06 (355.26) meV/A | Time/eval: 1408.72 mcs/at
+2024-09-12 12:22:05,617 I - Iteration   #11   (16 evals):       Loss: 6.9084e+01 | RMSE Energy(low): 26202.58 (11464.46) meV/at | Forces(low): 397.40 (340.86) meV/A | Time/eval: 467.81 mcs/at
+2024-09-12 12:22:05,956 I - Iteration   #12   (17 evals):       Loss: 6.9056e+01 | RMSE Energy(low): 26203.70 (11534.57) meV/at | Forces(low): 381.38 (320.40) meV/A | Time/eval: 1127.84 mcs/at
+2024-09-12 12:22:06,326 I - Iteration   #13   (18 evals):       Loss: 6.9001e+01 | RMSE Energy(low): 26204.76 (11659.87) meV/at | Forces(low): 350.46 (295.87) meV/A | Time/eval: 1278.39 mcs/at
+2024-09-12 12:22:06,750 I - Iteration   #14   (20 evals):       Loss: 6.8976e+01 | RMSE Energy(low): 26204.75 (11722.33) meV/at | Forces(low): 337.16 (287.50) meV/A | Time/eval: 479.57 mcs/at
+2024-09-12 12:22:07,132 I - Iteration   #15   (22 evals):       Loss: 6.8965e+01 | RMSE Energy(low): 26204.09 (11753.77) meV/at | Forces(low): 332.98 (301.67) meV/A | Time/eval: 472.04 mcs/at
+2024-09-12 12:22:07,473 I - Iteration   #16   (23 evals):       Loss: 6.8958e+01 | RMSE Energy(low): 26205.67 (11807.59) meV/at | Forces(low): 324.43 (272.06) meV/A | Time/eval: 766.17 mcs/at
+2024-09-12 12:22:07,848 I - Iteration   #17   (24 evals):       Loss: 6.8945e+01 | RMSE Energy(low): 26204.82 (11787.54) meV/at | Forces(low): 319.46 (266.68) meV/A | Time/eval: 945.08 mcs/at
+2024-09-12 12:22:08,212 I - Iteration   #18   (25 evals):       Loss: 6.8921e+01 | RMSE Energy(low): 26203.06 (11728.50) meV/at | Forces(low): 311.05 (259.38) meV/A | Time/eval: 1106.37 mcs/at
+2024-09-12 12:22:08,682 I - Iteration   #19   (27 evals):       Loss: 6.8915e+01 | RMSE Energy(low): 26202.57 (11701.97) meV/at | Forces(low): 308.63 (253.18) meV/A | Time/eval: 1399.61 mcs/at
+2024-09-12 12:22:08,993 I - Iteration   #20   (28 evals):       Loss: 6.8906e+01 | RMSE Energy(low): 26201.25 (11675.88) meV/at | Forces(low): 307.56 (262.21) meV/A | Time/eval: 620.78 mcs/at
+2024-09-12 12:22:09,341 I - Iteration   #21   (29 evals):       Loss: 6.8895e+01 | RMSE Energy(low): 26200.64 (11630.30) meV/at | Forces(low): 303.10 (250.86) meV/A | Time/eval: 1143.23 mcs/at
+2024-09-12 12:22:09,722 I - Iteration   #22   (30 evals):       Loss: 6.8877e+01 | RMSE Energy(low): 26198.02 (11528.84) meV/at | Forces(low): 300.34 (254.74) meV/A | Time/eval: 1149.04 mcs/at
+2024-09-12 12:22:10,099 I - Iteration   #23   (31 evals):       Loss: 6.8847e+01 | RMSE Energy(low): 26195.54 (11352.46) meV/at | Forces(low): 289.45 (247.54) meV/A | Time/eval: 1526.23 mcs/at
+2024-09-12 12:22:10,502 I - Iteration   #24   (33 evals):       Loss: 6.8830e+01 | RMSE Energy(low): 26193.24 (11235.48) meV/at | Forces(low): 286.41 (260.44) meV/A | Time/eval: 556.12 mcs/at
+2024-09-12 12:22:10,847 I - Iteration   #25   (34 evals):       Loss: 6.8804e+01 | RMSE Energy(low): 26191.79 (11033.05) meV/at | Forces(low): 274.29 (269.53) meV/A | Time/eval: 985.44 mcs/at
+2024-09-12 12:22:11,261 I - Iteration   #26   (36 evals):       Loss: 6.8790e+01 | RMSE Energy(low): 26193.23 (10893.88) meV/at | Forces(low): 259.05 (254.73) meV/A | Time/eval: 495.69 mcs/at
+2024-09-12 12:22:11,648 I - Iteration   #27   (38 evals):       Loss: 6.8785e+01 | RMSE Energy(low): 26192.91 (10826.82) meV/at | Forces(low): 256.60 (263.81) meV/A | Time/eval: 489.27 mcs/at
+2024-09-12 12:22:11,990 I - Iteration   #28   (39 evals):       Loss: 6.8777e+01 | RMSE Energy(low): 26193.14 (10744.36) meV/at | Forces(low): 250.49 (276.02) meV/A | Time/eval: 707.73 mcs/at
+2024-09-12 12:22:12,379 I - Iteration   #29   (41 evals):       Loss: 6.8774e+01 | RMSE Energy(low): 26192.65 (10739.48) meV/at | Forces(low): 249.97 (285.91) meV/A | Time/eval: 411.48 mcs/at
+2024-09-12 12:22:12,780 I - Iteration   #30   (43 evals):       Loss: 6.8774e+01 | RMSE Energy(low): 26192.58 (10749.69) meV/at | Forces(low): 249.88 (286.34) meV/A | Time/eval: 566.11 mcs/at
+2024-09-12 12:22:13,151 I - Iteration   #31   (45 evals):       Loss: 6.8769e+01 | RMSE Energy(low): 26191.72 (10809.56) meV/at | Forces(low): 250.07 (290.53) meV/A | Time/eval: 474.69 mcs/at
+2024-09-12 12:22:13,520 I - Iteration   #32   (46 evals):       Loss: 6.8764e+01 | RMSE Energy(low): 26191.30 (10934.93) meV/at | Forces(low): 247.89 (285.56) meV/A | Time/eval: 1389.28 mcs/at
+2024-09-12 12:22:13,915 I - Iteration   #33   (48 evals):       Loss: 6.8763e+01 | RMSE Energy(low): 26190.61 (11016.28) meV/at | Forces(low): 249.24 (291.14) meV/A | Time/eval: 555.91 mcs/at
+2024-09-12 12:22:14,247 I - Iteration   #34   (49 evals):       Loss: 6.8762e+01 | RMSE Energy(low): 26190.33 (11064.59) meV/at | Forces(low): 250.09 (296.60) meV/A | Time/eval: 779.09 mcs/at
+2024-09-12 12:22:14,602 I - Iteration   #35   (50 evals):       Loss: 6.8762e+01 | RMSE Energy(low): 26190.50 (11061.27) meV/at | Forces(low): 249.08 (294.07) meV/A | Time/eval: 1339.31 mcs/at
+2024-09-12 12:22:14,969 I - Iteration   #36   (51 evals):       Loss: 6.8761e+01 | RMSE Energy(low): 26190.58 (11063.64) meV/at | Forces(low): 248.50 (292.66) meV/A | Time/eval: 1240.28 mcs/at
+2024-09-12 12:22:15,352 I - Iteration   #37   (52 evals):       Loss: 6.8761e+01 | RMSE Energy(low): 26190.61 (11056.47) meV/at | Forces(low): 248.08 (292.26) meV/A | Time/eval: 1272.96 mcs/at
+2024-09-12 12:22:15,729 I - Iteration   #38   (53 evals):       Loss: 6.8760e+01 | RMSE Energy(low): 26190.71 (11049.18) meV/at | Forces(low): 247.13 (290.55) meV/A | Time/eval: 1167.14 mcs/at
+2024-09-12 12:22:16,124 I - Iteration   #39   (54 evals):       Loss: 6.8759e+01 | RMSE Energy(low): 26190.65 (11036.20) meV/at | Forces(low): 246.67 (291.68) meV/A | Time/eval: 1553.11 mcs/at
+2024-09-12 12:22:16,501 I - Iteration   #40   (55 evals):       Loss: 6.8758e+01 | RMSE Energy(low): 26190.93 (11025.72) meV/at | Forces(low): 244.74 (287.61) meV/A | Time/eval: 766.59 mcs/at
+2024-09-12 12:22:16,882 I - Iteration   #41   (56 evals):       Loss: 6.8757e+01 | RMSE Energy(low): 26190.90 (11020.46) meV/at | Forces(low): 243.60 (287.94) meV/A | Time/eval: 977.04 mcs/at
+2024-09-12 12:22:17,257 I - Iteration   #42   (57 evals):       Loss: 6.8755e+01 | RMSE Energy(low): 26190.14 (11027.36) meV/at | Forces(low): 245.19 (298.67) meV/A | Time/eval: 735.20 mcs/at
+2024-09-12 12:22:17,621 I - Iteration   #43   (58 evals):       Loss: 6.8752e+01 | RMSE Energy(low): 26190.38 (11058.59) meV/at | Forces(low): 241.87 (293.54) meV/A | Time/eval: 1285.01 mcs/at
+2024-09-12 12:22:17,997 I - Iteration   #44   (59 evals):       Loss: 6.8748e+01 | RMSE Energy(low): 26191.17 (11110.04) meV/at | Forces(low): 236.04 (281.98) meV/A | Time/eval: 1061.80 mcs/at
+2024-09-12 12:22:18,414 I - Iteration   #45   (61 evals):       Loss: 6.8746e+01 | RMSE Energy(low): 26191.17 (11126.44) meV/at | Forces(low): 234.31 (280.97) meV/A | Time/eval: 485.99 mcs/at
+2024-09-12 12:22:18,756 I - Iteration   #46   (62 evals):       Loss: 6.8744e+01 | RMSE Energy(low): 26190.27 (11134.41) meV/at | Forces(low): 236.51 (290.88) meV/A | Time/eval: 934.72 mcs/at
+2024-09-12 12:22:19,147 I - Iteration   #47   (63 evals):       Loss: 6.8742e+01 | RMSE Energy(low): 26189.96 (11128.75) meV/at | Forces(low): 236.05 (295.06) meV/A | Time/eval: 576.33 mcs/at
+2024-09-12 12:22:19,507 I - Iteration   #48   (64 evals):       Loss: 6.8738e+01 | RMSE Energy(low): 26189.88 (11112.20) meV/at | Forces(low): 233.23 (294.72) meV/A | Time/eval: 1026.81 mcs/at
+2024-09-12 12:22:19,881 I - Iteration   #49   (65 evals):       Loss: 6.8733e+01 | RMSE Energy(low): 26190.15 (11078.48) meV/at | Forces(low): 227.96 (289.56) meV/A | Time/eval: 1190.22 mcs/at
+2024-09-12 12:22:20,319 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #50  Loss:    Total:  6.8731e+01 (100%) 
+                         Energy:  6.8593e+01 (100%) 
+                          Force:  1.3777e-01 (  0%) 
+                             L1:  8.7703e-07 (  0%) 
+                             L2:  4.2804e-07 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:     480.91 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        26190.24             11067.05               225.89                  288.14
+    MAE:        16701.14             11062.68                90.49                  127.58
+ MAX_AE:        83979.83             11427.41              1105.70                 1105.70
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:22:20,319 I - Last relative TRAIN loss change -2.96e-05/iter (averaged over last 1 step(s))
+2024-09-12 12:22:20,654 I - Iteration   #51   (68 evals):       Loss: 6.8728e+01 | RMSE Energy(low): 26190.87 (11050.34) meV/at | Forces(low): 221.08 (279.09) meV/A | Time/eval: 546.70 mcs/at
+2024-09-12 12:22:21,017 I - Iteration   #52   (69 evals):       Loss: 6.8725e+01 | RMSE Energy(low): 26190.37 (11021.56) meV/at | Forces(low): 220.69 (279.57) meV/A | Time/eval: 1062.84 mcs/at
+2024-09-12 12:22:21,386 I - Iteration   #53   (70 evals):       Loss: 6.8722e+01 | RMSE Energy(low): 26190.35 (11000.94) meV/at | Forces(low): 218.17 (278.50) meV/A | Time/eval: 1172.06 mcs/at
+2024-09-12 12:22:21,799 I - Iteration   #54   (72 evals):       Loss: 6.8720e+01 | RMSE Energy(low): 26190.01 (10985.42) meV/at | Forces(low): 217.84 (278.97) meV/A | Time/eval: 501.89 mcs/at
+2024-09-12 12:22:22,221 I - Iteration   #55   (75 evals):       Loss: 6.8717e+01 | RMSE Energy(low): 26189.65 (10968.30) meV/at | Forces(low): 217.42 (278.50) meV/A | Time/eval: 465.08 mcs/at
+2024-09-12 12:22:22,533 I - Iteration   #56   (76 evals):       Loss: 6.8713e+01 | RMSE Energy(low): 26188.80 (10950.04) meV/at | Forces(low): 217.88 (279.65) meV/A | Time/eval: 638.72 mcs/at
+2024-09-12 12:22:22,895 I - Iteration   #57   (77 evals):       Loss: 6.8709e+01 | RMSE Energy(low): 26187.86 (10917.87) meV/at | Forces(low): 218.09 (273.57) meV/A | Time/eval: 1057.41 mcs/at
+2024-09-12 12:22:23,265 I - Iteration   #58   (78 evals):       Loss: 6.8701e+01 | RMSE Energy(low): 26187.32 (10894.26) meV/at | Forces(low): 213.72 (265.45) meV/A | Time/eval: 1191.68 mcs/at
+2024-09-12 12:22:23,635 I - Iteration   #59   (79 evals):       Loss: 6.8696e+01 | RMSE Energy(low): 26187.15 (10882.81) meV/at | Forces(low): 209.94 (257.21) meV/A | Time/eval: 1382.03 mcs/at
+2024-09-12 12:22:24,012 I - Iteration   #60   (80 evals):       Loss: 6.8692e+01 | RMSE Energy(low): 26186.89 (10882.12) meV/at | Forces(low): 208.26 (260.99) meV/A | Time/eval: 1263.58 mcs/at
+2024-09-12 12:22:24,409 I - Iteration   #61   (81 evals):       Loss: 6.8688e+01 | RMSE Energy(low): 26186.65 (10897.94) meV/at | Forces(low): 205.42 (259.36) meV/A | Time/eval: 1532.28 mcs/at
+2024-09-12 12:22:24,783 I - Iteration   #62   (82 evals):       Loss: 6.8683e+01 | RMSE Energy(low): 26186.69 (10922.76) meV/at | Forces(low): 200.47 (254.54) meV/A | Time/eval: 1118.90 mcs/at
+2024-09-12 12:22:25,195 I - Iteration   #63   (84 evals):       Loss: 6.8680e+01 | RMSE Energy(low): 26186.75 (10934.73) meV/at | Forces(low): 197.67 (249.46) meV/A | Time/eval: 487.65 mcs/at
+2024-09-12 12:22:25,567 I - Iteration   #64   (86 evals):       Loss: 6.8679e+01 | RMSE Energy(low): 26187.32 (10949.08) meV/at | Forces(low): 194.08 (242.76) meV/A | Time/eval: 489.08 mcs/at
+2024-09-12 12:22:25,907 I - Iteration   #65   (87 evals):       Loss: 6.8678e+01 | RMSE Energy(low): 26187.26 (10985.66) meV/at | Forces(low): 193.35 (242.22) meV/A | Time/eval: 1057.55 mcs/at
+2024-09-12 12:22:26,281 I - Iteration   #66   (88 evals):       Loss: 6.8677e+01 | RMSE Energy(low): 26186.86 (11023.97) meV/at | Forces(low): 194.57 (245.08) meV/A | Time/eval: 1112.34 mcs/at
+2024-09-12 12:22:26,656 I - Iteration   #67   (89 evals):       Loss: 6.8676e+01 | RMSE Energy(low): 26187.05 (11044.93) meV/at | Forces(low): 192.47 (242.88) meV/A | Time/eval: 1480.03 mcs/at
+2024-09-12 12:22:27,030 I - Iteration   #68   (90 evals):       Loss: 6.8674e+01 | RMSE Energy(low): 26187.26 (11055.86) meV/at | Forces(low): 189.32 (238.68) meV/A | Time/eval: 1180.89 mcs/at
+2024-09-12 12:22:27,408 I - Iteration   #69   (91 evals):       Loss: 6.8670e+01 | RMSE Energy(low): 26187.51 (11069.50) meV/at | Forces(low): 184.41 (230.89) meV/A | Time/eval: 1284.77 mcs/at
+2024-09-12 12:22:27,826 I - Iteration   #70   (93 evals):       Loss: 6.8668e+01 | RMSE Energy(low): 26187.22 (11070.26) meV/at | Forces(low): 183.61 (231.29) meV/A | Time/eval: 526.86 mcs/at
+2024-09-12 12:22:28,172 I - Iteration   #71   (94 evals):       Loss: 6.8665e+01 | RMSE Energy(low): 26187.23 (11071.54) meV/at | Forces(low): 180.49 (222.64) meV/A | Time/eval: 1039.18 mcs/at
+2024-09-12 12:22:28,540 I - Iteration   #72   (95 evals):       Loss: 6.8661e+01 | RMSE Energy(low): 26187.21 (11061.42) meV/at | Forces(low): 176.08 (213.75) meV/A | Time/eval: 1293.30 mcs/at
+2024-09-12 12:22:28,953 I - Iteration   #73   (97 evals):       Loss: 6.8658e+01 | RMSE Energy(low): 26187.35 (11046.53) meV/at | Forces(low): 172.51 (209.40) meV/A | Time/eval: 553.73 mcs/at
+2024-09-12 12:22:29,301 I - Iteration   #74   (98 evals):       Loss: 6.8653e+01 | RMSE Energy(low): 26187.20 (11027.12) meV/at | Forces(low): 167.82 (203.44) meV/A | Time/eval: 1066.00 mcs/at
+2024-09-12 12:22:29,668 I - Iteration   #75   (99 evals):       Loss: 6.8647e+01 | RMSE Energy(low): 26186.70 (10997.88) meV/at | Forces(low): 164.16 (204.78) meV/A | Time/eval: 1331.13 mcs/at
+2024-09-12 12:22:30,046 I - Iteration   #76   (100 evals):      Loss: 6.8640e+01 | RMSE Energy(low): 26187.66 (10984.86) meV/at | Forces(low): 150.47 (175.95) meV/A | Time/eval: 1117.72 mcs/at
+2024-09-12 12:22:30,416 I - Iteration   #77   (101 evals):      Loss: 6.8632e+01 | RMSE Energy(low): 26187.10 (10961.90) meV/at | Forces(low): 143.94 (156.64) meV/A | Time/eval: 1407.08 mcs/at
+2024-09-12 12:22:30,795 I - Iteration   #78   (102 evals):      Loss: 6.8628e+01 | RMSE Energy(low): 26186.72 (10912.61) meV/at | Forces(low): 141.38 (147.84) meV/A | Time/eval: 1202.37 mcs/at
+2024-09-12 12:22:31,102 I - Iteration   #79   (103 evals):      Loss: 6.8625e+01 | RMSE Energy(low): 26185.96 (10912.20) meV/at | Forces(low): 141.48 (137.37) meV/A | Time/eval: 554.30 mcs/at
+2024-09-12 12:22:31,435 I - Iteration   #80   (104 evals):      Loss: 6.8618e+01 | RMSE Energy(low): 26185.86 (10919.20) meV/at | Forces(low): 132.90 (125.09) meV/A | Time/eval: 847.11 mcs/at
+2024-09-12 12:22:31,798 I - Iteration   #81   (105 evals):      Loss: 6.8608e+01 | RMSE Energy(low): 26186.72 (10934.93) meV/at | Forces(low): 111.90 (106.41) meV/A | Time/eval: 1205.08 mcs/at
+2024-09-12 12:22:32,215 I - Iteration   #82   (107 evals):      Loss: 6.8607e+01 | RMSE Energy(low): 26186.41 (10939.66) meV/at | Forces(low): 112.78 (113.42) meV/A | Time/eval: 555.62 mcs/at
+2024-09-12 12:22:32,556 I - Iteration   #83   (108 evals):      Loss: 6.8605e+01 | RMSE Energy(low): 26186.15 (10965.99) meV/at | Forces(low): 111.76 (111.38) meV/A | Time/eval: 1062.22 mcs/at
+2024-09-12 12:22:32,928 I - Iteration   #84   (109 evals):      Loss: 6.8602e+01 | RMSE Energy(low): 26185.89 (11026.34) meV/at | Forces(low): 108.88 (107.32) meV/A | Time/eval: 1081.59 mcs/at
+2024-09-12 12:22:33,303 I - Iteration   #85   (110 evals):      Loss: 6.8599e+01 | RMSE Energy(low): 26185.35 (11101.67) meV/at | Forces(low): 108.69 (95.03) meV/A | Time/eval: 1281.65 mcs/at
+2024-09-12 12:22:33,690 I - Iteration   #86   (111 evals):      Loss: 6.8597e+01 | RMSE Energy(low): 26183.93 (11146.09) meV/at | Forces(low): 117.29 (111.59) meV/A | Time/eval: 1583.89 mcs/at
+2024-09-12 12:22:34,098 I - Iteration   #87   (113 evals):      Loss: 6.8596e+01 | RMSE Energy(low): 26183.86 (11144.40) meV/at | Forces(low): 116.20 (111.53) meV/A | Time/eval: 529.24 mcs/at
+2024-09-12 12:22:34,493 I - Iteration   #88   (115 evals):      Loss: 6.8595e+01 | RMSE Energy(low): 26183.77 (11141.98) meV/at | Forces(low): 115.75 (110.85) meV/A | Time/eval: 525.17 mcs/at
+2024-09-12 12:22:35,143 I - Iteration   #89   (125 evals):      Loss: 6.8595e+01 | RMSE Energy(low): 26183.74 (11138.60) meV/at | Forces(low): 115.12 (109.93) meV/A | Time/eval: 302.60 mcs/at
+2024-09-12 12:22:35,456 I - Iteration   #90   (126 evals):      Loss: 6.8594e+01 | RMSE Energy(low): 26183.90 (11108.94) meV/at | Forces(low): 112.54 (104.79) meV/A | Time/eval: 930.28 mcs/at
+2024-09-12 12:22:35,887 I - Iteration   #91   (128 evals):      Loss: 6.8594e+01 | RMSE Energy(low): 26183.88 (11093.06) meV/at | Forces(low): 112.22 (104.38) meV/A | Time/eval: 711.95 mcs/at
+2024-09-12 12:22:36,227 I - Iteration   #92   (129 evals):      Loss: 6.8593e+01 | RMSE Energy(low): 26183.84 (11069.35) meV/at | Forces(low): 112.00 (105.38) meV/A | Time/eval: 953.59 mcs/at
+2024-09-12 12:22:36,584 I - Iteration   #93   (130 evals):      Loss: 6.8593e+01 | RMSE Energy(low): 26183.79 (11029.00) meV/at | Forces(low): 112.17 (103.82) meV/A | Time/eval: 1283.39 mcs/at
+2024-09-12 12:22:36,967 I - Iteration   #94   (131 evals):      Loss: 6.8593e+01 | RMSE Energy(low): 26183.72 (11023.41) meV/at | Forces(low): 112.47 (104.71) meV/A | Time/eval: 1001.36 mcs/at
+2024-09-12 12:22:37,338 I - Iteration   #95   (132 evals):      Loss: 6.8593e+01 | RMSE Energy(low): 26183.64 (11020.85) meV/at | Forces(low): 112.63 (106.31) meV/A | Time/eval: 1138.94 mcs/at
+2024-09-12 12:22:37,713 I - Iteration   #96   (133 evals):      Loss: 6.8592e+01 | RMSE Energy(low): 26183.35 (11018.09) meV/at | Forces(low): 114.38 (110.15) meV/A | Time/eval: 1455.27 mcs/at
+2024-09-12 12:22:38,080 I - Iteration   #97   (134 evals):      Loss: 6.8591e+01 | RMSE Energy(low): 26182.89 (11021.43) meV/at | Forces(low): 117.11 (115.06) meV/A | Time/eval: 1437.83 mcs/at
+2024-09-12 12:22:38,521 I - Iteration   #98   (136 evals):      Loss: 6.8591e+01 | RMSE Energy(low): 26182.80 (11023.23) meV/at | Forces(low): 117.20 (114.36) meV/A | Time/eval: 735.80 mcs/at
+2024-09-12 12:22:38,867 I - Iteration   #99   (137 evals):      Loss: 6.8591e+01 | RMSE Energy(low): 26182.50 (11022.58) meV/at | Forces(low): 118.94 (117.83) meV/A | Time/eval: 1061.46 mcs/at
+2024-09-12 12:22:39,321 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #100 Loss:    Total:  6.8590e+01 (100%) 
+                         Energy:  6.8552e+01 (100%) 
+                          Force:  3.8082e-02 (  0%) 
+                             L1:  2.0543e-06 (  0%) 
+                             L2:  2.3267e-06 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1933.11 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        26182.40             11032.69               118.76                  117.42
+    MAE:        16652.34             11028.09                45.03                   48.14
+ MAX_AE:        84071.59             11397.45               716.80                  716.80
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:22:39,321 I - Last relative TRAIN loss change -8.98e-06/iter (averaged over last 1 step(s))
+2024-09-12 12:22:39,734 I - Iteration   #101  (139 evals):      Loss: 6.8589e+01 | RMSE Energy(low): 26182.04 (11045.62) meV/at | Forces(low): 119.94 (122.00) meV/A | Time/eval: 2002.99 mcs/at
+2024-09-12 12:22:40,161 I - Iteration   #102  (140 evals):      Loss: 6.8587e+01 | RMSE Energy(low): 26181.03 (11066.12) meV/at | Forces(low): 125.69 (134.73) meV/A | Time/eval: 2004.11 mcs/at
+2024-09-12 12:22:40,563 I - Iteration   #103  (142 evals):      Loss: 6.8586e+01 | RMSE Energy(low): 26180.58 (11083.63) meV/at | Forces(low): 127.75 (138.88) meV/A | Time/eval: 725.05 mcs/at
+2024-09-12 12:22:40,969 I - Iteration   #104  (143 evals):      Loss: 6.8585e+01 | RMSE Energy(low): 26179.84 (11095.13) meV/at | Forces(low): 131.85 (141.56) meV/A | Time/eval: 1774.29 mcs/at
+2024-09-12 12:22:41,348 I - Iteration   #105  (144 evals):      Loss: 6.8584e+01 | RMSE Energy(low): 26179.09 (11104.98) meV/at | Forces(low): 135.22 (142.11) meV/A | Time/eval: 1399.12 mcs/at
+2024-09-12 12:22:41,733 I - Iteration   #106  (145 evals):      Loss: 6.8582e+01 | RMSE Energy(low): 26177.37 (11109.88) meV/at | Forces(low): 145.02 (151.66) meV/A | Time/eval: 1766.49 mcs/at
+2024-09-12 12:22:42,115 I - Iteration   #107  (146 evals):      Loss: 6.8580e+01 | RMSE Energy(low): 26176.42 (11100.39) meV/at | Forces(low): 148.16 (155.26) meV/A | Time/eval: 1541.36 mcs/at
+2024-09-12 12:22:42,484 I - Iteration   #108  (147 evals):      Loss: 6.8576e+01 | RMSE Energy(low): 26174.94 (11081.24) meV/at | Forces(low): 152.50 (163.00) meV/A | Time/eval: 1322.63 mcs/at
+2024-09-12 12:22:43,064 I - Iteration   #109  (151 evals):      Loss: 6.8565e+01 | RMSE Energy(low): 26170.67 (11022.28) meV/at | Forces(low): 165.71 (184.29) meV/A | Time/eval: 411.12 mcs/at
+2024-09-12 12:22:43,446 I - Iteration   #110  (153 evals):      Loss: 6.8562e+01 | RMSE Energy(low): 26168.80 (10989.69) meV/at | Forces(low): 173.54 (196.72) meV/A | Time/eval: 814.76 mcs/at
+2024-09-12 12:22:43,905 I - Iteration   #111  (155 evals):      Loss: 6.8561e+01 | RMSE Energy(low): 26167.85 (10974.82) meV/at | Forces(low): 177.40 (197.77) meV/A | Time/eval: 734.42 mcs/at
+2024-09-12 12:22:44,418 I - Iteration   #112  (157 evals):      Loss: 6.8554e+01 | RMSE Energy(low): 26163.77 (10867.98) meV/at | Forces(low): 192.06 (197.51) meV/A | Time/eval: 826.37 mcs/at
+2024-09-12 12:22:44,833 I - Iteration   #113  (159 evals):      Loss: 6.8551e+01 | RMSE Energy(low): 26163.13 (10829.06) meV/at | Forces(low): 192.32 (198.22) meV/A | Time/eval: 840.31 mcs/at
+2024-09-12 12:22:45,240 I - Iteration   #114  (160 evals):      Loss: 6.8545e+01 | RMSE Energy(low): 26162.72 (10801.09) meV/at | Forces(low): 188.87 (194.59) meV/A | Time/eval: 1803.08 mcs/at
+2024-09-12 12:22:45,613 I - Iteration   #115  (161 evals):      Loss: 6.8535e+01 | RMSE Energy(low): 26162.59 (10755.43) meV/at | Forces(low): 178.95 (180.10) meV/A | Time/eval: 1516.40 mcs/at
+2024-09-12 12:22:45,996 I - Iteration   #116  (162 evals):      Loss: 6.8516e+01 | RMSE Energy(low): 26161.06 (10665.72) meV/at | Forces(low): 167.21 (168.62) meV/A | Time/eval: 1334.93 mcs/at
+2024-09-12 12:22:46,435 I - Iteration   #117  (164 evals):      Loss: 6.8503e+01 | RMSE Energy(low): 26160.67 (10591.85) meV/at | Forces(low): 154.63 (165.56) meV/A | Time/eval: 811.11 mcs/at
+2024-09-12 12:22:46,853 I - Iteration   #118  (165 evals):      Loss: 6.8488e+01 | RMSE Energy(low): 26157.16 (10539.89) meV/at | Forces(low): 158.75 (182.14) meV/A | Time/eval: 1857.08 mcs/at
+2024-09-12 12:22:47,246 I - Iteration   #119  (166 evals):      Loss: 6.8463e+01 | RMSE Energy(low): 26151.13 (10497.31) meV/at | Forces(low): 166.35 (183.93) meV/A | Time/eval: 1625.51 mcs/at
+2024-09-12 12:22:47,628 I - Iteration   #120  (167 evals):      Loss: 6.8440e+01 | RMSE Energy(low): 26138.69 (10443.66) meV/at | Forces(low): 208.42 (246.63) meV/A | Time/eval: 1358.47 mcs/at
+2024-09-12 12:22:48,066 I - Iteration   #121  (169 evals):      Loss: 6.8429e+01 | RMSE Energy(low): 26135.13 (10444.63) meV/at | Forces(low): 215.03 (244.32) meV/A | Time/eval: 829.96 mcs/at
+2024-09-12 12:22:48,487 I - Iteration   #122  (170 evals):      Loss: 6.8418e+01 | RMSE Energy(low): 26131.02 (10472.62) meV/at | Forces(low): 223.68 (251.83) meV/A | Time/eval: 1680.27 mcs/at
+2024-09-12 12:22:48,872 I - Iteration   #123  (171 evals):      Loss: 6.8399e+01 | RMSE Energy(low): 26129.16 (10512.70) meV/at | Forces(low): 216.18 (217.02) meV/A | Time/eval: 1600.36 mcs/at
+2024-09-12 12:22:49,274 I - Iteration   #124  (172 evals):      Loss: 6.8373e+01 | RMSE Energy(low): 26124.76 (10580.69) meV/at | Forces(low): 213.32 (207.88) meV/A | Time/eval: 1059.66 mcs/at
+2024-09-12 12:22:49,778 I - Iteration   #125  (174 evals):      Loss: 6.8367e+01 | RMSE Energy(low): 26124.08 (10590.34) meV/at | Forces(low): 211.43 (206.58) meV/A | Time/eval: 1027.91 mcs/at
+2024-09-12 12:22:50,190 I - Iteration   #126  (176 evals):      Loss: 6.8321e+01 | RMSE Energy(low): 26121.74 (10747.80) meV/at | Forces(low): 179.05 (161.67) meV/A | Time/eval: 848.70 mcs/at
+2024-09-12 12:22:50,598 I - Iteration   #127  (178 evals):      Loss: 6.8290e+01 | RMSE Energy(low): 26118.00 (10854.27) meV/at | Forces(low): 166.18 (191.10) meV/A | Time/eval: 835.81 mcs/at
+2024-09-12 12:22:51,003 I - Iteration   #128  (179 evals):      Loss: 6.8240e+01 | RMSE Energy(low): 26113.83 (10948.79) meV/at | Forces(low): 131.24 (142.31) meV/A | Time/eval: 1529.14 mcs/at
+2024-09-12 12:22:51,445 I - Iteration   #129  (181 evals):      Loss: 6.8206e+01 | RMSE Energy(low): 26107.37 (10883.50) meV/at | Forces(low): 131.13 (116.57) meV/A | Time/eval: 872.97 mcs/at
+2024-09-12 12:22:51,853 I - Iteration   #130  (183 evals):      Loss: 6.8184e+01 | RMSE Energy(low): 26102.52 (10794.61) meV/at | Forces(low): 136.34 (129.44) meV/A | Time/eval: 821.04 mcs/at
+2024-09-12 12:22:52,270 I - Iteration   #131  (184 evals):      Loss: 6.8170e+01 | RMSE Energy(low): 26093.83 (10643.72) meV/at | Forces(low): 173.47 (135.12) meV/A | Time/eval: 2061.54 mcs/at
+2024-09-12 12:22:52,653 I - Iteration   #132  (185 evals):      Loss: 6.8143e+01 | RMSE Energy(low): 26088.75 (10529.64) meV/at | Forces(low): 172.50 (153.25) meV/A | Time/eval: 1429.87 mcs/at
+2024-09-12 12:22:53,084 I - Iteration   #133  (186 evals):      Loss: 6.8094e+01 | RMSE Energy(low): 26078.84 (10282.97) meV/at | Forces(low): 175.60 (198.75) meV/A | Time/eval: 1848.39 mcs/at
+2024-09-12 12:22:53,628 I - Iteration   #134  (188 evals):      Loss: 6.8060e+01 | RMSE Energy(low): 26071.75 (10021.51) meV/at | Forces(low): 179.10 (226.44) meV/A | Time/eval: 1859.28 mcs/at
+2024-09-12 12:22:54,055 I - Iteration   #135  (190 evals):      Loss: 6.8054e+01 | RMSE Energy(low): 26069.57 (9954.50) meV/at | Forces(low): 183.97 (231.51) meV/A | Time/eval: 833.86 mcs/at
+2024-09-12 12:22:54,452 I - Iteration   #136  (191 evals):      Loss: 6.8042e+01 | RMSE Energy(low): 26067.64 (9880.25) meV/at | Forces(low): 182.48 (226.47) meV/A | Time/eval: 1721.65 mcs/at
+2024-09-12 12:22:54,884 I - Iteration   #137  (192 evals):      Loss: 6.8030e+01 | RMSE Energy(low): 26063.70 (9727.85) meV/at | Forces(low): 190.93 (241.52) meV/A | Time/eval: 1598.14 mcs/at
+2024-09-12 12:22:55,327 I - Iteration   #138  (194 evals):      Loss: 6.8023e+01 | RMSE Energy(low): 26062.74 (9651.96) meV/at | Forces(low): 189.27 (235.84) meV/A | Time/eval: 853.53 mcs/at
+2024-09-12 12:22:55,801 I - Iteration   #139  (196 evals):      Loss: 6.8019e+01 | RMSE Energy(low): 26061.85 (9615.62) meV/at | Forces(low): 189.34 (238.40) meV/A | Time/eval: 912.08 mcs/at
+2024-09-12 12:22:56,213 I - Iteration   #140  (198 evals):      Loss: 6.8018e+01 | RMSE Energy(low): 26061.77 (9612.46) meV/at | Forces(low): 189.30 (238.24) meV/A | Time/eval: 820.07 mcs/at
+2024-09-12 12:22:56,700 I - Iteration   #141  (200 evals):      Loss: 6.8014e+01 | RMSE Energy(low): 26061.92 (9612.70) meV/at | Forces(low): 184.46 (231.20) meV/A | Time/eval: 846.47 mcs/at
+2024-09-12 12:22:57,060 I - Iteration   #142  (201 evals):      Loss: 6.8008e+01 | RMSE Energy(low): 26062.47 (9626.76) meV/at | Forces(low): 174.95 (214.39) meV/A | Time/eval: 960.57 mcs/at
+2024-09-12 12:22:57,463 I - Iteration   #143  (203 evals):      Loss: 6.8004e+01 | RMSE Energy(low): 26062.87 (9635.04) meV/at | Forces(low): 168.58 (205.97) meV/A | Time/eval: 712.81 mcs/at
+2024-09-12 12:22:57,862 I - Iteration   #144  (205 evals):      Loss: 6.8002e+01 | RMSE Energy(low): 26063.00 (9645.00) meV/at | Forces(low): 165.64 (198.72) meV/A | Time/eval: 804.47 mcs/at
+2024-09-12 12:22:58,296 I - Iteration   #145  (206 evals):      Loss: 6.8001e+01 | RMSE Energy(low): 26063.65 (9634.24) meV/at | Forces(low): 160.58 (187.48) meV/A | Time/eval: 1860.08 mcs/at
+2024-09-12 12:22:58,719 I - Iteration   #146  (207 evals):      Loss: 6.8000e+01 | RMSE Energy(low): 26063.61 (9624.29) meV/at | Forces(low): 159.46 (187.94) meV/A | Time/eval: 1937.93 mcs/at
+2024-09-12 12:22:59,077 I - Iteration   #147  (208 evals):      Loss: 6.7998e+01 | RMSE Energy(low): 26063.77 (9611.22) meV/at | Forces(low): 156.63 (183.89) meV/A | Time/eval: 1044.85 mcs/at
+2024-09-12 12:22:59,487 I - Iteration   #148  (210 evals):      Loss: 6.7998e+01 | RMSE Energy(low): 26063.70 (9611.75) meV/at | Forces(low): 156.43 (184.48) meV/A | Time/eval: 748.05 mcs/at
+2024-09-12 12:22:59,897 I - Iteration   #149  (211 evals):      Loss: 6.7997e+01 | RMSE Energy(low): 26063.68 (9621.30) meV/at | Forces(low): 155.46 (182.55) meV/A | Time/eval: 1896.35 mcs/at
+2024-09-12 12:23:00,289 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #150 Loss:    Total:  6.7995e+01 (100%) 
+                         Energy:  6.7930e+01 (100%) 
+                          Force:  6.4669e-02 (  0%) 
+                             L1:  4.6948e-06 (  0%) 
+                             L2:  1.1653e-05 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1547.62 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        26063.47              9631.56               154.76                  181.69
+    MAE:        16567.53              9624.01                52.47                   67.52
+ MAX_AE:        83243.90             10311.29               888.08                  888.08
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:23:00,289 I - Last relative TRAIN loss change -2.46e-05/iter (averaged over last 1 step(s))
+2024-09-12 12:23:00,657 I - Iteration   #151  (213 evals):      Loss: 6.7992e+01 | RMSE Energy(low): 26063.02 (9625.62) meV/at | Forces(low): 153.96 (181.46) meV/A | Time/eval: 1424.99 mcs/at
+2024-09-12 12:23:01,083 I - Iteration   #152  (215 evals):      Loss: 6.7990e+01 | RMSE Energy(low): 26062.70 (9623.24) meV/at | Forces(low): 153.72 (178.88) meV/A | Time/eval: 704.43 mcs/at
+2024-09-12 12:23:01,494 I - Iteration   #153  (217 evals):      Loss: 6.7989e+01 | RMSE Energy(low): 26062.61 (9619.21) meV/at | Forces(low): 153.19 (177.91) meV/A | Time/eval: 875.49 mcs/at
+2024-09-12 12:23:01,915 I - Iteration   #154  (218 evals):      Loss: 6.7988e+01 | RMSE Energy(low): 26062.03 (9610.74) meV/at | Forces(low): 154.86 (181.25) meV/A | Time/eval: 1666.97 mcs/at
+2024-09-12 12:23:02,291 I - Iteration   #155  (219 evals):      Loss: 6.7986e+01 | RMSE Energy(low): 26061.09 (9589.65) meV/at | Forces(low): 158.47 (186.76) meV/A | Time/eval: 1376.16 mcs/at
+2024-09-12 12:23:02,704 I - Iteration   #156  (220 evals):      Loss: 6.7983e+01 | RMSE Energy(low): 26059.93 (9573.61) meV/at | Forces(low): 161.93 (195.69) meV/A | Time/eval: 2044.38 mcs/at
+2024-09-12 12:23:03,062 I - Iteration   #157  (221 evals):      Loss: 6.7978e+01 | RMSE Energy(low): 26057.76 (9542.26) meV/at | Forces(low): 169.05 (204.93) meV/A | Time/eval: 1148.65 mcs/at
+2024-09-12 12:23:03,418 I - Iteration   #158  (222 evals):      Loss: 6.7968e+01 | RMSE Energy(low): 26054.66 (9511.73) meV/at | Forces(low): 175.76 (213.55) meV/A | Time/eval: 1207.28 mcs/at
+2024-09-12 12:23:03,853 I - Iteration   #159  (224 evals):      Loss: 6.7962e+01 | RMSE Energy(low): 26052.65 (9494.43) meV/at | Forces(low): 180.69 (217.89) meV/A | Time/eval: 782.69 mcs/at
+2024-09-12 12:23:04,196 I - Iteration   #160  (225 evals):      Loss: 6.7959e+01 | RMSE Energy(low): 26048.48 (9481.62) meV/at | Forces(low): 199.16 (224.56) meV/A | Time/eval: 997.86 mcs/at
+2024-09-12 12:23:04,678 I - Iteration   #161  (228 evals):      Loss: 6.7945e+01 | RMSE Energy(low): 26042.94 (9466.17) meV/at | Forces(low): 212.23 (243.81) meV/A | Time/eval: 738.30 mcs/at
+2024-09-12 12:23:05,130 I - Iteration   #162  (230 evals):      Loss: 6.7939e+01 | RMSE Energy(low): 26039.58 (9464.45) meV/at | Forces(low): 221.62 (256.17) meV/A | Time/eval: 884.54 mcs/at
+2024-09-12 12:23:05,603 I - Iteration   #163  (232 evals):      Loss: 6.7937e+01 | RMSE Energy(low): 26038.23 (9463.72) meV/at | Forces(low): 226.14 (267.33) meV/A | Time/eval: 822.03 mcs/at
+2024-09-12 12:23:05,952 I - Iteration   #164  (233 evals):      Loss: 6.7934e+01 | RMSE Energy(low): 26037.00 (9461.64) meV/at | Forces(low): 229.14 (273.23) meV/A | Time/eval: 1007.20 mcs/at
+2024-09-12 12:23:06,369 I - Iteration   #165  (235 evals):      Loss: 6.7916e+01 | RMSE Energy(low): 26027.90 (9473.46) meV/at | Forces(low): 251.21 (290.96) meV/A | Time/eval: 791.99 mcs/at
+2024-09-12 12:23:06,827 I - Iteration   #166  (238 evals):      Loss: 6.7891e+01 | RMSE Energy(low): 26017.75 (9514.93) meV/at | Forces(low): 271.00 (324.40) meV/A | Time/eval: 773.71 mcs/at
+2024-09-12 12:23:07,252 I - Iteration   #167  (240 evals):      Loss: 6.7883e+01 | RMSE Energy(low): 26014.13 (9527.93) meV/at | Forces(low): 278.39 (336.26) meV/A | Time/eval: 861.72 mcs/at
+2024-09-12 12:23:07,592 I - Iteration   #168  (241 evals):      Loss: 6.7868e+01 | RMSE Energy(low): 26009.27 (9552.90) meV/at | Forces(low): 285.38 (343.29) meV/A | Time/eval: 1018.35 mcs/at
+2024-09-12 12:23:07,948 I - Iteration   #169  (242 evals):      Loss: 6.7843e+01 | RMSE Energy(low): 26000.99 (9594.06) meV/at | Forces(low): 296.61 (353.76) meV/A | Time/eval: 966.97 mcs/at
+2024-09-12 12:23:08,384 I - Iteration   #170  (244 evals):      Loss: 6.7827e+01 | RMSE Energy(low): 25995.41 (9627.79) meV/at | Forces(low): 304.79 (352.32) meV/A | Time/eval: 811.46 mcs/at
+2024-09-12 12:23:08,805 I - Iteration   #171  (245 evals):      Loss: 6.7809e+01 | RMSE Energy(low): 25988.95 (9689.16) meV/at | Forces(low): 313.99 (337.80) meV/A | Time/eval: 1669.37 mcs/at
+2024-09-12 12:23:09,199 I - Iteration   #172  (246 evals):      Loss: 6.7779e+01 | RMSE Energy(low): 25982.75 (9708.76) meV/at | Forces(low): 315.56 (319.50) meV/A | Time/eval: 1525.57 mcs/at
+2024-09-12 12:23:09,562 I - Iteration   #173  (247 evals):      Loss: 6.7749e+01 | RMSE Energy(low): 25974.98 (9737.17) meV/at | Forces(low): 321.43 (330.21) meV/A | Time/eval: 1278.93 mcs/at
+2024-09-12 12:23:09,947 I - Iteration   #174  (248 evals):      Loss: 6.7731e+01 | RMSE Energy(low): 25969.15 (9775.76) meV/at | Forces(low): 328.36 (356.18) meV/A | Time/eval: 1366.14 mcs/at
+2024-09-12 12:23:10,325 I - Iteration   #175  (249 evals):      Loss: 6.7706e+01 | RMSE Energy(low): 25968.61 (9793.93) meV/at | Forces(low): 315.97 (377.66) meV/A | Time/eval: 1055.90 mcs/at
+2024-09-12 12:23:10,714 I - Iteration   #176  (250 evals):      Loss: 6.7690e+01 | RMSE Energy(low): 25969.16 (9813.92) meV/at | Forces(low): 304.15 (381.25) meV/A | Time/eval: 1151.05 mcs/at
+2024-09-12 12:23:11,067 I - Iteration   #177  (251 evals):      Loss: 6.7661e+01 | RMSE Energy(low): 25968.41 (9838.03) meV/at | Forces(low): 288.76 (369.61) meV/A | Time/eval: 1366.53 mcs/at
+2024-09-12 12:23:11,437 I - Iteration   #178  (252 evals):      Loss: 6.7611e+01 | RMSE Energy(low): 25967.03 (9874.41) meV/at | Forces(low): 259.75 (337.46) meV/A | Time/eval: 1235.81 mcs/at
+2024-09-12 12:23:11,827 I - Iteration   #179  (253 evals):      Loss: 6.7562e+01 | RMSE Energy(low): 25960.78 (9993.49) meV/at | Forces(low): 248.04 (326.83) meV/A | Time/eval: 1307.96 mcs/at
+2024-09-12 12:23:12,270 I - Iteration   #180  (255 evals):      Loss: 6.7535e+01 | RMSE Energy(low): 25958.13 (10074.24) meV/at | Forces(low): 237.47 (279.03) meV/A | Time/eval: 908.30 mcs/at
+2024-09-12 12:23:12,683 I - Iteration   #181  (256 evals):      Loss: 6.7487e+01 | RMSE Energy(low): 25955.38 (10196.36) meV/at | Forces(low): 209.76 (242.76) meV/A | Time/eval: 1716.39 mcs/at
+2024-09-12 12:23:13,134 I - Iteration   #182  (258 evals):      Loss: 6.7457e+01 | RMSE Energy(low): 25952.27 (10302.94) meV/at | Forces(low): 197.13 (232.68) meV/A | Time/eval: 756.00 mcs/at
+2024-09-12 12:23:13,484 I - Iteration   #183  (259 evals):      Loss: 6.7420e+01 | RMSE Energy(low): 25944.11 (10501.92) meV/at | Forces(low): 202.23 (254.40) meV/A | Time/eval: 980.67 mcs/at
+2024-09-12 12:23:13,922 I - Iteration   #184  (261 evals):      Loss: 6.7409e+01 | RMSE Energy(low): 25939.45 (10532.89) meV/at | Forces(low): 213.82 (263.85) meV/A | Time/eval: 834.73 mcs/at
+2024-09-12 12:23:14,339 I - Iteration   #185  (262 evals):      Loss: 6.7389e+01 | RMSE Energy(low): 25933.97 (10563.36) meV/at | Forces(low): 221.18 (276.58) meV/A | Time/eval: 1484.42 mcs/at
+2024-09-12 12:23:14,722 I - Iteration   #186  (263 evals):      Loss: 6.7361e+01 | RMSE Energy(low): 25924.90 (10599.12) meV/at | Forces(low): 236.23 (299.92) meV/A | Time/eval: 1414.81 mcs/at
+2024-09-12 12:23:15,088 I - Iteration   #187  (264 evals):      Loss: 6.7323e+01 | RMSE Energy(low): 25909.76 (10594.26) meV/at | Forces(low): 265.91 (331.98) meV/A | Time/eval: 1156.13 mcs/at
+2024-09-12 12:23:15,530 I - Iteration   #188  (266 evals):      Loss: 6.7296e+01 | RMSE Energy(low): 25897.89 (10516.42) meV/at | Forces(low): 289.02 (371.10) meV/A | Time/eval: 853.53 mcs/at
+2024-09-12 12:23:15,956 I - Iteration   #189  (267 evals):      Loss: 6.7259e+01 | RMSE Energy(low): 25884.31 (10404.03) meV/at | Forces(low): 309.70 (402.57) meV/A | Time/eval: 1478.95 mcs/at
+2024-09-12 12:23:16,410 I - Iteration   #190  (269 evals):      Loss: 6.7239e+01 | RMSE Energy(low): 25876.79 (10299.03) meV/at | Forces(low): 320.69 (421.73) meV/A | Time/eval: 791.16 mcs/at
+2024-09-12 12:23:16,751 I - Iteration   #191  (270 evals):      Loss: 6.7199e+01 | RMSE Energy(low): 25867.32 (10183.80) meV/at | Forces(low): 326.26 (433.07) meV/A | Time/eval: 1020.17 mcs/at
+2024-09-12 12:23:17,116 I - Iteration   #192  (271 evals):      Loss: 6.7133e+01 | RMSE Energy(low): 25850.69 (9954.03) meV/at | Forces(low): 337.38 (429.58) meV/A | Time/eval: 1205.31 mcs/at
+2024-09-12 12:23:17,529 I - Iteration   #193  (273 evals):      Loss: 6.7086e+01 | RMSE Energy(low): 25839.23 (9794.27) meV/at | Forces(low): 343.74 (433.40) meV/A | Time/eval: 778.82 mcs/at
+2024-09-12 12:23:17,956 I - Iteration   #194  (274 evals):      Loss: 6.7003e+01 | RMSE Energy(low): 25819.84 (9539.82) meV/at | Forces(low): 353.07 (448.18) meV/A | Time/eval: 1613.79 mcs/at
+2024-09-12 12:23:18,403 I - Iteration   #195  (276 evals):      Loss: 6.6969e+01 | RMSE Energy(low): 25811.23 (9456.90) meV/at | Forces(low): 358.74 (466.70) meV/A | Time/eval: 780.73 mcs/at
+2024-09-12 12:23:18,737 I - Iteration   #196  (277 evals):      Loss: 6.6949e+01 | RMSE Energy(low): 25796.50 (9461.41) meV/at | Forces(low): 386.32 (497.45) meV/A | Time/eval: 1008.95 mcs/at
+2024-09-12 12:23:19,114 I - Iteration   #197  (278 evals):      Loss: 6.6940e+01 | RMSE Energy(low): 25786.69 (9612.58) meV/at | Forces(low): 405.67 (534.79) meV/A | Time/eval: 1354.50 mcs/at
+2024-09-12 12:23:19,472 I - Iteration   #198  (279 evals):      Loss: 6.6925e+01 | RMSE Energy(low): 25781.98 (9725.52) meV/at | Forces(low): 410.21 (544.67) meV/A | Time/eval: 1282.24 mcs/at
+2024-09-12 12:23:19,847 I - Iteration   #199  (280 evals):      Loss: 6.6909e+01 | RMSE Energy(low): 25776.59 (9880.12) meV/at | Forces(low): 415.46 (547.51) meV/A | Time/eval: 1206.57 mcs/at
+2024-09-12 12:23:20,225 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #200 Loss:    Total:  6.6888e+01 (100%) 
+                         Energy:  6.6411e+01 ( 99%) 
+                          Force:  4.7734e-01 (  1%) 
+                             L1:  7.9088e-06 (  0%) 
+                             L2:  3.0123e-05 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1424.49 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        25770.25             10003.21               420.47                  555.71
+    MAE:        16064.75              9984.53               119.37                  182.54
+ MAX_AE:        83003.01             11569.91              3136.89                 3136.89
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:23:20,225 I - Last relative TRAIN loss change -3.20e-04/iter (averaged over last 1 step(s))
+2024-09-12 12:23:20,600 I - Iteration   #201  (282 evals):      Loss: 6.6854e+01 | RMSE Energy(low): 25757.36 (10101.21) meV/at | Forces(low): 434.58 (573.32) meV/A | Time/eval: 1534.61 mcs/at
+2024-09-12 12:23:20,972 I - Iteration   #202  (283 evals):      Loss: 6.6809e+01 | RMSE Energy(low): 25737.51 (10285.35) meV/at | Forces(low): 458.07 (602.41) meV/A | Time/eval: 1482.27 mcs/at
+2024-09-12 12:23:21,416 I - Iteration   #203  (285 evals):      Loss: 6.6786e+01 | RMSE Energy(low): 25727.28 (10387.52) meV/at | Forces(low): 470.12 (625.35) meV/A | Time/eval: 851.11 mcs/at
+2024-09-12 12:23:21,752 I - Iteration   #204  (286 evals):      Loss: 6.6777e+01 | RMSE Energy(low): 25714.33 (10525.46) meV/at | Forces(low): 492.43 (649.96) meV/A | Time/eval: 930.87 mcs/at
+2024-09-12 12:23:22,114 I - Iteration   #205  (287 evals):      Loss: 6.6765e+01 | RMSE Energy(low): 25710.09 (10552.40) meV/at | Forces(low): 495.90 (661.58) meV/A | Time/eval: 1303.38 mcs/at
+2024-09-12 12:23:22,552 I - Iteration   #206  (289 evals):      Loss: 6.6759e+01 | RMSE Energy(low): 25707.05 (10554.10) meV/at | Forces(low): 499.41 (667.32) meV/A | Time/eval: 748.41 mcs/at
+2024-09-12 12:23:22,971 I - Iteration   #207  (290 evals):      Loss: 6.6752e+01 | RMSE Energy(low): 25704.73 (10559.31) meV/at | Forces(low): 501.29 (670.26) meV/A | Time/eval: 1669.46 mcs/at
+2024-09-12 12:23:23,359 I - Iteration   #208  (291 evals):      Loss: 6.6739e+01 | RMSE Energy(low): 25700.93 (10509.31) meV/at | Forces(low): 503.85 (674.78) meV/A | Time/eval: 1360.03 mcs/at
+2024-09-12 12:23:23,740 I - Iteration   #209  (292 evals):      Loss: 6.6725e+01 | RMSE Energy(low): 25692.42 (10377.14) meV/at | Forces(low): 514.62 (692.05) meV/A | Time/eval: 1385.15 mcs/at
+2024-09-12 12:23:24,176 I - Iteration   #210  (294 evals):      Loss: 6.6718e+01 | RMSE Energy(low): 25690.05 (10301.99) meV/at | Forces(low): 516.40 (692.95) meV/A | Time/eval: 819.75 mcs/at
+2024-09-12 12:23:24,512 I - Iteration   #211  (295 evals):      Loss: 6.6705e+01 | RMSE Energy(low): 25687.10 (10178.08) meV/at | Forces(low): 517.20 (694.57) meV/A | Time/eval: 1012.08 mcs/at
+2024-09-12 12:23:24,875 I - Iteration   #212  (296 evals):      Loss: 6.6699e+01 | RMSE Energy(low): 25682.09 (9982.81) meV/at | Forces(low): 524.06 (698.43) meV/A | Time/eval: 1196.74 mcs/at
+2024-09-12 12:23:25,245 I - Iteration   #213  (297 evals):      Loss: 6.6689e+01 | RMSE Energy(low): 25679.99 (9905.38) meV/at | Forces(low): 524.40 (700.46) meV/A | Time/eval: 1431.81 mcs/at
+2024-09-12 12:23:25,626 I - Iteration   #214  (298 evals):      Loss: 6.6671e+01 | RMSE Energy(low): 25676.52 (9814.30) meV/at | Forces(low): 524.35 (700.57) meV/A | Time/eval: 1518.86 mcs/at
+2024-09-12 12:23:25,989 I - Iteration   #215  (299 evals):      Loss: 6.6654e+01 | RMSE Energy(low): 25670.82 (9653.64) meV/at | Forces(low): 528.76 (704.84) meV/A | Time/eval: 1346.84 mcs/at
+2024-09-12 12:23:26,388 I - Iteration   #216  (300 evals):      Loss: 6.6640e+01 | RMSE Energy(low): 25666.84 (9570.58) meV/at | Forces(low): 530.95 (715.30) meV/A | Time/eval: 1119.48 mcs/at
+2024-09-12 12:23:26,822 I - Iteration   #217  (301 evals):      Loss: 6.6619e+01 | RMSE Energy(low): 25665.13 (9580.55) meV/at | Forces(low): 526.78 (702.10) meV/A | Time/eval: 2254.42 mcs/at
+2024-09-12 12:23:27,152 I - Iteration   #218  (302 evals):      Loss: 6.6592e+01 | RMSE Energy(low): 25662.15 (9600.52) meV/at | Forces(low): 522.40 (687.10) meV/A | Time/eval: 811.23 mcs/at
+2024-09-12 12:23:27,512 I - Iteration   #219  (303 evals):      Loss: 6.6569e+01 | RMSE Energy(low): 25659.36 (9655.24) meV/at | Forces(low): 519.36 (675.02) meV/A | Time/eval: 1271.24 mcs/at
+2024-09-12 12:23:27,899 I - Iteration   #220  (304 evals):      Loss: 6.6535e+01 | RMSE Energy(low): 25655.54 (9720.88) meV/at | Forces(low): 514.36 (669.88) meV/A | Time/eval: 1043.61 mcs/at
+2024-09-12 12:23:28,273 I - Iteration   #221  (305 evals):      Loss: 6.6474e+01 | RMSE Energy(low): 25649.51 (9811.43) meV/at | Forces(low): 503.44 (649.73) meV/A | Time/eval: 1271.13 mcs/at
+2024-09-12 12:23:28,707 I - Iteration   #222  (307 evals):      Loss: 6.6438e+01 | RMSE Energy(low): 25644.80 (9871.90) meV/at | Forces(low): 499.10 (642.41) meV/A | Time/eval: 862.15 mcs/at
+2024-09-12 12:23:29,115 I - Iteration   #223  (308 evals):      Loss: 6.6368e+01 | RMSE Energy(low): 25636.09 (9970.93) meV/at | Forces(low): 489.64 (615.19) meV/A | Time/eval: 1809.07 mcs/at
+2024-09-12 12:23:29,585 I - Iteration   #224  (310 evals):      Loss: 6.6326e+01 | RMSE Energy(low): 25630.50 (10039.39) meV/at | Forces(low): 484.32 (599.99) meV/A | Time/eval: 927.79 mcs/at
+2024-09-12 12:23:30,059 I - Iteration   #225  (312 evals):      Loss: 6.6307e+01 | RMSE Energy(low): 25626.13 (10069.11) meV/at | Forces(low): 485.79 (598.96) meV/A | Time/eval: 857.44 mcs/at
+2024-09-12 12:23:30,399 I - Iteration   #226  (313 evals):      Loss: 6.6286e+01 | RMSE Energy(low): 25620.19 (10102.47) meV/at | Forces(low): 489.24 (592.07) meV/A | Time/eval: 933.46 mcs/at
+2024-09-12 12:23:30,771 I - Iteration   #227  (314 evals):      Loss: 6.6246e+01 | RMSE Energy(low): 25613.68 (10143.25) meV/at | Forces(low): 486.67 (593.82) meV/A | Time/eval: 1385.29 mcs/at
+2024-09-12 12:23:31,134 I - Iteration   #228  (315 evals):      Loss: 6.6193e+01 | RMSE Energy(low): 25604.85 (10244.25) meV/at | Forces(low): 483.76 (588.61) meV/A | Time/eval: 1293.72 mcs/at
+2024-09-12 12:23:31,503 I - Iteration   #229  (316 evals):      Loss: 6.6115e+01 | RMSE Energy(low): 25590.56 (10351.91) meV/at | Forces(low): 482.08 (599.90) meV/A | Time/eval: 1286.30 mcs/at
+2024-09-12 12:23:31,886 I - Iteration   #230  (317 evals):      Loss: 6.6016e+01 | RMSE Energy(low): 25573.11 (10537.07) meV/at | Forces(low): 478.31 (610.06) meV/A | Time/eval: 1483.62 mcs/at
+2024-09-12 12:23:32,324 I - Iteration   #231  (319 evals):      Loss: 6.5997e+01 | RMSE Energy(low): 25569.56 (10575.56) meV/at | Forces(low): 477.86 (607.95) meV/A | Time/eval: 788.61 mcs/at
+2024-09-12 12:23:32,660 I - Iteration   #232  (320 evals):      Loss: 6.5966e+01 | RMSE Energy(low): 25564.80 (10573.21) meV/at | Forces(low): 475.41 (619.01) meV/A | Time/eval: 815.81 mcs/at
+2024-09-12 12:23:33,025 I - Iteration   #233  (321 evals):      Loss: 6.5921e+01 | RMSE Energy(low): 25560.10 (10584.90) meV/at | Forces(low): 467.19 (605.90) meV/A | Time/eval: 1286.47 mcs/at
+2024-09-12 12:23:33,399 I - Iteration   #234  (322 evals):      Loss: 6.5845e+01 | RMSE Energy(low): 25557.08 (10639.50) meV/at | Forces(low): 442.32 (581.83) meV/A | Time/eval: 1112.57 mcs/at
+2024-09-12 12:23:33,776 I - Iteration   #235  (323 evals):      Loss: 6.5769e+01 | RMSE Energy(low): 25559.17 (10749.79) meV/at | Forces(low): 404.62 (495.18) meV/A | Time/eval: 1337.78 mcs/at
+2024-09-12 12:23:34,196 I - Iteration   #236  (325 evals):      Loss: 6.5735e+01 | RMSE Energy(low): 25558.25 (10660.23) meV/at | Forces(low): 390.82 (473.89) meV/A | Time/eval: 699.40 mcs/at
+2024-09-12 12:23:34,548 I - Iteration   #237  (326 evals):      Loss: 6.5702e+01 | RMSE Energy(low): 25555.83 (10541.64) meV/at | Forces(low): 381.14 (472.21) meV/A | Time/eval: 865.84 mcs/at
+2024-09-12 12:23:34,914 I - Iteration   #238  (327 evals):      Loss: 6.5653e+01 | RMSE Energy(low): 25555.09 (10418.28) meV/at | Forces(low): 358.34 (425.12) meV/A | Time/eval: 1296.09 mcs/at
+2024-09-12 12:23:35,285 I - Iteration   #239  (328 evals):      Loss: 6.5559e+01 | RMSE Energy(low): 25554.91 (10263.06) meV/at | Forces(low): 306.71 (364.11) meV/A | Time/eval: 1425.21 mcs/at
+2024-09-12 12:23:35,652 I - Iteration   #240  (329 evals):      Loss: 6.5452e+01 | RMSE Energy(low): 25553.22 (10084.85) meV/at | Forces(low): 239.53 (290.74) meV/A | Time/eval: 1426.86 mcs/at
+2024-09-12 12:23:36,099 I - Iteration   #241  (331 evals):      Loss: 6.5385e+01 | RMSE Energy(low): 25548.48 (10086.92) meV/at | Forces(low): 204.31 (252.58) meV/A | Time/eval: 885.96 mcs/at
+2024-09-12 12:23:36,438 I - Iteration   #242  (332 evals):      Loss: 6.5346e+01 | RMSE Energy(low): 25543.13 (10222.01) meV/at | Forces(low): 192.76 (202.11) meV/A | Time/eval: 934.41 mcs/at
+2024-09-12 12:23:36,933 I - Iteration   #243  (334 evals):      Loss: 6.5324e+01 | RMSE Energy(low): 25538.77 (10231.37) meV/at | Forces(low): 193.60 (225.07) meV/A | Time/eval: 741.32 mcs/at
+2024-09-12 12:23:37,300 I - Iteration   #244  (335 evals):      Loss: 6.5291e+01 | RMSE Energy(low): 25532.26 (10183.25) meV/at | Forces(low): 193.73 (233.49) meV/A | Time/eval: 1097.62 mcs/at
+2024-09-12 12:23:37,658 I - Iteration   #245  (336 evals):      Loss: 6.5231e+01 | RMSE Energy(low): 25519.76 (10075.02) meV/at | Forces(low): 197.71 (242.70) meV/A | Time/eval: 1292.93 mcs/at
+2024-09-12 12:23:38,044 I - Iteration   #246  (337 evals):      Loss: 6.5139e+01 | RMSE Energy(low): 25496.91 (9826.80) meV/at | Forces(low): 219.54 (249.69) meV/A | Time/eval: 1346.80 mcs/at
+2024-09-12 12:23:38,479 I - Iteration   #247  (339 evals):      Loss: 6.5075e+01 | RMSE Energy(low): 25478.43 (9583.20) meV/at | Forces(low): 243.27 (284.92) meV/A | Time/eval: 790.93 mcs/at
+2024-09-12 12:23:38,907 I - Iteration   #248  (340 evals):      Loss: 6.5009e+01 | RMSE Energy(low): 25456.82 (9216.91) meV/at | Forces(low): 274.57 (270.29) meV/A | Time/eval: 1907.74 mcs/at
+2024-09-12 12:23:39,328 I - Iteration   #249  (341 evals):      Loss: 6.4932e+01 | RMSE Energy(low): 25443.21 (8912.03) meV/at | Forces(low): 269.75 (279.95) meV/A | Time/eval: 1942.42 mcs/at
+2024-09-12 12:23:39,698 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #250 Loss:    Total:  6.4892e+01 (100%) 
+                         Energy:  6.4657e+01 (100%) 
+                          Force:  2.3520e-01 (  0%) 
+                             L1:  1.2147e-05 (  0%) 
+                             L2:  6.7051e-05 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:     890.93 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        25427.73              8771.45               295.14                  372.87
+    MAE:        15152.39              8711.82               110.26                  139.83
+ MAX_AE:        83692.28              9428.23              1346.04                 1346.04
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:23:39,698 I - Last relative TRAIN loss change -6.17e-04/iter (averaged over last 1 step(s))
+2024-09-12 12:23:40,059 I - Iteration   #251  (343 evals):      Loss: 6.4846e+01 | RMSE Energy(low): 25419.25 (8711.19) meV/at | Forces(low): 293.21 (381.76) meV/A | Time/eval: 993.54 mcs/at
+2024-09-12 12:23:40,475 I - Iteration   #252  (345 evals):      Loss: 6.4828e+01 | RMSE Energy(low): 25415.40 (8684.83) meV/at | Forces(low): 293.92 (382.38) meV/A | Time/eval: 720.68 mcs/at
+2024-09-12 12:23:40,811 I - Iteration   #253  (346 evals):      Loss: 6.4793e+01 | RMSE Energy(low): 25410.84 (8660.78) meV/at | Forces(low): 286.79 (364.48) meV/A | Time/eval: 986.97 mcs/at
+2024-09-12 12:23:41,167 I - Iteration   #254  (347 evals):      Loss: 6.4728e+01 | RMSE Energy(low): 25400.84 (8672.22) meV/at | Forces(low): 277.11 (352.92) meV/A | Time/eval: 1208.89 mcs/at
+2024-09-12 12:23:41,548 I - Iteration   #255  (348 evals):      Loss: 6.4604e+01 | RMSE Energy(low): 25381.84 (8714.30) meV/at | Forces(low): 257.95 (318.41) meV/A | Time/eval: 1371.07 mcs/at
+2024-09-12 12:23:41,929 I - Iteration   #256  (349 evals):      Loss: 6.4417e+01 | RMSE Energy(low): 25346.13 (8780.96) meV/at | Forces(low): 254.15 (292.52) meV/A | Time/eval: 1100.66 mcs/at
+2024-09-12 12:23:42,356 I - Iteration   #257  (351 evals):      Loss: 6.4324e+01 | RMSE Energy(low): 25329.78 (8796.72) meV/at | Forces(low): 246.80 (309.74) meV/A | Time/eval: 750.16 mcs/at
+2024-09-12 12:23:42,695 I - Iteration   #258  (352 evals):      Loss: 6.4250e+01 | RMSE Energy(low): 25300.01 (8638.50) meV/at | Forces(low): 298.52 (371.21) meV/A | Time/eval: 826.22 mcs/at
+2024-09-12 12:23:43,051 I - Iteration   #259  (353 evals):      Loss: 6.4186e+01 | RMSE Energy(low): 25278.59 (8551.58) meV/at | Forces(low): 324.77 (411.24) meV/A | Time/eval: 1205.81 mcs/at
+2024-09-12 12:23:43,485 I - Iteration   #260  (355 evals):      Loss: 6.4147e+01 | RMSE Energy(low): 25271.05 (8516.78) meV/at | Forces(low): 324.65 (395.43) meV/A | Time/eval: 800.71 mcs/at
+2024-09-12 12:23:43,935 I - Iteration   #261  (356 evals):      Loss: 6.4075e+01 | RMSE Energy(low): 25256.82 (8405.17) meV/at | Forces(low): 324.47 (382.23) meV/A | Time/eval: 1856.16 mcs/at
+2024-09-12 12:23:44,312 I - Iteration   #262  (357 evals):      Loss: 6.3938e+01 | RMSE Energy(low): 25231.62 (8214.31) meV/at | Forces(low): 318.74 (374.93) meV/A | Time/eval: 1470.07 mcs/at
+2024-09-12 12:23:44,678 I - Iteration   #263  (358 evals):      Loss: 6.3807e+01 | RMSE Energy(low): 25188.28 (7954.47) meV/at | Forces(low): 365.91 (469.33) meV/A | Time/eval: 1423.04 mcs/at
+2024-09-12 12:23:45,118 I - Iteration   #264  (360 evals):      Loss: 6.3776e+01 | RMSE Energy(low): 25178.73 (7928.02) meV/at | Forces(low): 374.64 (490.86) meV/A | Time/eval: 785.69 mcs/at
+2024-09-12 12:23:45,540 I - Iteration   #265  (361 evals):      Loss: 6.3731e+01 | RMSE Energy(low): 25167.76 (7850.79) meV/at | Forces(low): 379.49 (491.09) meV/A | Time/eval: 1989.15 mcs/at
+2024-09-12 12:23:45,964 I - Iteration   #266  (362 evals):      Loss: 6.3680e+01 | RMSE Energy(low): 25152.93 (7792.33) meV/at | Forces(low): 391.20 (507.17) meV/A | Time/eval: 1805.53 mcs/at
+2024-09-12 12:23:46,334 I - Iteration   #267  (363 evals):      Loss: 6.3615e+01 | RMSE Energy(low): 25132.84 (7890.97) meV/at | Forces(low): 407.89 (526.47) meV/A | Time/eval: 1274.54 mcs/at
+2024-09-12 12:23:46,747 I - Iteration   #268  (365 evals):      Loss: 6.3583e+01 | RMSE Energy(low): 25122.36 (7986.61) meV/at | Forces(low): 417.06 (520.12) meV/A | Time/eval: 764.44 mcs/at
+2024-09-12 12:23:47,087 I - Iteration   #269  (366 evals):      Loss: 6.3525e+01 | RMSE Energy(low): 25109.32 (8193.80) meV/at | Forces(low): 420.20 (515.63) meV/A | Time/eval: 955.90 mcs/at
+2024-09-12 12:23:47,447 I - Iteration   #270  (367 evals):      Loss: 6.3440e+01 | RMSE Energy(low): 25090.50 (8302.32) meV/at | Forces(low): 424.69 (531.50) meV/A | Time/eval: 1190.76 mcs/at
+2024-09-12 12:23:47,838 I - Iteration   #271  (368 evals):      Loss: 6.3303e+01 | RMSE Energy(low): 25071.42 (8452.87) meV/at | Forces(low): 406.14 (522.38) meV/A | Time/eval: 1613.51 mcs/at
+2024-09-12 12:23:48,258 I - Iteration   #272  (370 evals):      Loss: 6.3219e+01 | RMSE Energy(low): 25063.19 (8514.24) meV/at | Forces(low): 385.93 (496.81) meV/A | Time/eval: 778.50 mcs/at
+2024-09-12 12:23:48,734 I - Iteration   #273  (372 evals):      Loss: 6.3160e+01 | RMSE Energy(low): 25057.26 (8591.16) meV/at | Forces(low): 371.74 (471.50) meV/A | Time/eval: 777.82 mcs/at
+2024-09-12 12:23:49,080 I - Iteration   #274  (373 evals):      Loss: 6.3059e+01 | RMSE Energy(low): 25052.19 (8691.63) meV/at | Forces(low): 332.29 (409.33) meV/A | Time/eval: 1176.73 mcs/at
+2024-09-12 12:23:49,448 I - Iteration   #275  (374 evals):      Loss: 6.2976e+01 | RMSE Energy(low): 25047.48 (8839.37) meV/at | Forces(low): 297.36 (323.38) meV/A | Time/eval: 1280.42 mcs/at
+2024-09-12 12:23:49,825 I - Iteration   #276  (375 evals):      Loss: 6.2853e+01 | RMSE Energy(low): 25041.25 (8961.83) meV/at | Forces(low): 233.14 (222.91) meV/A | Time/eval: 1509.18 mcs/at
+2024-09-12 12:23:50,271 I - Iteration   #277  (377 evals):      Loss: 6.2780e+01 | RMSE Energy(low): 25036.56 (9066.19) meV/at | Forces(low): 189.18 (179.41) meV/A | Time/eval: 815.78 mcs/at
+2024-09-12 12:23:50,604 I - Iteration   #278  (378 evals):      Loss: 6.2743e+01 | RMSE Energy(low): 25027.33 (9233.33) meV/at | Forces(low): 198.51 (191.75) meV/A | Time/eval: 874.80 mcs/at
+2024-09-12 12:23:50,969 I - Iteration   #279  (379 evals):      Loss: 6.2697e+01 | RMSE Energy(low): 25021.13 (9429.56) meV/at | Forces(low): 183.89 (196.41) meV/A | Time/eval: 950.67 mcs/at
+2024-09-12 12:23:51,332 I - Iteration   #280  (380 evals):      Loss: 6.2685e+01 | RMSE Energy(low): 25019.86 (9845.52) meV/at | Forces(low): 178.39 (172.26) meV/A | Time/eval: 1313.05 mcs/at
+2024-09-12 12:23:51,699 I - Iteration   #281  (381 evals):      Loss: 6.2663e+01 | RMSE Energy(low): 25017.86 (9876.64) meV/at | Forces(low): 165.34 (174.81) meV/A | Time/eval: 1428.66 mcs/at
+2024-09-12 12:23:52,080 I - Iteration   #282  (382 evals):      Loss: 6.2628e+01 | RMSE Energy(low): 25013.47 (9885.82) meV/at | Forces(low): 149.71 (154.86) meV/A | Time/eval: 1446.55 mcs/at
+2024-09-12 12:23:52,458 I - Iteration   #283  (383 evals):      Loss: 6.2570e+01 | RMSE Energy(low): 25003.30 (9796.34) meV/at | Forces(low): 140.71 (151.65) meV/A | Time/eval: 1334.68 mcs/at
+2024-09-12 12:23:52,889 I - Iteration   #284  (385 evals):      Loss: 6.2531e+01 | RMSE Energy(low): 24996.58 (9764.84) meV/at | Forces(low): 134.01 (131.37) meV/A | Time/eval: 749.51 mcs/at
+2024-09-12 12:23:53,231 I - Iteration   #285  (386 evals):      Loss: 6.2481e+01 | RMSE Energy(low): 24985.08 (9553.36) meV/at | Forces(low): 143.29 (136.54) meV/A | Time/eval: 871.42 mcs/at
+2024-09-12 12:23:53,639 I - Iteration   #286  (388 evals):      Loss: 6.2451e+01 | RMSE Energy(low): 24977.90 (9362.06) meV/at | Forces(low): 150.26 (152.15) meV/A | Time/eval: 769.46 mcs/at
+2024-09-12 12:23:54,054 I - Iteration   #287  (389 evals):      Loss: 6.2408e+01 | RMSE Energy(low): 24971.28 (9085.27) meV/at | Forces(low): 138.16 (123.87) meV/A | Time/eval: 1664.33 mcs/at
+2024-09-12 12:23:54,524 I - Iteration   #288  (391 evals):      Loss: 6.2393e+01 | RMSE Energy(low): 24969.30 (8930.10) meV/at | Forces(low): 130.56 (102.71) meV/A | Time/eval: 743.65 mcs/at
+2024-09-12 12:23:54,937 I - Iteration   #289  (392 evals):      Loss: 6.2366e+01 | RMSE Energy(low): 24967.02 (8815.66) meV/at | Forces(low): 107.00 (83.37) meV/A | Time/eval: 1709.72 mcs/at
+2024-09-12 12:23:55,408 I - Iteration   #290  (394 evals):      Loss: 6.2352e+01 | RMSE Energy(low): 24964.51 (8755.33) meV/at | Forces(low): 104.57 (81.34) meV/A | Time/eval: 688.15 mcs/at
+2024-09-12 12:23:55,743 I - Iteration   #291  (395 evals):      Loss: 6.2331e+01 | RMSE Energy(low): 24960.92 (8711.27) meV/at | Forces(low): 98.03 (73.01) meV/A | Time/eval: 782.02 mcs/at
+2024-09-12 12:23:56,160 I - Iteration   #292  (397 evals):      Loss: 6.2324e+01 | RMSE Energy(low): 24959.97 (8688.37) meV/at | Forces(low): 94.77 (68.19) meV/A | Time/eval: 750.50 mcs/at
+2024-09-12 12:23:56,703 I - Iteration   #293  (399 evals):      Loss: 6.2322e+01 | RMSE Energy(low): 24959.11 (8677.74) meV/at | Forces(low): 98.57 (84.68) meV/A | Time/eval: 1737.15 mcs/at
+2024-09-12 12:23:57,086 I - Iteration   #294  (400 evals):      Loss: 6.2318e+01 | RMSE Energy(low): 24958.08 (8687.24) meV/at | Forces(low): 100.97 (85.50) meV/A | Time/eval: 1561.06 mcs/at
+2024-09-12 12:23:57,469 I - Iteration   #295  (401 evals):      Loss: 6.2316e+01 | RMSE Energy(low): 24956.86 (8672.89) meV/at | Forces(low): 107.58 (101.37) meV/A | Time/eval: 1507.16 mcs/at
+2024-09-12 12:23:57,923 I - Iteration   #296  (402 evals):      Loss: 6.2313e+01 | RMSE Energy(low): 24956.36 (8613.63) meV/at | Forces(low): 106.76 (98.90) meV/A | Time/eval: 2111.36 mcs/at
+2024-09-12 12:23:58,410 I - Iteration   #297  (404 evals):      Loss: 6.2311e+01 | RMSE Energy(low): 24956.31 (8594.88) meV/at | Forces(low): 104.36 (91.12) meV/A | Time/eval: 790.32 mcs/at
+2024-09-12 12:23:58,754 I - Iteration   #298  (405 evals):      Loss: 6.2310e+01 | RMSE Energy(low): 24955.49 (8605.33) meV/at | Forces(low): 108.77 (97.76) meV/A | Time/eval: 869.85 mcs/at
+2024-09-12 12:23:59,180 I - Iteration   #299  (407 evals):      Loss: 6.2309e+01 | RMSE Energy(low): 24955.26 (8608.04) meV/at | Forces(low): 109.62 (100.44) meV/A | Time/eval: 931.27 mcs/at
+2024-09-12 12:23:59,600 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #300 Loss:    Total:  6.2308e+01 (100%) 
+                         Energy:  6.2275e+01 (100%) 
+                          Force:  3.2619e-02 (  0%) 
+                             L1:  1.6822e-05 (  0%) 
+                             L2:  1.2651e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1511.19 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24955.02              8606.54               109.91                  100.21
+    MAE:        13791.63              8375.79                42.05                   45.39
+ MAX_AE:        83441.79              9445.67               730.82                  390.62
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:23:59,601 I - Last relative TRAIN loss change -1.67e-05/iter (averaged over last 1 step(s))
+2024-09-12 12:24:00,049 I - Iteration   #301  (409 evals):      Loss: 6.2307e+01 | RMSE Energy(low): 24954.35 (8617.45) meV/at | Forces(low): 112.93 (109.43) meV/A | Time/eval: 1948.69 mcs/at
+2024-09-12 12:24:00,473 I - Iteration   #302  (410 evals):      Loss: 6.2305e+01 | RMSE Energy(low): 24953.75 (8617.19) meV/at | Forces(low): 114.86 (113.01) meV/A | Time/eval: 1948.73 mcs/at
+2024-09-12 12:24:00,876 I - Iteration   #303  (411 evals):      Loss: 6.2302e+01 | RMSE Energy(low): 24953.31 (8609.87) meV/at | Forces(low): 114.45 (105.75) meV/A | Time/eval: 1082.54 mcs/at
+2024-09-12 12:24:01,362 I - Iteration   #304  (412 evals):      Loss: 6.2300e+01 | RMSE Energy(low): 24952.84 (8584.32) meV/at | Forces(low): 114.28 (101.53) meV/A | Time/eval: 1940.66 mcs/at
+2024-09-12 12:24:01,809 I - Iteration   #305  (414 evals):      Loss: 6.2299e+01 | RMSE Energy(low): 24952.60 (8572.42) meV/at | Forces(low): 114.73 (102.13) meV/A | Time/eval: 838.81 mcs/at
+2024-09-12 12:24:02,230 I - Iteration   #306  (415 evals):      Loss: 6.2298e+01 | RMSE Energy(low): 24952.43 (8560.03) meV/at | Forces(low): 114.17 (102.99) meV/A | Time/eval: 1873.77 mcs/at
+2024-09-12 12:24:02,641 I - Iteration   #307  (416 evals):      Loss: 6.2296e+01 | RMSE Energy(low): 24951.99 (8544.14) meV/at | Forces(low): 114.18 (103.18) meV/A | Time/eval: 914.61 mcs/at
+2024-09-12 12:24:03,112 I - Iteration   #308  (417 evals):      Loss: 6.2291e+01 | RMSE Energy(low): 24951.23 (8512.77) meV/at | Forces(low): 113.33 (106.14) meV/A | Time/eval: 1407.39 mcs/at
+2024-09-12 12:24:03,490 I - Iteration   #309  (418 evals):      Loss: 6.2285e+01 | RMSE Energy(low): 24949.42 (8442.42) meV/at | Forces(low): 118.15 (120.41) meV/A | Time/eval: 1215.47 mcs/at
+2024-09-12 12:24:03,931 I - Iteration   #310  (420 evals):      Loss: 6.2281e+01 | RMSE Energy(low): 24948.68 (8395.68) meV/at | Forces(low): 117.60 (123.57) meV/A | Time/eval: 853.38 mcs/at
+2024-09-12 12:24:04,420 I - Iteration   #311  (422 evals):      Loss: 6.2279e+01 | RMSE Energy(low): 24948.13 (8373.14) meV/at | Forces(low): 117.91 (119.77) meV/A | Time/eval: 847.40 mcs/at
+2024-09-12 12:24:04,861 I - Iteration   #312  (423 evals):      Loss: 6.2277e+01 | RMSE Energy(low): 24948.20 (8348.93) meV/at | Forces(low): 114.78 (101.40) meV/A | Time/eval: 1880.58 mcs/at
+2024-09-12 12:24:05,275 I - Iteration   #313  (424 evals):      Loss: 6.2274e+01 | RMSE Energy(low): 24948.13 (8338.96) meV/at | Forces(low): 111.08 (95.16) meV/A | Time/eval: 1042.51 mcs/at
+2024-09-12 12:24:05,638 I - Iteration   #314  (425 evals):      Loss: 6.2270e+01 | RMSE Energy(low): 24947.93 (8324.40) meV/at | Forces(low): 106.01 (86.02) meV/A | Time/eval: 1332.74 mcs/at
+2024-09-12 12:24:06,010 I - Iteration   #315  (426 evals):      Loss: 6.2268e+01 | RMSE Energy(low): 24947.89 (8301.43) meV/at | Forces(low): 102.29 (75.47) meV/A | Time/eval: 1305.04 mcs/at
+2024-09-12 12:24:06,377 I - Iteration   #316  (427 evals):      Loss: 6.2266e+01 | RMSE Energy(low): 24947.50 (8293.17) meV/at | Forces(low): 102.67 (81.80) meV/A | Time/eval: 1384.29 mcs/at
+2024-09-12 12:24:06,754 I - Iteration   #317  (428 evals):      Loss: 6.2264e+01 | RMSE Energy(low): 24947.52 (8287.47) meV/at | Forces(low): 97.66 (77.61) meV/A | Time/eval: 1255.24 mcs/at
+2024-09-12 12:24:07,123 I - Iteration   #318  (429 evals):      Loss: 6.2262e+01 | RMSE Energy(low): 24947.35 (8273.68) meV/at | Forces(low): 95.73 (72.22) meV/A | Time/eval: 1408.78 mcs/at
+2024-09-12 12:24:07,569 I - Iteration   #319  (431 evals):      Loss: 6.2261e+01 | RMSE Energy(low): 24947.15 (8267.36) meV/at | Forces(low): 95.57 (71.22) meV/A | Time/eval: 841.20 mcs/at
+2024-09-12 12:24:08,002 I - Iteration   #320  (432 evals):      Loss: 6.2260e+01 | RMSE Energy(low): 24947.09 (8258.90) meV/at | Forces(low): 95.44 (71.08) meV/A | Time/eval: 2055.55 mcs/at
+2024-09-12 12:24:08,390 I - Iteration   #321  (433 evals):      Loss: 6.2260e+01 | RMSE Energy(low): 24946.85 (8267.02) meV/at | Forces(low): 97.16 (73.96) meV/A | Time/eval: 1357.14 mcs/at
+2024-09-12 12:24:08,762 I - Iteration   #322  (434 evals):      Loss: 6.2260e+01 | RMSE Energy(low): 24946.78 (8275.07) meV/at | Forces(low): 96.96 (75.79) meV/A | Time/eval: 1427.35 mcs/at
+2024-09-12 12:24:09,138 I - Iteration   #323  (435 evals):      Loss: 6.2259e+01 | RMSE Energy(low): 24946.86 (8265.44) meV/at | Forces(low): 95.40 (70.37) meV/A | Time/eval: 1361.74 mcs/at
+2024-09-12 12:24:09,521 I - Iteration   #324  (436 evals):      Loss: 6.2259e+01 | RMSE Energy(low): 24946.78 (8255.03) meV/at | Forces(low): 95.18 (71.99) meV/A | Time/eval: 1372.68 mcs/at
+2024-09-12 12:24:09,894 I - Iteration   #325  (437 evals):      Loss: 6.2258e+01 | RMSE Energy(low): 24946.54 (8260.06) meV/at | Forces(low): 96.63 (77.34) meV/A | Time/eval: 1459.81 mcs/at
+2024-09-12 12:24:10,265 I - Iteration   #326  (438 evals):      Loss: 6.2258e+01 | RMSE Energy(low): 24946.65 (8256.16) meV/at | Forces(low): 94.44 (71.95) meV/A | Time/eval: 1319.63 mcs/at
+2024-09-12 12:24:10,643 I - Iteration   #327  (439 evals):      Loss: 6.2257e+01 | RMSE Energy(low): 24946.58 (8256.93) meV/at | Forces(low): 92.83 (67.22) meV/A | Time/eval: 1454.49 mcs/at
+2024-09-12 12:24:11,066 I - Iteration   #328  (440 evals):      Loss: 6.2256e+01 | RMSE Energy(low): 24946.40 (8255.32) meV/at | Forces(low): 92.53 (61.57) meV/A | Time/eval: 1905.53 mcs/at
+2024-09-12 12:24:11,487 I - Iteration   #329  (442 evals):      Loss: 6.2255e+01 | RMSE Energy(low): 24946.02 (8251.32) meV/at | Forces(low): 94.93 (70.24) meV/A | Time/eval: 888.48 mcs/at
+2024-09-12 12:24:11,896 I - Iteration   #330  (443 evals):      Loss: 6.2254e+01 | RMSE Energy(low): 24945.59 (8243.12) meV/at | Forces(low): 96.83 (77.93) meV/A | Time/eval: 1345.36 mcs/at
+2024-09-12 12:24:12,268 I - Iteration   #331  (444 evals):      Loss: 6.2252e+01 | RMSE Energy(low): 24944.94 (8230.94) meV/at | Forces(low): 100.11 (84.63) meV/A | Time/eval: 1441.77 mcs/at
+2024-09-12 12:24:12,782 I - Iteration   #332  (446 evals):      Loss: 6.2251e+01 | RMSE Energy(low): 24944.56 (8229.25) meV/at | Forces(low): 101.83 (91.40) meV/A | Time/eval: 1563.09 mcs/at
+2024-09-12 12:24:13,147 I - Iteration   #333  (447 evals):      Loss: 6.2251e+01 | RMSE Energy(low): 24944.32 (8234.07) meV/at | Forces(low): 102.99 (91.68) meV/A | Time/eval: 1446.95 mcs/at
+2024-09-12 12:24:13,605 I - Iteration   #334  (449 evals):      Loss: 6.2247e+01 | RMSE Energy(low): 24944.03 (8243.54) meV/at | Forces(low): 98.55 (72.91) meV/A | Time/eval: 880.23 mcs/at
+2024-09-12 12:24:14,082 I - Iteration   #335  (451 evals):      Loss: 6.2245e+01 | RMSE Energy(low): 24943.97 (8247.81) meV/at | Forces(low): 95.38 (65.19) meV/A | Time/eval: 935.16 mcs/at
+2024-09-12 12:24:14,436 I - Iteration   #336  (452 evals):      Loss: 6.2242e+01 | RMSE Energy(low): 24943.32 (8258.55) meV/at | Forces(low): 95.42 (64.84) meV/A | Time/eval: 1018.63 mcs/at
+2024-09-12 12:24:14,794 I - Iteration   #337  (453 evals):      Loss: 6.2236e+01 | RMSE Energy(low): 24942.06 (8269.83) meV/at | Forces(low): 96.63 (68.46) meV/A | Time/eval: 1129.30 mcs/at
+2024-09-12 12:24:15,235 I - Iteration   #338  (455 evals):      Loss: 6.2234e+01 | RMSE Energy(low): 24941.22 (8279.33) meV/at | Forces(low): 100.87 (77.64) meV/A | Time/eval: 996.09 mcs/at
+2024-09-12 12:24:15,649 I - Iteration   #339  (456 evals):      Loss: 6.2231e+01 | RMSE Energy(low): 24940.06 (8286.52) meV/at | Forces(low): 105.41 (84.82) meV/A | Time/eval: 1680.90 mcs/at
+2024-09-12 12:24:16,039 I - Iteration   #340  (457 evals):      Loss: 6.2228e+01 | RMSE Energy(low): 24938.49 (8302.68) meV/at | Forces(low): 113.14 (94.30) meV/A | Time/eval: 1522.94 mcs/at
+2024-09-12 12:24:16,415 I - Iteration   #341  (458 evals):      Loss: 6.2222e+01 | RMSE Energy(low): 24936.73 (8325.02) meV/at | Forces(low): 118.68 (99.07) meV/A | Time/eval: 1458.51 mcs/at
+2024-09-12 12:24:16,792 I - Iteration   #342  (459 evals):      Loss: 6.2216e+01 | RMSE Energy(low): 24933.96 (8363.96) meV/at | Forces(low): 129.77 (130.23) meV/A | Time/eval: 1427.61 mcs/at
+2024-09-12 12:24:17,242 I - Iteration   #343  (460 evals):      Loss: 6.2209e+01 | RMSE Energy(low): 24931.34 (8404.06) meV/at | Forces(low): 138.54 (144.81) meV/A | Time/eval: 1989.98 mcs/at
+2024-09-12 12:24:17,672 I - Iteration   #344  (461 evals):      Loss: 6.2203e+01 | RMSE Energy(low): 24928.14 (8388.24) meV/at | Forces(low): 150.93 (163.21) meV/A | Time/eval: 1951.49 mcs/at
+2024-09-12 12:24:18,113 I - Iteration   #345  (463 evals):      Loss: 6.2201e+01 | RMSE Energy(low): 24927.38 (8378.17) meV/at | Forces(low): 152.96 (163.64) meV/A | Time/eval: 897.89 mcs/at
+2024-09-12 12:24:18,557 I - Iteration   #346  (464 evals):      Loss: 6.2197e+01 | RMSE Energy(low): 24926.59 (8373.28) meV/at | Forces(low): 153.07 (167.16) meV/A | Time/eval: 2109.81 mcs/at
+2024-09-12 12:24:18,972 I - Iteration   #347  (465 evals):      Loss: 6.2190e+01 | RMSE Energy(low): 24925.81 (8361.50) meV/at | Forces(low): 149.18 (158.45) meV/A | Time/eval: 1265.03 mcs/at
+2024-09-12 12:24:19,327 I - Iteration   #348  (466 evals):      Loss: 6.2177e+01 | RMSE Energy(low): 24924.33 (8339.32) meV/at | Forces(low): 142.10 (144.85) meV/A | Time/eval: 963.12 mcs/at
+2024-09-12 12:24:19,684 I - Iteration   #349  (467 evals):      Loss: 6.2161e+01 | RMSE Energy(low): 24922.00 (8297.24) meV/at | Forces(low): 135.99 (119.63) meV/A | Time/eval: 1343.66 mcs/at
+2024-09-12 12:24:20,126 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #350 Loss:    Total:  6.2148e+01 (100%) 
+                         Energy:  6.2105e+01 (100%) 
+                          Force:  4.3563e-02 (  0%) 
+                             L1:  1.6570e-05 (  0%) 
+                             L2:  1.2060e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:     840.98 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24920.83              8270.07               127.02                  115.85
+    MAE:        13724.41              7898.72                52.88                   51.61
+ MAX_AE:        83474.26              9128.68               702.13                  633.33
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:24:20,127 I - Last relative TRAIN loss change -1.96e-04/iter (averaged over last 1 step(s))
+2024-09-12 12:24:20,613 I - Iteration   #351  (471 evals):      Loss: 6.2141e+01 | RMSE Energy(low): 24919.53 (8251.94) meV/at | Forces(low): 124.85 (118.19) meV/A | Time/eval: 833.76 mcs/at
+2024-09-12 12:24:21,027 I - Iteration   #352  (472 evals):      Loss: 6.2135e+01 | RMSE Energy(low): 24916.41 (8219.20) meV/at | Forces(low): 138.48 (129.89) meV/A | Time/eval: 1784.80 mcs/at
+2024-09-12 12:24:21,423 I - Iteration   #353  (473 evals):      Loss: 6.2127e+01 | RMSE Energy(low): 24915.73 (8187.41) meV/at | Forces(low): 132.16 (133.11) meV/A | Time/eval: 1789.99 mcs/at
+2024-09-12 12:24:21,831 I - Iteration   #354  (474 evals):      Loss: 6.2118e+01 | RMSE Energy(low): 24914.02 (8147.68) meV/at | Forces(low): 131.76 (138.20) meV/A | Time/eval: 1887.94 mcs/at
+2024-09-12 12:24:22,202 I - Iteration   #355  (475 evals):      Loss: 6.2107e+01 | RMSE Energy(low): 24911.89 (8103.55) meV/at | Forces(low): 131.78 (131.27) meV/A | Time/eval: 1059.39 mcs/at
+2024-09-12 12:24:22,670 I - Iteration   #356  (476 evals):      Loss: 6.2093e+01 | RMSE Energy(low): 24909.54 (8071.35) meV/at | Forces(low): 128.55 (130.84) meV/A | Time/eval: 1776.42 mcs/at
+2024-09-12 12:24:23,058 I - Iteration   #357  (477 evals):      Loss: 6.2080e+01 | RMSE Energy(low): 24907.31 (8112.70) meV/at | Forces(low): 125.75 (97.86) meV/A | Time/eval: 1493.81 mcs/at
+2024-09-12 12:24:23,506 I - Iteration   #358  (479 evals):      Loss: 6.2072e+01 | RMSE Energy(low): 24907.02 (8139.99) meV/at | Forces(low): 115.46 (105.20) meV/A | Time/eval: 923.07 mcs/at
+2024-09-12 12:24:23,926 I - Iteration   #359  (480 evals):      Loss: 6.2063e+01 | RMSE Energy(low): 24906.61 (8208.98) meV/at | Forces(low): 103.54 (93.10) meV/A | Time/eval: 1955.36 mcs/at
+2024-09-12 12:24:24,376 I - Iteration   #360  (482 evals):      Loss: 6.2060e+01 | RMSE Energy(low): 24906.40 (8236.24) meV/at | Forces(low): 100.90 (91.44) meV/A | Time/eval: 851.35 mcs/at
+2024-09-12 12:24:24,792 I - Iteration   #361  (483 evals):      Loss: 6.2056e+01 | RMSE Energy(low): 24906.22 (8269.66) meV/at | Forces(low): 94.32 (75.71) meV/A | Time/eval: 1741.66 mcs/at
+2024-09-12 12:24:25,204 I - Iteration   #362  (484 evals):      Loss: 6.2049e+01 | RMSE Energy(low): 24904.67 (8330.89) meV/at | Forces(low): 95.42 (70.06) meV/A | Time/eval: 1818.38 mcs/at
+2024-09-12 12:24:25,583 I - Iteration   #363  (485 evals):      Loss: 6.2042e+01 | RMSE Energy(low): 24902.34 (8400.56) meV/at | Forces(low): 103.67 (71.64) meV/A | Time/eval: 1068.30 mcs/at
+2024-09-12 12:24:26,005 I - Iteration   #364  (487 evals):      Loss: 6.2039e+01 | RMSE Energy(low): 24901.66 (8413.94) meV/at | Forces(low): 104.88 (71.28) meV/A | Time/eval: 775.34 mcs/at
+2024-09-12 12:24:26,437 I - Iteration   #365  (488 evals):      Loss: 6.2034e+01 | RMSE Energy(low): 24900.96 (8427.45) meV/at | Forces(low): 102.84 (67.64) meV/A | Time/eval: 1633.04 mcs/at
+2024-09-12 12:24:26,814 I - Iteration   #366  (489 evals):      Loss: 6.2026e+01 | RMSE Energy(low): 24899.52 (8434.10) meV/at | Forces(low): 101.02 (66.90) meV/A | Time/eval: 1542.90 mcs/at
+2024-09-12 12:24:27,235 I - Iteration   #367  (491 evals):      Loss: 6.2021e+01 | RMSE Energy(low): 24898.52 (8438.70) meV/at | Forces(low): 99.77 (69.63) meV/A | Time/eval: 764.36 mcs/at
+2024-09-12 12:24:27,586 I - Iteration   #368  (492 evals):      Loss: 6.2015e+01 | RMSE Energy(low): 24896.63 (8432.88) meV/at | Forces(low): 106.49 (91.62) meV/A | Time/eval: 1127.56 mcs/at
+2024-09-12 12:24:27,968 I - Iteration   #369  (493 evals):      Loss: 6.2008e+01 | RMSE Energy(low): 24894.53 (8380.28) meV/at | Forces(low): 112.85 (84.71) meV/A | Time/eval: 1237.30 mcs/at
+2024-09-12 12:24:28,318 I - Iteration   #370  (494 evals):      Loss: 6.2000e+01 | RMSE Energy(low): 24892.41 (8291.16) meV/at | Forces(low): 116.02 (88.76) meV/A | Time/eval: 1147.05 mcs/at
+2024-09-12 12:24:28,749 I - Iteration   #371  (496 evals):      Loss: 6.1998e+01 | RMSE Energy(low): 24891.71 (8281.96) meV/at | Forces(low): 118.61 (93.39) meV/A | Time/eval: 756.46 mcs/at
+2024-09-12 12:24:29,271 I - Iteration   #372  (498 evals):      Loss: 6.1987e+01 | RMSE Energy(low): 24888.97 (8224.76) meV/at | Forces(low): 123.24 (118.38) meV/A | Time/eval: 929.51 mcs/at
+2024-09-12 12:24:29,737 I - Iteration   #373  (500 evals):      Loss: 6.1981e+01 | RMSE Energy(low): 24888.03 (8208.10) meV/at | Forces(low): 121.49 (120.14) meV/A | Time/eval: 790.04 mcs/at
+2024-09-12 12:24:30,154 I - Iteration   #374  (502 evals):      Loss: 6.1978e+01 | RMSE Energy(low): 24887.55 (8209.78) meV/at | Forces(low): 119.89 (116.28) meV/A | Time/eval: 777.50 mcs/at
+2024-09-12 12:24:30,570 I - Iteration   #375  (503 evals):      Loss: 6.1974e+01 | RMSE Energy(low): 24887.03 (8211.21) meV/at | Forces(low): 117.66 (110.36) meV/A | Time/eval: 1646.73 mcs/at
+2024-09-12 12:24:31,008 I - Iteration   #376  (505 evals):      Loss: 6.1971e+01 | RMSE Energy(low): 24886.98 (8208.95) meV/at | Forces(low): 114.11 (106.10) meV/A | Time/eval: 779.69 mcs/at
+2024-09-12 12:24:31,347 I - Iteration   #377  (506 evals):      Loss: 6.1968e+01 | RMSE Energy(low): 24886.77 (8220.48) meV/at | Forces(low): 109.85 (100.93) meV/A | Time/eval: 768.91 mcs/at
+2024-09-12 12:24:31,705 I - Iteration   #378  (507 evals):      Loss: 6.1962e+01 | RMSE Energy(low): 24886.66 (8232.77) meV/at | Forces(low): 101.06 (82.39) meV/A | Time/eval: 1237.07 mcs/at
+2024-09-12 12:24:32,138 I - Iteration   #379  (509 evals):      Loss: 6.1959e+01 | RMSE Energy(low): 24886.03 (8218.33) meV/at | Forces(low): 101.64 (84.48) meV/A | Time/eval: 801.00 mcs/at
+2024-09-12 12:24:32,529 I - Iteration   #380  (511 evals):      Loss: 6.1957e+01 | RMSE Energy(low): 24885.94 (8211.58) meV/at | Forces(low): 98.48 (79.15) meV/A | Time/eval: 697.91 mcs/at
+2024-09-12 12:24:33,018 I - Iteration   #381  (513 evals):      Loss: 6.1956e+01 | RMSE Energy(low): 24886.11 (8199.44) meV/at | Forces(low): 94.97 (71.11) meV/A | Time/eval: 879.81 mcs/at
+2024-09-12 12:24:33,412 I - Iteration   #382  (515 evals):      Loss: 6.1956e+01 | RMSE Energy(low): 24886.03 (8192.90) meV/at | Forces(low): 95.04 (72.17) meV/A | Time/eval: 831.32 mcs/at
+2024-09-12 12:24:33,826 I - Iteration   #383  (516 evals):      Loss: 6.1955e+01 | RMSE Energy(low): 24885.90 (8181.83) meV/at | Forces(low): 95.31 (71.13) meV/A | Time/eval: 1928.96 mcs/at
+2024-09-12 12:24:34,360 I - Iteration   #384  (518 evals):      Loss: 6.1955e+01 | RMSE Energy(low): 24885.87 (8183.76) meV/at | Forces(low): 95.15 (72.57) meV/A | Time/eval: 1114.77 mcs/at
+2024-09-12 12:24:34,723 I - Iteration   #385  (519 evals):      Loss: 6.1955e+01 | RMSE Energy(low): 24885.63 (8191.64) meV/at | Forces(low): 96.96 (77.37) meV/A | Time/eval: 1142.60 mcs/at
+2024-09-12 12:24:35,081 I - Iteration   #386  (520 evals):      Loss: 6.1955e+01 | RMSE Energy(low): 24885.42 (8202.44) meV/at | Forces(low): 98.43 (79.40) meV/A | Time/eval: 1223.86 mcs/at
+2024-09-12 12:24:35,461 I - Iteration   #387  (521 evals):      Loss: 6.1954e+01 | RMSE Energy(low): 24885.22 (8208.96) meV/at | Forces(low): 99.74 (81.72) meV/A | Time/eval: 1436.27 mcs/at
+2024-09-12 12:24:35,834 I - Iteration   #388  (522 evals):      Loss: 6.1954e+01 | RMSE Energy(low): 24885.21 (8205.41) meV/at | Forces(low): 99.49 (80.37) meV/A | Time/eval: 1557.27 mcs/at
+2024-09-12 12:24:36,205 I - Iteration   #389  (523 evals):      Loss: 6.1954e+01 | RMSE Energy(low): 24885.20 (8206.43) meV/at | Forces(low): 99.21 (80.75) meV/A | Time/eval: 1454.51 mcs/at
+2024-09-12 12:24:36,590 I - Iteration   #390  (524 evals):      Loss: 6.1954e+01 | RMSE Energy(low): 24885.14 (8215.19) meV/at | Forces(low): 99.18 (80.80) meV/A | Time/eval: 1353.22 mcs/at
+2024-09-12 12:24:36,984 I - Iteration   #391  (525 evals):      Loss: 6.1953e+01 | RMSE Energy(low): 24885.14 (8246.83) meV/at | Forces(low): 98.74 (79.93) meV/A | Time/eval: 1410.22 mcs/at
+2024-09-12 12:24:37,347 I - Iteration   #392  (526 evals):      Loss: 6.1953e+01 | RMSE Energy(low): 24885.11 (8263.46) meV/at | Forces(low): 98.51 (81.29) meV/A | Time/eval: 1221.35 mcs/at
+2024-09-12 12:24:37,717 I - Iteration   #393  (527 evals):      Loss: 6.1953e+01 | RMSE Energy(low): 24885.08 (8275.92) meV/at | Forces(low): 98.07 (79.17) meV/A | Time/eval: 1422.78 mcs/at
+2024-09-12 12:24:38,098 I - Iteration   #394  (528 evals):      Loss: 6.1952e+01 | RMSE Energy(low): 24884.91 (8275.09) meV/at | Forces(low): 98.53 (80.84) meV/A | Time/eval: 1405.35 mcs/at
+2024-09-12 12:24:38,476 I - Iteration   #395  (529 evals):      Loss: 6.1952e+01 | RMSE Energy(low): 24884.80 (8275.05) meV/at | Forces(low): 98.59 (78.28) meV/A | Time/eval: 1222.76 mcs/at
+2024-09-12 12:24:38,846 I - Iteration   #396  (530 evals):      Loss: 6.1951e+01 | RMSE Energy(low): 24884.74 (8268.01) meV/at | Forces(low): 97.53 (74.40) meV/A | Time/eval: 1361.93 mcs/at
+2024-09-12 12:24:39,235 I - Iteration   #397  (531 evals):      Loss: 6.1950e+01 | RMSE Energy(low): 24884.54 (8253.59) meV/at | Forces(low): 96.88 (70.91) meV/A | Time/eval: 1288.95 mcs/at
+2024-09-12 12:24:39,619 I - Iteration   #398  (532 evals):      Loss: 6.1949e+01 | RMSE Energy(low): 24884.20 (8225.93) meV/at | Forces(low): 98.23 (72.90) meV/A | Time/eval: 1257.06 mcs/at
+2024-09-12 12:24:40,085 I - Iteration   #399  (533 evals):      Loss: 6.1947e+01 | RMSE Energy(low): 24884.07 (8208.21) meV/at | Forces(low): 95.83 (71.76) meV/A | Time/eval: 1834.24 mcs/at
+2024-09-12 12:24:40,539 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #400 Loss:    Total:  6.1945e+01 (100%) 
+                         Energy:  6.1921e+01 (100%) 
+                          Force:  2.4189e-02 (  0%) 
+                             L1:  1.6359e-05 (  0%) 
+                             L2:  1.1567e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:     769.00 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24883.93              8195.43                94.65                   72.34
+    MAE:        13565.46              7859.19                35.33                   36.52
+ MAX_AE:        83597.72              9052.54               697.47                  223.62
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:24:40,540 I - Last relative TRAIN loss change -2.07e-05/iter (averaged over last 1 step(s))
+2024-09-12 12:24:40,931 I - Iteration   #401  (537 evals):      Loss: 6.1945e+01 | RMSE Energy(low): 24883.82 (8185.92) meV/at | Forces(low): 94.48 (70.30) meV/A | Time/eval: 857.29 mcs/at
+2024-09-12 12:24:41,340 I - Iteration   #402  (538 evals):      Loss: 6.1944e+01 | RMSE Energy(low): 24883.54 (8181.83) meV/at | Forces(low): 95.18 (71.17) meV/A | Time/eval: 1704.59 mcs/at
+2024-09-12 12:24:41,735 I - Iteration   #403  (539 evals):      Loss: 6.1942e+01 | RMSE Energy(low): 24883.08 (8176.05) meV/at | Forces(low): 96.09 (75.51) meV/A | Time/eval: 1203.70 mcs/at
+2024-09-12 12:24:42,102 I - Iteration   #404  (540 evals):      Loss: 6.1939e+01 | RMSE Energy(low): 24882.21 (8167.37) meV/at | Forces(low): 98.64 (76.58) meV/A | Time/eval: 1211.19 mcs/at
+2024-09-12 12:24:42,489 I - Iteration   #405  (541 evals):      Loss: 6.1934e+01 | RMSE Energy(low): 24880.60 (8158.47) meV/at | Forces(low): 103.78 (91.90) meV/A | Time/eval: 1536.27 mcs/at
+2024-09-12 12:24:42,932 I - Iteration   #406  (543 evals):      Loss: 6.1932e+01 | RMSE Energy(low): 24880.16 (8157.44) meV/at | Forces(low): 104.84 (88.06) meV/A | Time/eval: 936.57 mcs/at
+2024-09-12 12:24:43,354 I - Iteration   #407  (544 evals):      Loss: 6.1930e+01 | RMSE Energy(low): 24879.32 (8162.09) meV/at | Forces(low): 108.14 (96.26) meV/A | Time/eval: 1941.76 mcs/at
+2024-09-12 12:24:43,740 I - Iteration   #408  (545 evals):      Loss: 6.1926e+01 | RMSE Energy(low): 24878.27 (8174.95) meV/at | Forces(low): 110.72 (101.51) meV/A | Time/eval: 1565.69 mcs/at
+2024-09-12 12:24:44,114 I - Iteration   #409  (546 evals):      Loss: 6.1920e+01 | RMSE Energy(low): 24877.07 (8200.69) meV/at | Forces(low): 110.88 (99.31) meV/A | Time/eval: 1267.82 mcs/at
+2024-09-12 12:24:44,559 I - Iteration   #410  (548 evals):      Loss: 6.1917e+01 | RMSE Energy(low): 24876.98 (8225.77) meV/at | Forces(low): 105.58 (86.40) meV/A | Time/eval: 772.80 mcs/at
+2024-09-12 12:24:45,111 I - Iteration   #411  (550 evals):      Loss: 6.1914e+01 | RMSE Energy(low): 24876.76 (8234.25) meV/at | Forces(low): 103.69 (84.77) meV/A | Time/eval: 1392.49 mcs/at
+2024-09-12 12:24:45,489 I - Iteration   #412  (551 evals):      Loss: 6.1912e+01 | RMSE Energy(low): 24876.31 (8241.86) meV/at | Forces(low): 102.92 (78.54) meV/A | Time/eval: 1638.63 mcs/at
+2024-09-12 12:24:45,925 I - Iteration   #413  (553 evals):      Loss: 6.1910e+01 | RMSE Energy(low): 24875.88 (8241.92) meV/at | Forces(low): 104.30 (81.74) meV/A | Time/eval: 715.72 mcs/at
+2024-09-12 12:24:46,358 I - Iteration   #414  (554 evals):      Loss: 6.1908e+01 | RMSE Energy(low): 24875.51 (8235.22) meV/at | Forces(low): 103.28 (82.81) meV/A | Time/eval: 1777.72 mcs/at
+2024-09-12 12:24:46,749 I - Iteration   #415  (555 evals):      Loss: 6.1904e+01 | RMSE Energy(low): 24874.78 (8229.04) meV/at | Forces(low): 103.27 (84.56) meV/A | Time/eval: 1685.24 mcs/at
+2024-09-12 12:24:47,172 I - Iteration   #416  (557 evals):      Loss: 6.1902e+01 | RMSE Energy(low): 24874.23 (8221.16) meV/at | Forces(low): 104.24 (83.99) meV/A | Time/eval: 664.00 mcs/at
+2024-09-12 12:24:47,507 I - Iteration   #417  (558 evals):      Loss: 6.1898e+01 | RMSE Energy(low): 24873.42 (8207.79) meV/at | Forces(low): 104.31 (88.07) meV/A | Time/eval: 772.40 mcs/at
+2024-09-12 12:24:47,866 I - Iteration   #418  (559 evals):      Loss: 6.1892e+01 | RMSE Energy(low): 24872.47 (8187.11) meV/at | Forces(low): 101.68 (78.58) meV/A | Time/eval: 1109.03 mcs/at
+2024-09-12 12:24:48,291 I - Iteration   #419  (561 evals):      Loss: 6.1888e+01 | RMSE Energy(low): 24871.95 (8179.50) meV/at | Forces(low): 98.69 (71.26) meV/A | Time/eval: 697.07 mcs/at
+2024-09-12 12:24:48,637 I - Iteration   #420  (562 evals):      Loss: 6.1882e+01 | RMSE Energy(low): 24870.98 (8147.33) meV/at | Forces(low): 97.29 (72.27) meV/A | Time/eval: 960.74 mcs/at
+2024-09-12 12:24:49,002 I - Iteration   #421  (563 evals):      Loss: 6.1877e+01 | RMSE Energy(low): 24869.17 (8091.99) meV/at | Forces(low): 103.49 (97.20) meV/A | Time/eval: 1110.39 mcs/at
+2024-09-12 12:24:49,424 I - Iteration   #422  (565 evals):      Loss: 6.1873e+01 | RMSE Energy(low): 24868.07 (8084.32) meV/at | Forces(low): 106.69 (100.03) meV/A | Time/eval: 762.28 mcs/at
+2024-09-12 12:24:49,764 I - Iteration   #423  (566 evals):      Loss: 6.1869e+01 | RMSE Energy(low): 24866.53 (8081.88) meV/at | Forces(low): 113.53 (101.12) meV/A | Time/eval: 753.24 mcs/at
+2024-09-12 12:24:50,183 I - Iteration   #424  (568 evals):      Loss: 6.1867e+01 | RMSE Energy(low): 24865.88 (8091.37) meV/at | Forces(low): 114.44 (102.85) meV/A | Time/eval: 752.28 mcs/at
+2024-09-12 12:24:50,612 I - Iteration   #425  (569 evals):      Loss: 6.1864e+01 | RMSE Energy(low): 24865.16 (8102.10) meV/at | Forces(low): 116.55 (99.66) meV/A | Time/eval: 1602.27 mcs/at
+2024-09-12 12:24:50,994 I - Iteration   #426  (570 evals):      Loss: 6.1861e+01 | RMSE Energy(low): 24864.95 (8121.50) meV/at | Forces(low): 113.01 (91.61) meV/A | Time/eval: 1538.00 mcs/at
+2024-09-12 12:24:51,373 I - Iteration   #427  (571 evals):      Loss: 6.1859e+01 | RMSE Energy(low): 24864.77 (8147.15) meV/at | Forces(low): 111.35 (79.85) meV/A | Time/eval: 1340.92 mcs/at
+2024-09-12 12:24:51,752 I - Iteration   #428  (572 evals):      Loss: 6.1856e+01 | RMSE Energy(low): 24864.53 (8161.55) meV/at | Forces(low): 108.19 (80.23) meV/A | Time/eval: 1387.46 mcs/at
+2024-09-12 12:24:52,131 I - Iteration   #429  (573 evals):      Loss: 6.1852e+01 | RMSE Energy(low): 24864.84 (8191.00) meV/at | Forces(low): 97.53 (63.51) meV/A | Time/eval: 1313.22 mcs/at
+2024-09-12 12:24:52,510 I - Iteration   #430  (574 evals):      Loss: 6.1846e+01 | RMSE Energy(low): 24863.89 (8225.56) meV/at | Forces(low): 94.49 (69.37) meV/A | Time/eval: 1514.29 mcs/at
+2024-09-12 12:24:52,936 I - Iteration   #431  (576 evals):      Loss: 6.1844e+01 | RMSE Energy(low): 24863.48 (8235.34) meV/at | Forces(low): 94.50 (73.82) meV/A | Time/eval: 746.78 mcs/at
+2024-09-12 12:24:53,481 I - Iteration   #432  (579 evals):      Loss: 6.1836e+01 | RMSE Energy(low): 24861.42 (8249.81) meV/at | Forces(low): 99.82 (79.37) meV/A | Time/eval: 722.92 mcs/at
+2024-09-12 12:24:53,936 I - Iteration   #433  (581 evals):      Loss: 6.1833e+01 | RMSE Energy(low): 24860.59 (8255.70) meV/at | Forces(low): 102.29 (76.92) meV/A | Time/eval: 755.65 mcs/at
+2024-09-12 12:24:54,326 I - Iteration   #434  (583 evals):      Loss: 6.1832e+01 | RMSE Energy(low): 24860.16 (8258.95) meV/at | Forces(low): 103.15 (77.82) meV/A | Time/eval: 725.26 mcs/at
+2024-09-12 12:24:54,741 I - Iteration   #435  (584 evals):      Loss: 6.1829e+01 | RMSE Energy(low): 24859.55 (8255.47) meV/at | Forces(low): 103.64 (77.02) meV/A | Time/eval: 1668.85 mcs/at
+2024-09-12 12:24:55,136 I - Iteration   #436  (585 evals):      Loss: 6.1825e+01 | RMSE Energy(low): 24858.38 (8244.87) meV/at | Forces(low): 107.64 (84.94) meV/A | Time/eval: 1555.36 mcs/at
+2024-09-12 12:24:55,520 I - Iteration   #437  (586 evals):      Loss: 6.1822e+01 | RMSE Energy(low): 24857.09 (8214.82) meV/at | Forces(low): 113.13 (101.63) meV/A | Time/eval: 1423.58 mcs/at
+2024-09-12 12:24:55,890 I - Iteration   #438  (587 evals):      Loss: 6.1817e+01 | RMSE Energy(low): 24856.59 (8189.74) meV/at | Forces(low): 109.39 (101.56) meV/A | Time/eval: 1302.36 mcs/at
+2024-09-12 12:24:56,338 I - Iteration   #439  (589 evals):      Loss: 6.1815e+01 | RMSE Energy(low): 24856.48 (8168.69) meV/at | Forces(low): 105.49 (97.01) meV/A | Time/eval: 779.93 mcs/at
+2024-09-12 12:24:56,764 I - Iteration   #440  (590 evals):      Loss: 6.1809e+01 | RMSE Energy(low): 24855.97 (8153.49) meV/at | Forces(low): 100.75 (85.10) meV/A | Time/eval: 1858.73 mcs/at
+2024-09-12 12:24:57,210 I - Iteration   #441  (592 evals):      Loss: 6.1805e+01 | RMSE Energy(low): 24855.22 (8152.42) meV/at | Forces(low): 100.27 (82.37) meV/A | Time/eval: 709.68 mcs/at
+2024-09-12 12:24:57,699 I - Iteration   #442  (594 evals):      Loss: 6.1804e+01 | RMSE Energy(low): 24854.85 (8149.08) meV/at | Forces(low): 100.32 (77.58) meV/A | Time/eval: 794.05 mcs/at
+2024-09-12 12:24:58,041 I - Iteration   #443  (595 evals):      Loss: 6.1801e+01 | RMSE Energy(low): 24854.57 (8146.65) meV/at | Forces(low): 98.09 (72.47) meV/A | Time/eval: 877.26 mcs/at
+2024-09-12 12:24:58,412 I - Iteration   #444  (596 evals):      Loss: 6.1799e+01 | RMSE Energy(low): 24853.89 (8148.69) meV/at | Forces(low): 100.20 (76.78) meV/A | Time/eval: 1176.19 mcs/at
+2024-09-12 12:24:58,791 I - Iteration   #445  (597 evals):      Loss: 6.1796e+01 | RMSE Energy(low): 24852.99 (8157.24) meV/at | Forces(low): 103.11 (84.32) meV/A | Time/eval: 1171.04 mcs/at
+2024-09-12 12:24:59,162 I - Iteration   #446  (598 evals):      Loss: 6.1793e+01 | RMSE Energy(low): 24852.55 (8173.57) meV/at | Forces(low): 101.64 (70.73) meV/A | Time/eval: 1275.65 mcs/at
+2024-09-12 12:24:59,540 I - Iteration   #447  (599 evals):      Loss: 6.1790e+01 | RMSE Energy(low): 24852.34 (8189.73) meV/at | Forces(low): 97.20 (67.06) meV/A | Time/eval: 1401.89 mcs/at
+2024-09-12 12:24:59,918 I - Iteration   #448  (600 evals):      Loss: 6.1785e+01 | RMSE Energy(low): 24852.00 (8199.17) meV/at | Forces(low): 92.35 (62.03) meV/A | Time/eval: 1535.23 mcs/at
+2024-09-12 12:25:00,286 I - Iteration   #449  (601 evals):      Loss: 6.1780e+01 | RMSE Energy(low): 24850.66 (8177.28) meV/at | Forces(low): 95.20 (74.59) meV/A | Time/eval: 1355.14 mcs/at
+2024-09-12 12:25:00,727 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #450 Loss:    Total:  6.1779e+01 (100%) 
+                         Energy:  6.1753e+01 (100%) 
+                          Force:  2.5837e-02 (  0%) 
+                             L1:  1.6243e-05 (  0%) 
+                             L2:  1.0315e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:     743.54 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24850.14              8164.71                97.82                   78.47
+    MAE:        13616.36              7773.67                38.36                   39.06
+ MAX_AE:        83324.84              9038.63               687.69                  241.64
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:25:00,728 I - Last relative TRAIN loss change -1.99e-05/iter (averaged over last 1 step(s))
+2024-09-12 12:25:01,154 I - Iteration   #451  (604 evals):      Loss: 6.1777e+01 | RMSE Energy(low): 24849.68 (8144.53) meV/at | Forces(low): 98.64 (74.40) meV/A | Time/eval: 1412.00 mcs/at
+2024-09-12 12:25:01,539 I - Iteration   #452  (605 evals):      Loss: 6.1774e+01 | RMSE Energy(low): 24848.81 (8107.47) meV/at | Forces(low): 100.66 (80.00) meV/A | Time/eval: 1570.66 mcs/at
+2024-09-12 12:25:01,906 I - Iteration   #453  (606 evals):      Loss: 6.1771e+01 | RMSE Energy(low): 24847.68 (8060.54) meV/at | Forces(low): 104.93 (84.87) meV/A | Time/eval: 1405.80 mcs/at
+2024-09-12 12:25:02,298 I - Iteration   #454  (607 evals):      Loss: 6.1768e+01 | RMSE Energy(low): 24847.03 (8037.99) meV/at | Forces(low): 105.32 (81.79) meV/A | Time/eval: 1714.04 mcs/at
+2024-09-12 12:25:02,674 I - Iteration   #455  (608 evals):      Loss: 6.1764e+01 | RMSE Energy(low): 24846.56 (8018.97) meV/at | Forces(low): 103.98 (85.29) meV/A | Time/eval: 1297.31 mcs/at
+2024-09-12 12:25:03,053 I - Iteration   #456  (609 evals):      Loss: 6.1760e+01 | RMSE Energy(low): 24846.12 (8016.02) meV/at | Forces(low): 99.81 (81.73) meV/A | Time/eval: 1321.34 mcs/at
+2024-09-12 12:25:03,420 I - Iteration   #457  (610 evals):      Loss: 6.1755e+01 | RMSE Energy(low): 24844.13 (8057.13) meV/at | Forces(low): 108.65 (95.74) meV/A | Time/eval: 1285.50 mcs/at
+2024-09-12 12:25:03,930 I - Iteration   #458  (612 evals):      Loss: 6.1752e+01 | RMSE Energy(low): 24843.23 (8097.89) meV/at | Forces(low): 110.59 (98.61) meV/A | Time/eval: 1367.30 mcs/at
+2024-09-12 12:25:04,316 I - Iteration   #459  (613 evals):      Loss: 6.1749e+01 | RMSE Energy(low): 24842.49 (8151.74) meV/at | Forces(low): 111.74 (106.04) meV/A | Time/eval: 1457.95 mcs/at
+2024-09-12 12:25:04,746 I - Iteration   #460  (615 evals):      Loss: 6.1747e+01 | RMSE Energy(low): 24842.21 (8172.39) meV/at | Forces(low): 111.13 (106.45) meV/A | Time/eval: 765.07 mcs/at
+2024-09-12 12:25:05,162 I - Iteration   #461  (616 evals):      Loss: 6.1744e+01 | RMSE Energy(low): 24842.00 (8188.56) meV/at | Forces(low): 107.79 (94.67) meV/A | Time/eval: 1739.62 mcs/at
+2024-09-12 12:25:05,554 I - Iteration   #462  (617 evals):      Loss: 6.1739e+01 | RMSE Energy(low): 24841.92 (8206.56) meV/at | Forces(low): 99.72 (77.05) meV/A | Time/eval: 1462.40 mcs/at
+2024-09-12 12:25:05,999 I - Iteration   #463  (619 evals):      Loss: 6.1736e+01 | RMSE Energy(low): 24841.72 (8222.46) meV/at | Forces(low): 95.20 (70.11) meV/A | Time/eval: 817.99 mcs/at
+2024-09-12 12:25:06,337 I - Iteration   #464  (620 evals):      Loss: 6.1733e+01 | RMSE Energy(low): 24841.14 (8213.66) meV/at | Forces(low): 95.00 (59.01) meV/A | Time/eval: 904.05 mcs/at
+2024-09-12 12:25:06,779 I - Iteration   #465  (622 evals):      Loss: 6.1731e+01 | RMSE Energy(low): 24840.70 (8200.90) meV/at | Forces(low): 95.58 (65.56) meV/A | Time/eval: 847.04 mcs/at
+2024-09-12 12:25:07,178 I - Iteration   #466  (623 evals):      Loss: 6.1727e+01 | RMSE Energy(low): 24840.10 (8172.12) meV/at | Forces(low): 94.80 (68.26) meV/A | Time/eval: 1555.36 mcs/at
+2024-09-12 12:25:07,619 I - Iteration   #467  (625 evals):      Loss: 6.1725e+01 | RMSE Energy(low): 24839.51 (8151.99) meV/at | Forces(low): 96.59 (68.87) meV/A | Time/eval: 805.17 mcs/at
+2024-09-12 12:25:08,052 I - Iteration   #468  (626 evals):      Loss: 6.1722e+01 | RMSE Energy(low): 24838.78 (8125.22) meV/at | Forces(low): 97.20 (72.99) meV/A | Time/eval: 1699.34 mcs/at
+2024-09-12 12:25:08,433 I - Iteration   #469  (627 evals):      Loss: 6.1717e+01 | RMSE Energy(low): 24837.55 (8072.98) meV/at | Forces(low): 98.41 (84.22) meV/A | Time/eval: 1414.85 mcs/at
+2024-09-12 12:25:08,876 I - Iteration   #470  (629 evals):      Loss: 6.1714e+01 | RMSE Energy(low): 24836.79 (8037.46) meV/at | Forces(low): 100.35 (86.99) meV/A | Time/eval: 828.63 mcs/at
+2024-09-12 12:25:09,225 I - Iteration   #471  (630 evals):      Loss: 6.1710e+01 | RMSE Energy(low): 24835.91 (8000.83) meV/at | Forces(low): 100.88 (84.16) meV/A | Time/eval: 939.11 mcs/at
+2024-09-12 12:25:09,706 I - Iteration   #472  (632 evals):      Loss: 6.1707e+01 | RMSE Energy(low): 24835.20 (7975.49) meV/at | Forces(low): 101.39 (80.06) meV/A | Time/eval: 1130.26 mcs/at
+2024-09-12 12:25:10,087 I - Iteration   #473  (633 evals):      Loss: 6.1701e+01 | RMSE Energy(low): 24834.38 (7935.57) meV/at | Forces(low): 98.12 (68.64) meV/A | Time/eval: 1139.97 mcs/at
+2024-09-12 12:25:10,529 I - Iteration   #474  (635 evals):      Loss: 6.1697e+01 | RMSE Energy(low): 24833.57 (7912.72) meV/at | Forces(low): 98.92 (68.31) meV/A | Time/eval: 814.53 mcs/at
+2024-09-12 12:25:10,938 I - Iteration   #475  (636 evals):      Loss: 6.1691e+01 | RMSE Energy(low): 24832.25 (7890.70) meV/at | Forces(low): 99.97 (69.41) meV/A | Time/eval: 1531.35 mcs/at
+2024-09-12 12:25:11,313 I - Iteration   #476  (637 evals):      Loss: 6.1683e+01 | RMSE Energy(low): 24830.31 (7863.64) meV/at | Forces(low): 103.41 (76.70) meV/A | Time/eval: 1572.44 mcs/at
+2024-09-12 12:25:11,881 I - Iteration   #477  (639 evals):      Loss: 6.1678e+01 | RMSE Energy(low): 24829.25 (7853.12) meV/at | Forces(low): 103.81 (81.72) meV/A | Time/eval: 1714.86 mcs/at
+2024-09-12 12:25:12,219 I - Iteration   #478  (640 evals):      Loss: 6.1675e+01 | RMSE Energy(low): 24827.59 (7865.23) meV/at | Forces(low): 111.47 (82.02) meV/A | Time/eval: 1068.26 mcs/at
+2024-09-12 12:25:12,632 I - Iteration   #479  (641 evals):      Loss: 6.1668e+01 | RMSE Energy(low): 24826.97 (7877.67) meV/at | Forces(low): 105.87 (74.20) meV/A | Time/eval: 1815.18 mcs/at
+2024-09-12 12:25:13,072 I - Iteration   #480  (642 evals):      Loss: 6.1660e+01 | RMSE Energy(low): 24825.61 (7924.76) meV/at | Forces(low): 102.96 (65.25) meV/A | Time/eval: 1866.89 mcs/at
+2024-09-12 12:25:13,463 I - Iteration   #481  (643 evals):      Loss: 6.1650e+01 | RMSE Energy(low): 24823.86 (7982.59) meV/at | Forces(low): 101.36 (80.02) meV/A | Time/eval: 1380.79 mcs/at
+2024-09-12 12:25:13,885 I - Iteration   #482  (645 evals):      Loss: 6.1645e+01 | RMSE Energy(low): 24822.78 (8014.16) meV/at | Forces(low): 101.09 (78.71) meV/A | Time/eval: 770.92 mcs/at
+2024-09-12 12:25:14,238 I - Iteration   #483  (646 evals):      Loss: 6.1638e+01 | RMSE Energy(low): 24820.58 (8062.53) meV/at | Forces(low): 107.92 (91.61) meV/A | Time/eval: 967.99 mcs/at
+2024-09-12 12:25:14,659 I - Iteration   #484  (648 evals):      Loss: 6.1635e+01 | RMSE Energy(low): 24820.03 (8087.03) meV/at | Forces(low): 107.15 (104.99) meV/A | Time/eval: 797.08 mcs/at
+2024-09-12 12:25:15,072 I - Iteration   #485  (649 evals):      Loss: 6.1630e+01 | RMSE Energy(low): 24819.46 (8124.33) meV/at | Forces(low): 103.91 (95.80) meV/A | Time/eval: 1732.86 mcs/at
+2024-09-12 12:25:15,465 I - Iteration   #486  (650 evals):      Loss: 6.1625e+01 | RMSE Energy(low): 24817.97 (8164.12) meV/at | Forces(low): 107.59 (96.56) meV/A | Time/eval: 1391.80 mcs/at
+2024-09-12 12:25:15,845 I - Iteration   #487  (651 evals):      Loss: 6.1618e+01 | RMSE Energy(low): 24816.84 (8203.00) meV/at | Forces(low): 105.57 (86.44) meV/A | Time/eval: 1335.71 mcs/at
+2024-09-12 12:25:16,222 I - Iteration   #488  (652 evals):      Loss: 6.1610e+01 | RMSE Energy(low): 24814.80 (8207.03) meV/at | Forces(low): 109.28 (91.54) meV/A | Time/eval: 1353.77 mcs/at
+2024-09-12 12:25:16,660 I - Iteration   #489  (654 evals):      Loss: 6.1608e+01 | RMSE Energy(low): 24814.39 (8205.82) meV/at | Forces(low): 109.27 (87.68) meV/A | Time/eval: 743.46 mcs/at
+2024-09-12 12:25:17,087 I - Iteration   #490  (655 evals):      Loss: 6.1604e+01 | RMSE Energy(low): 24813.79 (8199.13) meV/at | Forces(low): 108.59 (80.01) meV/A | Time/eval: 1945.71 mcs/at
+2024-09-12 12:25:17,479 I - Iteration   #491  (656 evals):      Loss: 6.1599e+01 | RMSE Energy(low): 24813.57 (8191.78) meV/at | Forces(low): 101.31 (66.08) meV/A | Time/eval: 1615.68 mcs/at
+2024-09-12 12:25:17,853 I - Iteration   #492  (657 evals):      Loss: 6.1593e+01 | RMSE Energy(low): 24812.00 (8161.57) meV/at | Forces(low): 104.83 (54.21) meV/A | Time/eval: 1365.22 mcs/at
+2024-09-12 12:25:18,243 I - Iteration   #493  (658 evals):      Loss: 6.1584e+01 | RMSE Energy(low): 24810.94 (8103.84) meV/at | Forces(low): 96.85 (64.41) meV/A | Time/eval: 1203.47 mcs/at
+2024-09-12 12:25:18,661 I - Iteration   #494  (660 evals):      Loss: 6.1579e+01 | RMSE Energy(low): 24810.12 (8064.88) meV/at | Forces(low): 96.47 (75.34) meV/A | Time/eval: 783.61 mcs/at
+2024-09-12 12:25:19,093 I - Iteration   #495  (661 evals):      Loss: 6.1576e+01 | RMSE Energy(low): 24808.67 (8003.10) meV/at | Forces(low): 102.72 (77.50) meV/A | Time/eval: 1872.70 mcs/at
+2024-09-12 12:25:19,481 I - Iteration   #496  (662 evals):      Loss: 6.1571e+01 | RMSE Energy(low): 24807.60 (7942.17) meV/at | Forces(low): 104.65 (77.22) meV/A | Time/eval: 1306.96 mcs/at
+2024-09-12 12:25:19,855 I - Iteration   #497  (663 evals):      Loss: 6.1565e+01 | RMSE Energy(low): 24807.14 (7878.68) meV/at | Forces(low): 96.64 (59.93) meV/A | Time/eval: 1345.76 mcs/at
+2024-09-12 12:25:20,302 I - Iteration   #498  (665 evals):      Loss: 6.1560e+01 | RMSE Energy(low): 24806.74 (7844.57) meV/at | Forces(low): 91.73 (58.24) meV/A | Time/eval: 903.08 mcs/at
+2024-09-12 12:25:20,736 I - Iteration   #499  (666 evals):      Loss: 6.1553e+01 | RMSE Energy(low): 24804.89 (7849.34) meV/at | Forces(low): 95.87 (66.60) meV/A | Time/eval: 1738.69 mcs/at
+2024-09-12 12:25:21,267 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #500 Loss:    Total:  6.1550e+01 (100%) 
+                         Energy:  6.1524e+01 (100%) 
+                          Force:  2.5937e-02 (  0%) 
+                             L1:  1.7889e-05 (  0%) 
+                             L2:  9.8440e-05 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1070.73 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24803.96              7854.24                98.01                   70.03
+    MAE:        13431.57              7523.70                37.55                   35.94
+ MAX_AE:        83688.20              8726.49               749.19                  247.14
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:25:21,268 I - Last relative TRAIN loss change -5.67e-05/iter (averaged over last 1 step(s))
+2024-09-12 12:25:21,687 I - Iteration   #501  (669 evals):      Loss: 6.1546e+01 | RMSE Energy(low): 24802.33 (7870.24) meV/at | Forces(low): 105.99 (75.58) meV/A | Time/eval: 1909.07 mcs/at
+2024-09-12 12:25:22,122 I - Iteration   #502  (670 evals):      Loss: 6.1542e+01 | RMSE Energy(low): 24800.82 (7901.92) meV/at | Forces(low): 111.83 (81.32) meV/A | Time/eval: 1579.12 mcs/at
+2024-09-12 12:25:22,570 I - Iteration   #503  (672 evals):      Loss: 6.1539e+01 | RMSE Energy(low): 24800.21 (7932.03) meV/at | Forces(low): 112.17 (84.15) meV/A | Time/eval: 960.27 mcs/at
+2024-09-12 12:25:22,982 I - Iteration   #504  (673 evals):      Loss: 6.1536e+01 | RMSE Energy(low): 24799.80 (7979.86) meV/at | Forces(low): 109.65 (78.38) meV/A | Time/eval: 1652.69 mcs/at
+2024-09-12 12:25:23,374 I - Iteration   #505  (674 evals):      Loss: 6.1530e+01 | RMSE Energy(low): 24799.70 (8043.07) meV/at | Forces(low): 100.46 (66.20) meV/A | Time/eval: 1428.87 mcs/at
+2024-09-12 12:25:23,751 I - Iteration   #506  (675 evals):      Loss: 6.1523e+01 | RMSE Energy(low): 24799.30 (8136.74) meV/at | Forces(low): 90.71 (51.77) meV/A | Time/eval: 1265.00 mcs/at
+2024-09-12 12:25:24,268 I - Iteration   #507  (677 evals):      Loss: 6.1521e+01 | RMSE Energy(low): 24798.96 (8144.70) meV/at | Forces(low): 91.14 (54.48) meV/A | Time/eval: 776.45 mcs/at
+2024-09-12 12:25:24,641 I - Iteration   #508  (678 evals):      Loss: 6.1519e+01 | RMSE Energy(low): 24798.41 (8146.70) meV/at | Forces(low): 91.86 (60.02) meV/A | Time/eval: 1488.12 mcs/at
+2024-09-12 12:25:25,021 I - Iteration   #509  (679 evals):      Loss: 6.1515e+01 | RMSE Energy(low): 24797.41 (8142.21) meV/at | Forces(low): 93.79 (65.17) meV/A | Time/eval: 1338.12 mcs/at
+2024-09-12 12:25:25,388 I - Iteration   #510  (680 evals):      Loss: 6.1508e+01 | RMSE Energy(low): 24795.72 (8121.38) meV/at | Forces(low): 96.18 (69.48) meV/A | Time/eval: 1305.63 mcs/at
+2024-09-12 12:25:25,816 I - Iteration   #511  (682 evals):      Loss: 6.1503e+01 | RMSE Energy(low): 24794.14 (8096.74) meV/at | Forces(low): 101.55 (82.08) meV/A | Time/eval: 744.05 mcs/at
+2024-09-12 12:25:26,302 I - Iteration   #512  (684 evals):      Loss: 6.1500e+01 | RMSE Energy(low): 24793.29 (8073.18) meV/at | Forces(low): 103.38 (72.57) meV/A | Time/eval: 879.85 mcs/at
+2024-09-12 12:25:26,738 I - Iteration   #513  (685 evals):      Loss: 6.1494e+01 | RMSE Energy(low): 24792.38 (8036.18) meV/at | Forces(low): 101.07 (74.27) meV/A | Time/eval: 1891.84 mcs/at
+2024-09-12 12:25:27,265 I - Iteration   #514  (688 evals):      Loss: 6.1486e+01 | RMSE Energy(low): 24791.31 (7990.83) meV/at | Forces(low): 97.10 (71.52) meV/A | Time/eval: 1028.58 mcs/at
+2024-09-12 12:25:28,038 I - Iteration   #515  (699 evals):      Loss: 6.1483e+01 | RMSE Energy(low): 24790.82 (7971.51) meV/at | Forces(low): 95.53 (70.08) meV/A | Time/eval: 373.76 mcs/at
+2024-09-12 12:25:29,081 I - Iteration   #516  (720 evals):      Loss: 6.1483e+01 | RMSE Energy(low): 24790.81 (7970.96) meV/at | Forces(low): 94.49 (70.06) meV/A | Time/eval: 479.03 mcs/at
+2024-09-12 12:25:29,423 I - Iteration   #517  (721 evals):      Loss: 6.1482e+01 | RMSE Energy(low): 24790.72 (7964.65) meV/at | Forces(low): 94.17 (68.15) meV/A | Time/eval: 1166.10 mcs/at
+2024-09-12 12:25:29,778 I - Iteration   #518  (722 evals):      Loss: 6.1481e+01 | RMSE Energy(low): 24790.63 (7959.92) meV/at | Forces(low): 93.05 (65.70) meV/A | Time/eval: 1051.09 mcs/at
+2024-09-12 12:25:30,405 I - Iteration   #519  (727 evals):      Loss: 6.1480e+01 | RMSE Energy(low): 24790.45 (7956.93) meV/at | Forces(low): 92.55 (66.95) meV/A | Time/eval: 458.08 mcs/at
+2024-09-12 12:25:31,264 I - Iteration   #520  (740 evals):      Loss: 6.1479e+01 | RMSE Energy(low): 24790.41 (7956.59) meV/at | Forces(low): 92.00 (66.48) meV/A | Time/eval: 448.76 mcs/at
+2024-09-12 12:25:31,640 I - Iteration   #521  (741 evals):      Loss: 6.1479e+01 | RMSE Energy(low): 24790.33 (7955.90) meV/at | Forces(low): 91.67 (65.45) meV/A | Time/eval: 1666.84 mcs/at
+2024-09-12 12:25:32,027 I - Iteration   #522  (742 evals):      Loss: 6.1478e+01 | RMSE Energy(low): 24790.05 (7961.07) meV/at | Forces(low): 92.49 (65.78) meV/A | Time/eval: 1404.59 mcs/at
+2024-09-12 12:25:32,454 I - Iteration   #523  (743 evals):      Loss: 6.1476e+01 | RMSE Energy(low): 24789.74 (7973.85) meV/at | Forces(low): 92.24 (63.53) meV/A | Time/eval: 2169.00 mcs/at
+2024-09-12 12:25:32,892 I - Iteration   #524  (744 evals):      Loss: 6.1474e+01 | RMSE Energy(low): 24789.00 (7996.42) meV/at | Forces(low): 96.04 (70.35) meV/A | Time/eval: 1895.89 mcs/at
+2024-09-12 12:25:33,293 I - Iteration   #525  (745 evals):      Loss: 6.1473e+01 | RMSE Energy(low): 24788.23 (8021.06) meV/at | Forces(low): 100.69 (83.40) meV/A | Time/eval: 1286.46 mcs/at
+2024-09-12 12:25:33,664 I - Iteration   #526  (746 evals):      Loss: 6.1472e+01 | RMSE Energy(low): 24787.87 (8029.88) meV/at | Forces(low): 101.44 (81.73) meV/A | Time/eval: 1394.10 mcs/at
+2024-09-12 12:25:34,108 I - Iteration   #527  (747 evals):      Loss: 6.1470e+01 | RMSE Energy(low): 24787.73 (8049.84) meV/at | Forces(low): 99.37 (78.38) meV/A | Time/eval: 2433.58 mcs/at
+2024-09-12 12:25:34,644 I - Iteration   #528  (748 evals):      Loss: 6.1468e+01 | RMSE Energy(low): 24787.77 (8082.84) meV/at | Forces(low): 96.12 (70.48) meV/A | Time/eval: 2865.39 mcs/at
+2024-09-12 12:25:35,027 I - Iteration   #529  (749 evals):      Loss: 6.1467e+01 | RMSE Energy(low): 24787.93 (8118.72) meV/at | Forces(low): 90.94 (59.86) meV/A | Time/eval: 1558.87 mcs/at
+2024-09-12 12:25:35,404 I - Iteration   #530  (750 evals):      Loss: 6.1465e+01 | RMSE Energy(low): 24787.27 (8155.18) meV/at | Forces(low): 95.18 (71.81) meV/A | Time/eval: 1488.52 mcs/at
+2024-09-12 12:25:35,793 I - Iteration   #531  (751 evals):      Loss: 6.1464e+01 | RMSE Energy(low): 24786.86 (8166.27) meV/at | Forces(low): 96.14 (74.30) meV/A | Time/eval: 1294.70 mcs/at
+2024-09-12 12:25:36,168 I - Iteration   #532  (752 evals):      Loss: 6.1461e+01 | RMSE Energy(low): 24786.42 (8174.64) meV/at | Forces(low): 95.37 (70.61) meV/A | Time/eval: 1300.54 mcs/at
+2024-09-12 12:25:36,628 I - Iteration   #533  (753 evals):      Loss: 6.1459e+01 | RMSE Energy(low): 24785.36 (8176.58) meV/at | Forces(low): 101.70 (84.05) meV/A | Time/eval: 2408.23 mcs/at
+2024-09-12 12:25:37,042 I - Iteration   #534  (754 evals):      Loss: 6.1458e+01 | RMSE Energy(low): 24784.69 (8177.45) meV/at | Forces(low): 105.69 (81.78) meV/A | Time/eval: 1412.04 mcs/at
+2024-09-12 12:25:37,437 I - Iteration   #535  (755 evals):      Loss: 6.1456e+01 | RMSE Energy(low): 24784.27 (8178.02) meV/at | Forces(low): 105.74 (83.46) meV/A | Time/eval: 886.11 mcs/at
+2024-09-12 12:25:37,931 I - Iteration   #536  (756 evals):      Loss: 6.1453e+01 | RMSE Energy(low): 24783.52 (8175.66) meV/at | Forces(low): 105.61 (86.75) meV/A | Time/eval: 946.82 mcs/at
+2024-09-12 12:25:38,397 I - Iteration   #537  (757 evals):      Loss: 6.1447e+01 | RMSE Energy(low): 24782.04 (8171.68) meV/at | Forces(low): 109.32 (93.69) meV/A | Time/eval: 1806.34 mcs/at
+2024-09-12 12:25:38,817 I - Iteration   #538  (758 evals):      Loss: 6.1444e+01 | RMSE Energy(low): 24780.41 (8159.86) meV/at | Forces(low): 117.61 (89.64) meV/A | Time/eval: 1313.07 mcs/at
+2024-09-12 12:25:39,328 I - Iteration   #539  (761 evals):      Loss: 6.1430e+01 | RMSE Energy(low): 24778.83 (8150.35) meV/at | Forces(low): 107.06 (54.40) meV/A | Time/eval: 1074.69 mcs/at
+2024-09-12 12:25:39,742 I - Iteration   #540  (763 evals):      Loss: 6.1419e+01 | RMSE Energy(low): 24777.82 (8136.87) meV/at | Forces(low): 96.82 (56.51) meV/A | Time/eval: 875.13 mcs/at
+2024-09-12 12:25:40,239 I - Iteration   #541  (765 evals):      Loss: 6.1415e+01 | RMSE Energy(low): 24777.02 (8121.50) meV/at | Forces(low): 96.81 (59.85) meV/A | Time/eval: 885.91 mcs/at
+2024-09-12 12:25:40,659 I - Iteration   #542  (766 evals):      Loss: 6.1410e+01 | RMSE Energy(low): 24775.84 (8096.15) meV/at | Forces(low): 96.82 (63.50) meV/A | Time/eval: 1629.12 mcs/at
+2024-09-12 12:25:41,038 I - Iteration   #543  (767 evals):      Loss: 6.1401e+01 | RMSE Energy(low): 24773.78 (8058.11) meV/at | Forces(low): 98.83 (71.09) meV/A | Time/eval: 1362.69 mcs/at
+2024-09-12 12:25:41,476 I - Iteration   #544  (769 evals):      Loss: 6.1395e+01 | RMSE Energy(low): 24772.31 (8036.55) meV/at | Forces(low): 102.68 (84.91) meV/A | Time/eval: 842.44 mcs/at
+2024-09-12 12:25:41,902 I - Iteration   #545  (770 evals):      Loss: 6.1386e+01 | RMSE Energy(low): 24770.28 (7999.84) meV/at | Forces(low): 104.31 (92.38) meV/A | Time/eval: 1888.96 mcs/at
+2024-09-12 12:25:42,303 I - Iteration   #546  (771 evals):      Loss: 6.1372e+01 | RMSE Energy(low): 24766.56 (7923.23) meV/at | Forces(low): 110.82 (97.69) meV/A | Time/eval: 1550.64 mcs/at
+2024-09-12 12:25:42,862 I - Iteration   #547  (773 evals):      Loss: 6.1367e+01 | RMSE Energy(low): 24765.31 (7891.67) meV/at | Forces(low): 113.74 (113.28) meV/A | Time/eval: 885.71 mcs/at
+2024-09-12 12:25:43,293 I - Iteration   #548  (774 evals):      Loss: 6.1359e+01 | RMSE Energy(low): 24763.79 (7858.41) meV/at | Forces(low): 112.91 (110.58) meV/A | Time/eval: 1571.91 mcs/at
+2024-09-12 12:25:43,695 I - Iteration   #549  (775 evals):      Loss: 6.1345e+01 | RMSE Energy(low): 24761.36 (7801.47) meV/at | Forces(low): 109.67 (104.95) meV/A | Time/eval: 1436.12 mcs/at
+2024-09-12 12:25:44,242 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #550 Loss:    Total:  6.1337e+01 (100%) 
+                         Energy:  6.1304e+01 (100%) 
+                          Force:  3.2096e-02 (  0%) 
+                             L1:  1.9573e-05 (  0%) 
+                             L2:  1.0537e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:     921.69 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24759.74              7770.76               109.03                  105.97
+    MAE:        13343.50              7443.18                44.62                   50.68
+ MAX_AE:        83668.62              8655.82               641.08                  396.09
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:25:44,242 I - Last relative TRAIN loss change -1.37e-04/iter (averaged over last 1 step(s))
+2024-09-12 12:25:44,748 I - Iteration   #551  (778 evals):      Loss: 6.1324e+01 | RMSE Energy(low): 24756.89 (7724.58) meV/at | Forces(low): 112.06 (104.04) meV/A | Time/eval: 2725.15 mcs/at
+2024-09-12 12:25:45,253 I - Iteration   #552  (780 evals):      Loss: 6.1320e+01 | RMSE Energy(low): 24755.78 (7708.11) meV/at | Forces(low): 113.24 (97.52) meV/A | Time/eval: 971.15 mcs/at
+2024-09-12 12:25:45,669 I - Iteration   #553  (781 evals):      Loss: 6.1312e+01 | RMSE Energy(low): 24754.41 (7697.17) meV/at | Forces(low): 111.29 (86.09) meV/A | Time/eval: 2001.66 mcs/at
+2024-09-12 12:25:46,140 I - Iteration   #554  (782 evals):      Loss: 6.1299e+01 | RMSE Energy(low): 24752.27 (7676.85) meV/at | Forces(low): 107.48 (89.71) meV/A | Time/eval: 2482.65 mcs/at
+2024-09-12 12:25:46,561 I - Iteration   #555  (783 evals):      Loss: 6.1278e+01 | RMSE Energy(low): 24748.73 (7654.66) meV/at | Forces(low): 102.53 (85.29) meV/A | Time/eval: 1723.10 mcs/at
+2024-09-12 12:25:47,084 I - Iteration   #556  (785 evals):      Loss: 6.1264e+01 | RMSE Energy(low): 24745.35 (7640.47) meV/at | Forces(low): 106.74 (91.73) meV/A | Time/eval: 1218.05 mcs/at
+2024-09-12 12:25:47,460 I - Iteration   #557  (786 evals):      Loss: 6.1237e+01 | RMSE Energy(low): 24740.25 (7619.42) meV/at | Forces(low): 104.22 (102.84) meV/A | Time/eval: 1497.54 mcs/at
+2024-09-12 12:25:47,916 I - Iteration   #558  (788 evals):      Loss: 6.1218e+01 | RMSE Energy(low): 24735.51 (7595.15) meV/at | Forces(low): 111.04 (110.43) meV/A | Time/eval: 1094.66 mcs/at
+2024-09-12 12:25:48,376 I - Iteration   #559  (790 evals):      Loss: 6.1206e+01 | RMSE Energy(low): 24732.89 (7586.73) meV/at | Forces(low): 113.47 (97.82) meV/A | Time/eval: 881.30 mcs/at
+2024-09-12 12:25:48,811 I - Iteration   #560  (791 evals):      Loss: 6.1189e+01 | RMSE Energy(low): 24728.74 (7580.64) meV/at | Forces(low): 118.54 (107.08) meV/A | Time/eval: 1812.06 mcs/at
+2024-09-12 12:25:49,199 I - Iteration   #561  (792 evals):      Loss: 6.1174e+01 | RMSE Energy(low): 24722.68 (7590.33) meV/at | Forces(low): 139.78 (150.73) meV/A | Time/eval: 1408.93 mcs/at
+2024-09-12 12:25:49,575 I - Iteration   #562  (793 evals):      Loss: 6.1149e+01 | RMSE Energy(low): 24716.89 (7609.07) meV/at | Forces(low): 144.54 (155.11) meV/A | Time/eval: 1379.27 mcs/at
+2024-09-12 12:25:49,995 I - Iteration   #563  (794 evals):      Loss: 6.1127e+01 | RMSE Energy(low): 24709.02 (7647.45) meV/at | Forces(low): 164.31 (172.21) meV/A | Time/eval: 2116.85 mcs/at
+2024-09-12 12:25:50,568 I - Iteration   #564  (796 evals):      Loss: 6.1120e+01 | RMSE Energy(low): 24707.75 (7662.66) meV/at | Forces(low): 163.80 (171.08) meV/A | Time/eval: 1289.61 mcs/at
+2024-09-12 12:25:50,940 I - Iteration   #565  (797 evals):      Loss: 6.1108e+01 | RMSE Energy(low): 24706.70 (7681.54) meV/at | Forces(low): 155.67 (148.33) meV/A | Time/eval: 1635.80 mcs/at
+2024-09-12 12:25:51,318 I - Iteration   #566  (798 evals):      Loss: 6.1085e+01 | RMSE Energy(low): 24705.52 (7719.13) meV/at | Forces(low): 133.84 (126.49) meV/A | Time/eval: 1410.92 mcs/at
+2024-09-12 12:25:51,699 I - Iteration   #567  (799 evals):      Loss: 6.1052e+01 | RMSE Energy(low): 24701.38 (7798.21) meV/at | Forces(low): 115.27 (92.03) meV/A | Time/eval: 1531.88 mcs/at
+2024-09-12 12:25:52,265 I - Iteration   #568  (801 evals):      Loss: 6.1044e+01 | RMSE Energy(low): 24699.65 (7822.04) meV/at | Forces(low): 115.76 (112.02) meV/A | Time/eval: 1465.95 mcs/at
+2024-09-12 12:25:52,607 I - Iteration   #569  (802 evals):      Loss: 6.1030e+01 | RMSE Energy(low): 24698.42 (7873.52) meV/at | Forces(low): 103.94 (87.62) meV/A | Time/eval: 1269.62 mcs/at
+2024-09-12 12:25:52,969 I - Iteration   #570  (803 evals):      Loss: 6.1018e+01 | RMSE Energy(low): 24694.97 (7957.94) meV/at | Forces(low): 111.10 (109.70) meV/A | Time/eval: 1185.57 mcs/at
+2024-09-12 12:25:53,331 I - Iteration   #571  (804 evals):      Loss: 6.1011e+01 | RMSE Energy(low): 24691.71 (8016.42) meV/at | Forces(low): 125.15 (81.15) meV/A | Time/eval: 1320.95 mcs/at
+2024-09-12 12:25:53,799 I - Iteration   #572  (805 evals):      Loss: 6.0998e+01 | RMSE Energy(low): 24689.48 (8025.42) meV/at | Forces(low): 123.07 (75.81) meV/A | Time/eval: 2182.40 mcs/at
+2024-09-12 12:25:54,195 I - Iteration   #573  (806 evals):      Loss: 6.0977e+01 | RMSE Energy(low): 24685.88 (8029.37) meV/at | Forces(low): 118.00 (89.94) meV/A | Time/eval: 1762.97 mcs/at
+2024-09-12 12:25:54,590 I - Iteration   #574  (807 evals):      Loss: 6.0958e+01 | RMSE Energy(low): 24678.52 (8007.03) meV/at | Forces(low): 143.25 (80.35) meV/A | Time/eval: 1152.88 mcs/at
+2024-09-12 12:25:54,954 I - Iteration   #575  (808 evals):      Loss: 6.0929e+01 | RMSE Energy(low): 24672.85 (7977.45) meV/at | Forces(low): 141.67 (104.76) meV/A | Time/eval: 1320.89 mcs/at
+2024-09-12 12:25:55,344 I - Iteration   #576  (809 evals):      Loss: 6.0898e+01 | RMSE Energy(low): 24664.45 (7908.95) meV/at | Forces(low): 154.41 (141.56) meV/A | Time/eval: 1310.19 mcs/at
+2024-09-12 12:25:55,791 I - Iteration   #577  (811 evals):      Loss: 6.0880e+01 | RMSE Energy(low): 24660.10 (7855.89) meV/at | Forces(low): 158.96 (153.52) meV/A | Time/eval: 824.58 mcs/at
+2024-09-12 12:25:56,203 I - Iteration   #578  (812 evals):      Loss: 6.0852e+01 | RMSE Energy(low): 24655.44 (7791.18) meV/at | Forces(low): 152.12 (151.18) meV/A | Time/eval: 1755.63 mcs/at
+2024-09-12 12:25:56,665 I - Iteration   #579  (814 evals):      Loss: 6.0830e+01 | RMSE Energy(low): 24650.91 (7730.14) meV/at | Forces(low): 152.40 (161.33) meV/A | Time/eval: 1050.52 mcs/at
+2024-09-12 12:25:57,085 I - Iteration   #580  (815 evals):      Loss: 6.0795e+01 | RMSE Energy(low): 24644.77 (7611.10) meV/at | Forces(low): 147.40 (130.38) meV/A | Time/eval: 1653.23 mcs/at
+2024-09-12 12:25:57,612 I - Iteration   #581  (817 evals):      Loss: 6.0781e+01 | RMSE Energy(low): 24641.79 (7543.54) meV/at | Forces(low): 147.92 (134.39) meV/A | Time/eval: 1003.99 mcs/at
+2024-09-12 12:25:58,054 I - Iteration   #582  (818 evals):      Loss: 6.0761e+01 | RMSE Energy(low): 24641.45 (7474.51) meV/at | Forces(low): 123.46 (97.57) meV/A | Time/eval: 2237.20 mcs/at
+2024-09-12 12:25:58,538 I - Iteration   #583  (820 evals):      Loss: 6.0755e+01 | RMSE Energy(low): 24641.26 (7448.48) meV/at | Forces(low): 114.86 (88.46) meV/A | Time/eval: 1014.29 mcs/at
+2024-09-12 12:25:58,972 I - Iteration   #584  (821 evals):      Loss: 6.0743e+01 | RMSE Energy(low): 24640.04 (7425.44) meV/at | Forces(low): 105.58 (74.92) meV/A | Time/eval: 2153.02 mcs/at
+2024-09-12 12:25:59,369 I - Iteration   #585  (822 evals):      Loss: 6.0723e+01 | RMSE Energy(low): 24635.98 (7420.21) meV/at | Forces(low): 105.09 (57.58) meV/A | Time/eval: 1500.66 mcs/at
+2024-09-12 12:25:59,742 I - Iteration   #586  (823 evals):      Loss: 6.0697e+01 | RMSE Energy(low): 24631.33 (7422.60) meV/at | Forces(low): 98.96 (59.88) meV/A | Time/eval: 1100.04 mcs/at
+2024-09-12 12:26:00,184 I - Iteration   #587  (825 evals):      Loss: 6.0678e+01 | RMSE Energy(low): 24626.50 (7384.23) meV/at | Forces(low): 107.87 (59.41) meV/A | Time/eval: 884.44 mcs/at
+2024-09-12 12:26:00,592 I - Iteration   #588  (826 evals):      Loss: 6.0656e+01 | RMSE Energy(low): 24618.62 (7346.93) meV/at | Forces(low): 133.41 (101.74) meV/A | Time/eval: 1869.70 mcs/at
+2024-09-12 12:26:01,044 I - Iteration   #589  (828 evals):      Loss: 6.0644e+01 | RMSE Energy(low): 24615.38 (7336.67) meV/at | Forces(low): 138.84 (122.19) meV/A | Time/eval: 919.53 mcs/at
+2024-09-12 12:26:01,535 I - Iteration   #590  (830 evals):      Loss: 6.0639e+01 | RMSE Energy(low): 24613.60 (7326.55) meV/at | Forces(low): 143.48 (118.96) meV/A | Time/eval: 971.89 mcs/at
+2024-09-12 12:26:01,874 I - Iteration   #591  (831 evals):      Loss: 6.0629e+01 | RMSE Energy(low): 24612.00 (7324.14) meV/at | Forces(low): 141.79 (116.97) meV/A | Time/eval: 951.20 mcs/at
+2024-09-12 12:26:02,244 I - Iteration   #592  (832 evals):      Loss: 6.0614e+01 | RMSE Energy(low): 24610.07 (7351.47) meV/at | Forces(low): 134.11 (129.20) meV/A | Time/eval: 1165.66 mcs/at
+2024-09-12 12:26:02,616 I - Iteration   #593  (833 evals):      Loss: 6.0589e+01 | RMSE Energy(low): 24606.67 (7400.11) meV/at | Forces(low): 121.63 (103.11) meV/A | Time/eval: 1323.40 mcs/at
+2024-09-12 12:26:02,992 I - Iteration   #594  (834 evals):      Loss: 6.0554e+01 | RMSE Energy(low): 24598.96 (7502.40) meV/at | Forces(low): 125.50 (80.75) meV/A | Time/eval: 1561.62 mcs/at
+2024-09-12 12:26:03,370 I - Iteration   #595  (835 evals):      Loss: 6.0526e+01 | RMSE Energy(low): 24590.11 (7581.20) meV/at | Forces(low): 147.16 (94.26) meV/A | Time/eval: 1342.16 mcs/at
+2024-09-12 12:26:03,743 I - Iteration   #596  (836 evals):      Loss: 6.0516e+01 | RMSE Energy(low): 24585.65 (7639.90) meV/at | Forces(low): 161.89 (95.12) meV/A | Time/eval: 1162.65 mcs/at
+2024-09-12 12:26:04,119 I - Iteration   #597  (837 evals):      Loss: 6.0499e+01 | RMSE Energy(low): 24584.20 (7659.02) meV/at | Forces(low): 149.68 (95.97) meV/A | Time/eval: 1523.27 mcs/at
+2024-09-12 12:26:04,500 I - Iteration   #598  (838 evals):      Loss: 6.0468e+01 | RMSE Energy(low): 24580.43 (7678.09) meV/at | Forces(low): 134.03 (105.27) meV/A | Time/eval: 964.33 mcs/at
+2024-09-12 12:26:04,875 I - Iteration   #599  (839 evals):      Loss: 6.0434e+01 | RMSE Energy(low): 24573.64 (7695.27) meV/at | Forces(low): 132.65 (112.40) meV/A | Time/eval: 1279.58 mcs/at
+2024-09-12 12:26:05,317 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #600 Loss:    Total:  6.0428e+01 (100%) 
+                         Energy:  6.0380e+01 (100%) 
+                          Force:  4.7859e-02 (  0%) 
+                             L1:  2.5064e-05 (  0%) 
+                             L2:  1.4949e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:     908.67 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24572.35              7691.43               133.14                  104.74
+    MAE:        13409.72              7329.02                54.99                   45.58
+ MAX_AE:        83511.02              8659.71               693.44                  480.79
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:26:05,317 I - Last relative TRAIN loss change -9.88e-05/iter (averaged over last 1 step(s))
+2024-09-12 12:26:05,728 I - Iteration   #601  (842 evals):      Loss: 6.0419e+01 | RMSE Energy(low): 24572.27 (7672.11) meV/at | Forces(low): 119.76 (76.05) meV/A | Time/eval: 1520.10 mcs/at
+2024-09-12 12:26:06,109 I - Iteration   #602  (843 evals):      Loss: 6.0406e+01 | RMSE Energy(low): 24571.23 (7635.25) meV/at | Forces(low): 107.66 (77.95) meV/A | Time/eval: 1433.92 mcs/at
+2024-09-12 12:26:06,490 I - Iteration   #603  (844 evals):      Loss: 6.0389e+01 | RMSE Energy(low): 24567.42 (7532.92) meV/at | Forces(low): 111.15 (74.61) meV/A | Time/eval: 1429.59 mcs/at
+2024-09-12 12:26:06,931 I - Iteration   #604  (846 evals):      Loss: 6.0379e+01 | RMSE Energy(low): 24564.88 (7472.89) meV/at | Forces(low): 115.07 (103.10) meV/A | Time/eval: 896.26 mcs/at
+2024-09-12 12:26:07,355 I - Iteration   #605  (847 evals):      Loss: 6.0361e+01 | RMSE Energy(low): 24562.23 (7394.55) meV/at | Forces(low): 107.05 (92.08) meV/A | Time/eval: 1578.60 mcs/at
+2024-09-12 12:26:07,764 I - Iteration   #606  (848 evals):      Loss: 6.0332e+01 | RMSE Energy(low): 24556.72 (7284.30) meV/at | Forces(low): 102.43 (97.91) meV/A | Time/eval: 935.07 mcs/at
+2024-09-12 12:26:08,217 I - Iteration   #607  (850 evals):      Loss: 6.0311e+01 | RMSE Energy(low): 24552.83 (7233.63) meV/at | Forces(low): 98.46 (81.20) meV/A | Time/eval: 981.86 mcs/at
+2024-09-12 12:26:08,621 I - Iteration   #608  (851 evals):      Loss: 6.0289e+01 | RMSE Energy(low): 24545.98 (7171.67) meV/at | Forces(low): 119.36 (55.84) meV/A | Time/eval: 1463.03 mcs/at
+2024-09-12 12:26:09,073 I - Iteration   #609  (853 evals):      Loss: 6.0280e+01 | RMSE Energy(low): 24543.58 (7160.08) meV/at | Forces(low): 123.11 (43.66) meV/A | Time/eval: 897.67 mcs/at
+2024-09-12 12:26:09,492 I - Iteration   #610  (854 evals):      Loss: 6.0272e+01 | RMSE Energy(low): 24541.27 (7179.57) meV/at | Forces(low): 128.34 (84.13) meV/A | Time/eval: 1596.32 mcs/at
+2024-09-12 12:26:09,972 I - Iteration   #611  (855 evals):      Loss: 6.0260e+01 | RMSE Energy(low): 24540.14 (7204.32) meV/at | Forces(low): 117.89 (80.60) meV/A | Time/eval: 2616.49 mcs/at
+2024-09-12 12:26:10,367 I - Iteration   #612  (856 evals):      Loss: 6.0243e+01 | RMSE Energy(low): 24537.74 (7238.46) meV/at | Forces(low): 109.63 (91.23) meV/A | Time/eval: 1475.66 mcs/at
+2024-09-12 12:26:10,825 I - Iteration   #613  (857 evals):      Loss: 6.0221e+01 | RMSE Energy(low): 24534.30 (7295.93) meV/at | Forces(low): 100.49 (82.75) meV/A | Time/eval: 1954.22 mcs/at
+2024-09-12 12:26:11,327 I - Iteration   #614  (859 evals):      Loss: 6.0212e+01 | RMSE Energy(low): 24531.83 (7316.19) meV/at | Forces(low): 107.30 (102.76) meV/A | Time/eval: 824.76 mcs/at
+2024-09-12 12:26:11,736 I - Iteration   #615  (860 evals):      Loss: 6.0197e+01 | RMSE Energy(low): 24529.35 (7331.54) meV/at | Forces(low): 102.50 (88.90) meV/A | Time/eval: 1766.48 mcs/at
+2024-09-12 12:26:12,127 I - Iteration   #616  (861 evals):      Loss: 6.0178e+01 | RMSE Energy(low): 24524.92 (7282.38) meV/at | Forces(low): 106.64 (56.30) meV/A | Time/eval: 1446.31 mcs/at
+2024-09-12 12:26:12,582 I - Iteration   #617  (863 evals):      Loss: 6.0172e+01 | RMSE Energy(low): 24523.60 (7258.12) meV/at | Forces(low): 107.75 (64.27) meV/A | Time/eval: 833.18 mcs/at
+2024-09-12 12:26:12,987 I - Iteration   #618  (864 evals):      Loss: 6.0163e+01 | RMSE Energy(low): 24522.04 (7218.09) meV/at | Forces(low): 105.00 (66.96) meV/A | Time/eval: 1497.81 mcs/at
+2024-09-12 12:26:13,377 I - Iteration   #619  (865 evals):      Loss: 6.0154e+01 | RMSE Energy(low): 24519.03 (7165.05) meV/at | Forces(low): 114.13 (107.62) meV/A | Time/eval: 1352.54 mcs/at
+2024-09-12 12:26:13,773 I - Iteration   #620  (866 evals):      Loss: 6.0143e+01 | RMSE Energy(low): 24516.04 (7138.42) meV/at | Forces(low): 120.51 (122.51) meV/A | Time/eval: 854.30 mcs/at
+2024-09-12 12:26:14,142 I - Iteration   #621  (867 evals):      Loss: 6.0124e+01 | RMSE Energy(low): 24511.72 (7113.98) meV/at | Forces(low): 123.67 (129.95) meV/A | Time/eval: 1272.10 mcs/at
+2024-09-12 12:26:14,512 I - Iteration   #622  (868 evals):      Loss: 6.0095e+01 | RMSE Energy(low): 24505.47 (7075.57) meV/at | Forces(low): 126.66 (118.22) meV/A | Time/eval: 1185.61 mcs/at
+2024-09-12 12:26:14,964 I - Iteration   #623  (870 evals):      Loss: 6.0081e+01 | RMSE Energy(low): 24502.22 (7066.14) meV/at | Forces(low): 128.37 (103.32) meV/A | Time/eval: 854.45 mcs/at
+2024-09-12 12:26:15,373 I - Iteration   #624  (871 evals):      Loss: 6.0058e+01 | RMSE Energy(low): 24497.92 (7035.54) meV/at | Forces(low): 125.82 (84.91) meV/A | Time/eval: 1712.99 mcs/at
+2024-09-12 12:26:15,755 I - Iteration   #625  (872 evals):      Loss: 6.0031e+01 | RMSE Energy(low): 24492.50 (6994.18) meV/at | Forces(low): 125.75 (99.64) meV/A | Time/eval: 1498.12 mcs/at
+2024-09-12 12:26:16,207 I - Iteration   #626  (874 evals):      Loss: 6.0016e+01 | RMSE Energy(low): 24489.67 (6976.54) meV/at | Forces(low): 123.81 (124.32) meV/A | Time/eval: 960.57 mcs/at
+2024-09-12 12:26:16,699 I - Iteration   #627  (876 evals):      Loss: 6.0008e+01 | RMSE Energy(low): 24488.41 (6982.92) meV/at | Forces(low): 120.65 (110.50) meV/A | Time/eval: 929.68 mcs/at
+2024-09-12 12:26:17,158 I - Iteration   #628  (877 evals):      Loss: 5.9996e+01 | RMSE Energy(low): 24486.49 (6976.05) meV/at | Forces(low): 117.13 (94.60) meV/A | Time/eval: 2190.55 mcs/at
+2024-09-12 12:26:17,525 I - Iteration   #629  (878 evals):      Loss: 5.9975e+01 | RMSE Energy(low): 24483.08 (6962.49) meV/at | Forces(low): 109.37 (92.74) meV/A | Time/eval: 1138.80 mcs/at
+2024-09-12 12:26:17,908 I - Iteration   #630  (879 evals):      Loss: 5.9941e+01 | RMSE Energy(low): 24476.65 (6966.01) meV/at | Forces(low): 105.70 (105.98) meV/A | Time/eval: 1113.27 mcs/at
+2024-09-12 12:26:18,451 I - Iteration   #631  (881 evals):      Loss: 5.9926e+01 | RMSE Energy(low): 24472.68 (6971.04) meV/at | Forces(low): 113.00 (102.35) meV/A | Time/eval: 958.81 mcs/at
+2024-09-12 12:26:18,796 I - Iteration   #632  (882 evals):      Loss: 5.9905e+01 | RMSE Energy(low): 24467.45 (6980.39) meV/at | Forces(low): 120.69 (115.19) meV/A | Time/eval: 1019.57 mcs/at
+2024-09-12 12:26:19,158 I - Iteration   #633  (883 evals):      Loss: 5.9879e+01 | RMSE Energy(low): 24463.17 (7013.33) meV/at | Forces(low): 111.99 (88.25) meV/A | Time/eval: 1031.27 mcs/at
+2024-09-12 12:26:19,520 I - Iteration   #634  (884 evals):      Loss: 5.9857e+01 | RMSE Energy(low): 24457.33 (7021.25) meV/at | Forces(low): 122.72 (98.41) meV/A | Time/eval: 1353.33 mcs/at
+2024-09-12 12:26:19,909 I - Iteration   #635  (885 evals):      Loss: 5.9846e+01 | RMSE Energy(low): 24454.40 (7176.49) meV/at | Forces(low): 128.16 (127.17) meV/A | Time/eval: 1152.22 mcs/at
+2024-09-12 12:26:20,278 I - Iteration   #636  (886 evals):      Loss: 5.9829e+01 | RMSE Energy(low): 24452.40 (7238.29) meV/at | Forces(low): 116.37 (117.66) meV/A | Time/eval: 1398.61 mcs/at
+2024-09-12 12:26:20,655 I - Iteration   #637  (887 evals):      Loss: 5.9810e+01 | RMSE Energy(low): 24448.84 (7300.46) meV/at | Forces(low): 115.02 (113.27) meV/A | Time/eval: 1184.81 mcs/at
+2024-09-12 12:26:21,092 I - Iteration   #638  (889 evals):      Loss: 5.9803e+01 | RMSE Energy(low): 24446.98 (7314.69) meV/at | Forces(low): 118.07 (108.18) meV/A | Time/eval: 830.57 mcs/at
+2024-09-12 12:26:21,519 I - Iteration   #639  (890 evals):      Loss: 5.9793e+01 | RMSE Energy(low): 24444.87 (7281.95) meV/at | Forces(low): 117.98 (104.43) meV/A | Time/eval: 1912.51 mcs/at
+2024-09-12 12:26:21,976 I - Iteration   #640  (892 evals):      Loss: 5.9790e+01 | RMSE Energy(low): 24444.45 (7269.78) meV/at | Forces(low): 116.48 (95.88) meV/A | Time/eval: 874.16 mcs/at
+2024-09-12 12:26:22,391 I - Iteration   #641  (893 evals):      Loss: 5.9784e+01 | RMSE Energy(low): 24443.95 (7254.44) meV/at | Forces(low): 111.21 (88.38) meV/A | Time/eval: 1711.52 mcs/at
+2024-09-12 12:26:22,796 I - Iteration   #642  (894 evals):      Loss: 5.9773e+01 | RMSE Energy(low): 24442.45 (7221.19) meV/at | Forces(low): 105.13 (80.37) meV/A | Time/eval: 1552.57 mcs/at
+2024-09-12 12:26:23,157 I - Iteration   #643  (895 evals):      Loss: 5.9754e+01 | RMSE Energy(low): 24439.39 (7157.29) meV/at | Forces(low): 97.60 (75.29) meV/A | Time/eval: 1252.74 mcs/at
+2024-09-12 12:26:23,603 I - Iteration   #644  (897 evals):      Loss: 5.9740e+01 | RMSE Energy(low): 24436.39 (7112.50) meV/at | Forces(low): 98.82 (56.65) meV/A | Time/eval: 927.57 mcs/at
+2024-09-12 12:26:24,086 I - Iteration   #645  (899 evals):      Loss: 5.9732e+01 | RMSE Energy(low): 24433.86 (7082.87) meV/at | Forces(low): 106.50 (89.55) meV/A | Time/eval: 872.58 mcs/at
+2024-09-12 12:26:24,534 I - Iteration   #646  (900 evals):      Loss: 5.9724e+01 | RMSE Energy(low): 24431.18 (7061.76) meV/at | Forces(low): 114.04 (92.24) meV/A | Time/eval: 2170.54 mcs/at
+2024-09-12 12:26:24,927 I - Iteration   #647  (901 evals):      Loss: 5.9709e+01 | RMSE Energy(low): 24428.66 (7044.67) meV/at | Forces(low): 110.68 (100.76) meV/A | Time/eval: 1283.95 mcs/at
+2024-09-12 12:26:25,292 I - Iteration   #648  (902 evals):      Loss: 5.9692e+01 | RMSE Energy(low): 24425.11 (7027.39) meV/at | Forces(low): 111.06 (93.00) meV/A | Time/eval: 1216.34 mcs/at
+2024-09-12 12:26:25,742 I - Iteration   #649  (904 evals):      Loss: 5.9684e+01 | RMSE Energy(low): 24423.32 (6993.72) meV/at | Forces(low): 112.30 (88.07) meV/A | Time/eval: 1025.43 mcs/at
+2024-09-12 12:26:26,163 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #650 Loss:    Total:  5.9675e+01 (100%) 
+                         Energy:  5.9641e+01 (100%) 
+                          Force:  3.4037e-02 (  0%) 
+                             L1:  2.9154e-05 (  0%) 
+                             L2:  1.9263e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1888.19 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24421.52              6950.99               112.28                   90.89
+    MAE:        13262.87              6602.88                46.98                   44.50
+ MAX_AE:        83174.80              7965.83               715.83                  438.73
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:26:26,163 I - Last relative TRAIN loss change -1.48e-04/iter (averaged over last 1 step(s))
+2024-09-12 12:26:26,541 I - Iteration   #651  (906 evals):      Loss: 5.9661e+01 | RMSE Energy(low): 24419.65 (6915.49) meV/at | Forces(low): 103.02 (92.83) meV/A | Time/eval: 1522.21 mcs/at
+2024-09-12 12:26:26,923 I - Iteration   #652  (907 evals):      Loss: 5.9642e+01 | RMSE Energy(low): 24415.80 (6830.39) meV/at | Forces(low): 103.32 (84.71) meV/A | Time/eval: 1302.14 mcs/at
+2024-09-12 12:26:27,360 I - Iteration   #653  (908 evals):      Loss: 5.9627e+01 | RMSE Energy(low): 24410.74 (6899.69) meV/at | Forces(low): 119.79 (103.64) meV/A | Time/eval: 1928.08 mcs/at
+2024-09-12 12:26:27,856 I - Iteration   #654  (910 evals):      Loss: 5.9618e+01 | RMSE Energy(low): 24409.22 (6956.29) meV/at | Forces(low): 115.97 (100.64) meV/A | Time/eval: 839.28 mcs/at
+2024-09-12 12:26:28,205 I - Iteration   #655  (911 evals):      Loss: 5.9605e+01 | RMSE Energy(low): 24407.47 (7081.56) meV/at | Forces(low): 109.96 (94.53) meV/A | Time/eval: 1047.73 mcs/at
+2024-09-12 12:26:28,615 I - Iteration   #656  (913 evals):      Loss: 5.9598e+01 | RMSE Energy(low): 24407.11 (7141.20) meV/at | Forces(low): 100.30 (80.74) meV/A | Time/eval: 817.92 mcs/at
+2024-09-12 12:26:29,041 I - Iteration   #657  (914 evals):      Loss: 5.9588e+01 | RMSE Energy(low): 24405.38 (7116.19) meV/at | Forces(low): 96.97 (68.52) meV/A | Time/eval: 1959.24 mcs/at
+2024-09-12 12:26:29,435 I - Iteration   #658  (915 evals):      Loss: 5.9576e+01 | RMSE Energy(low): 24402.68 (7075.70) meV/at | Forces(low): 99.23 (59.48) meV/A | Time/eval: 1322.49 mcs/at
+2024-09-12 12:26:29,812 I - Iteration   #659  (916 evals):      Loss: 5.9560e+01 | RMSE Energy(low): 24399.30 (7026.66) meV/at | Forces(low): 99.38 (55.95) meV/A | Time/eval: 1553.46 mcs/at
+2024-09-12 12:26:30,364 I - Iteration   #660  (918 evals):      Loss: 5.9550e+01 | RMSE Energy(low): 24396.56 (7003.52) meV/at | Forces(low): 106.71 (94.00) meV/A | Time/eval: 1565.88 mcs/at
+2024-09-12 12:26:30,803 I - Iteration   #661  (919 evals):      Loss: 5.9539e+01 | RMSE Energy(low): 24393.06 (6979.67) meV/at | Forces(low): 116.93 (91.71) meV/A | Time/eval: 1985.69 mcs/at
+2024-09-12 12:26:31,177 I - Iteration   #662  (920 evals):      Loss: 5.9532e+01 | RMSE Energy(low): 24389.93 (6985.93) meV/at | Forces(low): 128.60 (101.90) meV/A | Time/eval: 1416.59 mcs/at
+2024-09-12 12:26:31,554 I - Iteration   #663  (921 evals):      Loss: 5.9518e+01 | RMSE Energy(low): 24387.92 (6969.31) meV/at | Forces(low): 122.50 (88.96) meV/A | Time/eval: 1520.06 mcs/at
+2024-09-12 12:26:31,961 I - Iteration   #664  (922 evals):      Loss: 5.9494e+01 | RMSE Energy(low): 24384.45 (6933.14) meV/at | Forces(low): 111.80 (76.63) meV/A | Time/eval: 1018.75 mcs/at
+2024-09-12 12:26:32,319 I - Iteration   #665  (923 evals):      Loss: 5.9479e+01 | RMSE Energy(low): 24378.41 (6884.66) meV/at | Forces(low): 133.36 (112.95) meV/A | Time/eval: 1039.84 mcs/at
+2024-09-12 12:26:32,695 I - Iteration   #666  (924 evals):      Loss: 5.9454e+01 | RMSE Energy(low): 24375.80 (6889.79) meV/at | Forces(low): 115.15 (99.50) meV/A | Time/eval: 1058.78 mcs/at
+2024-09-12 12:26:33,071 I - Iteration   #667  (925 evals):      Loss: 5.9426e+01 | RMSE Energy(low): 24369.29 (6862.20) meV/at | Forces(low): 121.49 (116.78) meV/A | Time/eval: 1182.73 mcs/at
+2024-09-12 12:26:33,516 I - Iteration   #668  (927 evals):      Loss: 5.9410e+01 | RMSE Energy(low): 24366.56 (6876.55) meV/at | Forces(low): 116.72 (82.76) meV/A | Time/eval: 858.91 mcs/at
+2024-09-12 12:26:33,982 I - Iteration   #669  (929 evals):      Loss: 5.9400e+01 | RMSE Energy(low): 24364.60 (6895.93) meV/at | Forces(low): 116.05 (62.29) meV/A | Time/eval: 818.30 mcs/at
+2024-09-12 12:26:34,430 I - Iteration   #670  (930 evals):      Loss: 5.9390e+01 | RMSE Energy(low): 24361.97 (6906.13) meV/at | Forces(low): 120.56 (71.75) meV/A | Time/eval: 2298.39 mcs/at
+2024-09-12 12:26:34,815 I - Iteration   #671  (931 evals):      Loss: 5.9373e+01 | RMSE Energy(low): 24359.08 (6930.46) meV/at | Forces(low): 115.15 (82.55) meV/A | Time/eval: 1566.54 mcs/at
+2024-09-12 12:26:35,188 I - Iteration   #672  (932 evals):      Loss: 5.9342e+01 | RMSE Energy(low): 24353.11 (6953.50) meV/at | Forces(low): 112.62 (87.47) meV/A | Time/eval: 1295.69 mcs/at
+2024-09-12 12:26:35,564 I - Iteration   #673  (933 evals):      Loss: 5.9296e+01 | RMSE Energy(low): 24343.96 (7025.21) meV/at | Forces(low): 109.98 (89.03) meV/A | Time/eval: 1488.31 mcs/at
+2024-09-12 12:26:36,013 I - Iteration   #674  (935 evals):      Loss: 5.9272e+01 | RMSE Energy(low): 24339.08 (7053.15) meV/at | Forces(low): 110.27 (113.89) meV/A | Time/eval: 790.78 mcs/at
+2024-09-12 12:26:36,435 I - Iteration   #675  (936 evals):      Loss: 5.9238e+01 | RMSE Energy(low): 24331.38 (7070.12) meV/at | Forces(low): 116.41 (98.24) meV/A | Time/eval: 1615.55 mcs/at
+2024-09-12 12:26:36,883 I - Iteration   #676  (938 evals):      Loss: 5.9224e+01 | RMSE Energy(low): 24326.77 (7048.34) meV/at | Forces(low): 128.67 (78.43) meV/A | Time/eval: 831.96 mcs/at
+2024-09-12 12:26:37,310 I - Iteration   #677  (939 evals):      Loss: 5.9207e+01 | RMSE Energy(low): 24323.01 (7028.98) meV/at | Forces(low): 129.82 (54.81) meV/A | Time/eval: 1932.20 mcs/at
+2024-09-12 12:26:37,755 I - Iteration   #678  (941 evals):      Loss: 5.9196e+01 | RMSE Energy(low): 24320.72 (7014.67) meV/at | Forces(low): 130.45 (65.01) meV/A | Time/eval: 853.46 mcs/at
+2024-09-12 12:26:38,096 I - Iteration   #679  (942 evals):      Loss: 5.9182e+01 | RMSE Energy(low): 24318.23 (6994.79) meV/at | Forces(low): 127.91 (77.28) meV/A | Time/eval: 907.46 mcs/at
+2024-09-12 12:26:38,461 I - Iteration   #680  (943 evals):      Loss: 5.9157e+01 | RMSE Energy(low): 24314.61 (6979.19) meV/at | Forces(low): 117.05 (82.22) meV/A | Time/eval: 1124.24 mcs/at
+2024-09-12 12:26:38,847 I - Iteration   #681  (944 evals):      Loss: 5.9121e+01 | RMSE Energy(low): 24305.89 (6943.19) meV/at | Forces(low): 126.97 (117.93) meV/A | Time/eval: 1461.92 mcs/at
+2024-09-12 12:26:39,404 I - Iteration   #682  (946 evals):      Loss: 5.9095e+01 | RMSE Energy(low): 24299.49 (6917.98) meV/at | Forces(low): 133.96 (152.10) meV/A | Time/eval: 1421.66 mcs/at
+2024-09-12 12:26:39,813 I - Iteration   #683  (947 evals):      Loss: 5.9057e+01 | RMSE Energy(low): 24290.65 (6982.69) meV/at | Forces(low): 140.76 (161.88) meV/A | Time/eval: 2123.47 mcs/at
+2024-09-12 12:26:40,234 I - Iteration   #684  (948 evals):      Loss: 5.9009e+01 | RMSE Energy(low): 24279.83 (7085.88) meV/at | Forces(low): 146.56 (148.42) meV/A | Time/eval: 1541.31 mcs/at
+2024-09-12 12:26:40,668 I - Iteration   #685  (950 evals):      Loss: 5.8989e+01 | RMSE Energy(low): 24276.25 (7129.83) meV/at | Forces(low): 142.56 (138.31) meV/A | Time/eval: 887.75 mcs/at
+2024-09-12 12:26:41,074 I - Iteration   #686  (951 evals):      Loss: 5.8957e+01 | RMSE Energy(low): 24272.05 (7160.77) meV/at | Forces(low): 127.13 (117.77) meV/A | Time/eval: 1772.36 mcs/at
+2024-09-12 12:26:41,461 I - Iteration   #687  (952 evals):      Loss: 5.8908e+01 | RMSE Energy(low): 24262.97 (7177.24) meV/at | Forces(low): 119.29 (77.24) meV/A | Time/eval: 1576.37 mcs/at
+2024-09-12 12:26:41,846 I - Iteration   #688  (953 evals):      Loss: 5.8866e+01 | RMSE Energy(low): 24248.73 (7178.55) meV/at | Forces(low): 155.98 (141.80) meV/A | Time/eval: 1104.92 mcs/at
+2024-09-12 12:26:42,213 I - Iteration   #689  (954 evals):      Loss: 5.8823e+01 | RMSE Energy(low): 24236.33 (7142.99) meV/at | Forces(low): 174.63 (163.16) meV/A | Time/eval: 1341.07 mcs/at
+2024-09-12 12:26:42,586 I - Iteration   #690  (955 evals):      Loss: 5.8800e+01 | RMSE Energy(low): 24226.61 (7113.42) meV/at | Forces(low): 199.36 (197.32) meV/A | Time/eval: 1339.90 mcs/at
+2024-09-12 12:26:42,972 I - Iteration   #691  (956 evals):      Loss: 5.8763e+01 | RMSE Energy(low): 24223.16 (7104.01) meV/at | Forces(low): 179.13 (181.42) meV/A | Time/eval: 1400.99 mcs/at
+2024-09-12 12:26:43,416 I - Iteration   #692  (957 evals):      Loss: 5.8712e+01 | RMSE Energy(low): 24213.76 (7063.87) meV/at | Forces(low): 173.06 (165.97) meV/A | Time/eval: 1965.38 mcs/at
+2024-09-12 12:26:43,836 I - Iteration   #693  (958 evals):      Loss: 5.8636e+01 | RMSE Energy(low): 24199.64 (6997.11) meV/at | Forces(low): 164.54 (158.33) meV/A | Time/eval: 1824.21 mcs/at
+2024-09-12 12:26:44,389 I - Iteration   #694  (960 evals):      Loss: 5.8594e+01 | RMSE Energy(low): 24192.42 (6960.44) meV/at | Forces(low): 157.21 (169.03) meV/A | Time/eval: 1678.37 mcs/at
+2024-09-12 12:26:44,735 I - Iteration   #695  (961 evals):      Loss: 5.8548e+01 | RMSE Energy(low): 24182.40 (6881.01) meV/at | Forces(low): 159.65 (139.15) meV/A | Time/eval: 1348.77 mcs/at
+2024-09-12 12:26:45,164 I - Iteration   #696  (963 evals):      Loss: 5.8515e+01 | RMSE Energy(low): 24176.46 (6805.13) meV/at | Forces(low): 154.98 (161.69) meV/A | Time/eval: 832.79 mcs/at
+2024-09-12 12:26:45,592 I - Iteration   #697  (964 evals):      Loss: 5.8465e+01 | RMSE Energy(low): 24164.87 (6626.84) meV/at | Forces(low): 161.70 (162.59) meV/A | Time/eval: 1661.99 mcs/at
+2024-09-12 12:26:46,000 I - Iteration   #698  (965 evals):      Loss: 5.8426e+01 | RMSE Energy(low): 24150.44 (6359.58) meV/at | Forces(low): 194.15 (183.91) meV/A | Time/eval: 1806.31 mcs/at
+2024-09-12 12:26:46,380 I - Iteration   #699  (966 evals):      Loss: 5.8380e+01 | RMSE Energy(low): 24139.77 (6186.09) meV/at | Forces(low): 199.12 (158.34) meV/A | Time/eval: 1034.78 mcs/at
+2024-09-12 12:26:46,747 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #700 Loss:    Total:  5.8334e+01 (100%) 
+                         Energy:  5.8241e+01 (100%) 
+                          Force:  9.3551e-02 (  0%) 
+                             L1:  3.5975e-05 (  0%) 
+                             L2:  2.6416e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1025.34 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        24133.07              6008.57               186.14                  153.53
+    MAE:        12513.27              5839.59                75.28                   59.75
+ MAX_AE:        84948.34              7145.20               873.46                  873.46
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:26:46,747 I - Last relative TRAIN loss change -7.85e-04/iter (averaged over last 1 step(s))
+2024-09-12 12:26:47,178 I - Iteration   #701  (969 evals):      Loss: 5.8318e+01 | RMSE Energy(low): 24130.09 (5962.44) meV/at | Forces(low): 184.66 (184.25) meV/A | Time/eval: 848.53 mcs/at
+2024-09-12 12:26:47,594 I - Iteration   #702  (970 evals):      Loss: 5.8288e+01 | RMSE Energy(low): 24125.44 (5949.58) meV/at | Forces(low): 176.52 (167.76) meV/A | Time/eval: 1616.15 mcs/at
+2024-09-12 12:26:47,986 I - Iteration   #703  (971 evals):      Loss: 5.8234e+01 | RMSE Energy(low): 24117.99 (5943.77) meV/at | Forces(low): 156.81 (137.76) meV/A | Time/eval: 1414.40 mcs/at
+2024-09-12 12:26:48,363 I - Iteration   #704  (972 evals):      Loss: 5.8138e+01 | RMSE Energy(low): 24103.91 (5947.57) meV/at | Forces(low): 118.19 (104.80) meV/A | Time/eval: 1305.30 mcs/at
+2024-09-12 12:26:48,810 I - Iteration   #705  (974 evals):      Loss: 5.8079e+01 | RMSE Energy(low): 24090.26 (5997.40) meV/at | Forces(low): 128.04 (129.72) meV/A | Time/eval: 875.54 mcs/at
+2024-09-12 12:26:49,230 I - Iteration   #706  (975 evals):      Loss: 5.7975e+01 | RMSE Energy(low): 24066.23 (6155.99) meV/at | Forces(low): 145.04 (158.90) meV/A | Time/eval: 1521.72 mcs/at
+2024-09-12 12:26:49,609 I - Iteration   #707  (976 evals):      Loss: 5.7905e+01 | RMSE Energy(low): 24032.30 (6502.08) meV/at | Forces(low): 235.61 (221.91) meV/A | Time/eval: 1537.55 mcs/at
+2024-09-12 12:26:49,993 I - Iteration   #708  (977 evals):      Loss: 5.7807e+01 | RMSE Energy(low): 24009.77 (6708.36) meV/at | Forces(low): 243.59 (232.55) meV/A | Time/eval: 1350.97 mcs/at
+2024-09-12 12:26:50,431 I - Iteration   #709  (979 evals):      Loss: 5.7752e+01 | RMSE Energy(low): 23997.95 (6812.57) meV/at | Forces(low): 244.53 (232.34) meV/A | Time/eval: 846.27 mcs/at
+2024-09-12 12:26:50,774 I - Iteration   #710  (980 evals):      Loss: 5.7733e+01 | RMSE Energy(low): 23984.41 (6948.73) meV/at | Forces(low): 277.45 (313.32) meV/A | Time/eval: 948.11 mcs/at
+2024-09-12 12:26:51,138 I - Iteration   #711  (981 evals):      Loss: 5.7709e+01 | RMSE Energy(low): 23981.30 (6998.37) meV/at | Forces(low): 271.03 (311.74) meV/A | Time/eval: 1149.54 mcs/at
+2024-09-12 12:26:51,501 I - Iteration   #712  (982 evals):      Loss: 5.7665e+01 | RMSE Energy(low): 23978.82 (7046.39) meV/at | Forces(low): 247.84 (275.44) meV/A | Time/eval: 1198.67 mcs/at
+2024-09-12 12:26:51,882 I - Iteration   #713  (983 evals):      Loss: 5.7585e+01 | RMSE Energy(low): 23973.10 (7097.85) meV/at | Forces(low): 204.84 (188.38) meV/A | Time/eval: 981.24 mcs/at
+2024-09-12 12:26:52,310 I - Iteration   #714  (985 evals):      Loss: 5.7523e+01 | RMSE Energy(low): 23966.42 (7119.72) meV/at | Forces(low): 176.07 (159.17) meV/A | Time/eval: 855.94 mcs/at
+2024-09-12 12:26:52,738 I - Iteration   #715  (986 evals):      Loss: 5.7442e+01 | RMSE Energy(low): 23954.25 (7138.17) meV/at | Forces(low): 149.84 (150.88) meV/A | Time/eval: 2044.01 mcs/at
+2024-09-12 12:26:53,177 I - Iteration   #716  (988 evals):      Loss: 5.7384e+01 | RMSE Energy(low): 23936.36 (7068.72) meV/at | Forces(low): 181.22 (211.95) meV/A | Time/eval: 797.46 mcs/at
+2024-09-12 12:26:53,609 I - Iteration   #717  (989 evals):      Loss: 5.7290e+01 | RMSE Energy(low): 23913.55 (6962.62) meV/at | Forces(low): 196.59 (233.40) meV/A | Time/eval: 1998.97 mcs/at
+2024-09-12 12:26:54,010 I - Iteration   #718  (990 evals):      Loss: 5.7171e+01 | RMSE Energy(low): 23881.05 (6813.44) meV/at | Forces(low): 228.18 (254.75) meV/A | Time/eval: 1356.07 mcs/at
+2024-09-12 12:26:54,443 I - Iteration   #719  (992 evals):      Loss: 5.7116e+01 | RMSE Energy(low): 23867.55 (6726.36) meV/at | Forces(low): 235.64 (286.79) meV/A | Time/eval: 889.97 mcs/at
+2024-09-12 12:26:54,858 I - Iteration   #720  (993 evals):      Loss: 5.7097e+01 | RMSE Energy(low): 23849.01 (6599.35) meV/at | Forces(low): 284.63 (332.15) meV/A | Time/eval: 1797.14 mcs/at
+2024-09-12 12:26:55,241 I - Iteration   #721  (994 evals):      Loss: 5.7059e+01 | RMSE Energy(low): 23841.64 (6551.41) meV/at | Forces(low): 283.27 (340.71) meV/A | Time/eval: 1548.16 mcs/at
+2024-09-12 12:26:55,627 I - Iteration   #722  (995 evals):      Loss: 5.6988e+01 | RMSE Energy(low): 23828.61 (6465.21) meV/at | Forces(low): 277.01 (330.95) meV/A | Time/eval: 1486.57 mcs/at
+2024-09-12 12:26:55,996 I - Iteration   #723  (996 evals):      Loss: 5.6904e+01 | RMSE Energy(low): 23810.98 (6279.29) meV/at | Forces(low): 277.13 (291.62) meV/A | Time/eval: 1213.36 mcs/at
+2024-09-12 12:26:56,386 I - Iteration   #724  (997 evals):      Loss: 5.6796e+01 | RMSE Energy(low): 23798.71 (5944.68) meV/at | Forces(low): 241.38 (266.05) meV/A | Time/eval: 1067.79 mcs/at
+2024-09-12 12:26:56,824 I - Iteration   #725  (999 evals):      Loss: 5.6738e+01 | RMSE Energy(low): 23792.20 (5798.88) meV/at | Forces(low): 220.39 (228.18) meV/A | Time/eval: 835.61 mcs/at
+2024-09-12 12:26:57,221 I - Iteration   #726  (1000 evals):     Loss: 5.6687e+01 | RMSE Energy(low): 23786.09 (5646.48) meV/at | Forces(low): 200.48 (172.31) meV/A | Time/eval: 1292.14 mcs/at
+2024-09-12 12:26:57,619 I - Iteration   #727  (1001 evals):     Loss: 5.6608e+01 | RMSE Energy(low): 23774.24 (5584.59) meV/at | Forces(low): 178.21 (136.26) meV/A | Time/eval: 1481.68 mcs/at
+2024-09-12 12:26:58,008 I - Iteration   #728  (1002 evals):     Loss: 5.6512e+01 | RMSE Energy(low): 23755.11 (5546.88) meV/at | Forces(low): 173.85 (153.71) meV/A | Time/eval: 1272.57 mcs/at
+2024-09-12 12:26:58,392 I - Iteration   #729  (1003 evals):     Loss: 5.6405e+01 | RMSE Energy(low): 23724.56 (5616.22) meV/at | Forces(low): 209.77 (209.31) meV/A | Time/eval: 1300.51 mcs/at
+2024-09-12 12:26:58,822 I - Iteration   #730  (1005 evals):     Loss: 5.6342e+01 | RMSE Energy(low): 23710.08 (5706.24) meV/at | Forces(low): 215.40 (202.50) meV/A | Time/eval: 850.28 mcs/at
+2024-09-12 12:26:59,245 I - Iteration   #731  (1006 evals):     Loss: 5.6227e+01 | RMSE Energy(low): 23690.90 (5822.13) meV/at | Forces(low): 193.22 (212.56) meV/A | Time/eval: 1704.35 mcs/at
+2024-09-12 12:26:59,683 I - Iteration   #732  (1007 evals):     Loss: 5.6092e+01 | RMSE Energy(low): 23656.71 (6040.87) meV/at | Forces(low): 217.56 (253.44) meV/A | Time/eval: 2218.92 mcs/at
+2024-09-12 12:27:00,137 I - Iteration   #733  (1008 evals):     Loss: 5.5884e+01 | RMSE Energy(low): 23606.65 (6299.87) meV/at | Forces(low): 240.85 (268.61) meV/A | Time/eval: 2169.88 mcs/at
+2024-09-12 12:27:00,659 I - Iteration   #734  (1010 evals):     Loss: 5.5753e+01 | RMSE Energy(low): 23579.34 (6461.95) meV/at | Forces(low): 239.13 (289.75) meV/A | Time/eval: 1123.16 mcs/at
+2024-09-12 12:27:01,088 I - Iteration   #735  (1012 evals):     Loss: 5.5650e+01 | RMSE Energy(low): 23559.80 (6607.69) meV/at | Forces(low): 230.31 (256.19) meV/A | Time/eval: 825.13 mcs/at
+2024-09-12 12:27:01,557 I - Iteration   #736  (1014 evals):     Loss: 5.5604e+01 | RMSE Energy(low): 23548.58 (6688.06) meV/at | Forces(low): 235.80 (245.62) meV/A | Time/eval: 796.61 mcs/at
+2024-09-12 12:27:01,904 I - Iteration   #737  (1015 evals):     Loss: 5.5535e+01 | RMSE Energy(low): 23535.29 (6801.68) meV/at | Forces(low): 230.68 (218.03) meV/A | Time/eval: 793.43 mcs/at
+2024-09-12 12:27:02,262 I - Iteration   #738  (1016 evals):     Loss: 5.5457e+01 | RMSE Energy(low): 23510.86 (6972.65) meV/at | Forces(low): 258.70 (210.84) meV/A | Time/eval: 1184.67 mcs/at
+2024-09-12 12:27:02,640 I - Iteration   #739  (1017 evals):     Loss: 5.5324e+01 | RMSE Energy(low): 23490.74 (7166.29) meV/at | Forces(low): 229.46 (169.13) meV/A | Time/eval: 1304.61 mcs/at
+2024-09-12 12:27:03,017 I - Iteration   #740  (1018 evals):     Loss: 5.5134e+01 | RMSE Energy(low): 23452.58 (7517.97) meV/at | Forces(low): 220.12 (126.88) meV/A | Time/eval: 1309.70 mcs/at
+2024-09-12 12:27:03,549 I - Iteration   #741  (1020 evals):     Loss: 5.5064e+01 | RMSE Energy(low): 23434.05 (7595.42) meV/at | Forces(low): 234.11 (189.95) meV/A | Time/eval: 926.77 mcs/at
+2024-09-12 12:27:04,057 I - Iteration   #742  (1023 evals):     Loss: 5.4844e+01 | RMSE Energy(low): 23387.95 (7795.78) meV/at | Forces(low): 231.10 (219.13) meV/A | Time/eval: 1098.35 mcs/at
+2024-09-12 12:27:04,481 I - Iteration   #743  (1025 evals):     Loss: 5.4757e+01 | RMSE Energy(low): 23367.16 (7847.52) meV/at | Forces(low): 239.14 (186.97) meV/A | Time/eval: 843.55 mcs/at
+2024-09-12 12:27:04,954 I - Iteration   #744  (1027 evals):     Loss: 5.4730e+01 | RMSE Energy(low): 23358.39 (7862.85) meV/at | Forces(low): 249.46 (181.39) meV/A | Time/eval: 848.80 mcs/at
+2024-09-12 12:27:05,353 I - Iteration   #745  (1029 evals):     Loss: 5.4515e+01 | RMSE Energy(low): 23316.15 (7885.11) meV/at | Forces(low): 236.34 (224.15) meV/A | Time/eval: 774.97 mcs/at
+2024-09-12 12:27:05,829 I - Iteration   #746  (1031 evals):     Loss: 5.4473e+01 | RMSE Energy(low): 23305.10 (7876.84) meV/at | Forces(low): 243.18 (238.73) meV/A | Time/eval: 911.22 mcs/at
+2024-09-12 12:27:06,171 I - Iteration   #747  (1032 evals):     Loss: 5.4405e+01 | RMSE Energy(low): 23291.86 (7849.60) meV/at | Forces(low): 238.75 (214.15) meV/A | Time/eval: 758.15 mcs/at
+2024-09-12 12:27:06,589 I - Iteration   #748  (1034 evals):     Loss: 5.3916e+01 | RMSE Energy(low): 23164.78 (7323.70) meV/at | Forces(low): 306.98 (192.39) meV/A | Time/eval: 758.99 mcs/at
+2024-09-12 12:27:07,074 I - Iteration   #749  (1036 evals):     Loss: 5.3788e+01 | RMSE Energy(low): 23136.47 (7198.35) meV/at | Forces(low): 309.11 (240.25) meV/A | Time/eval: 818.56 mcs/at
+2024-09-12 12:27:07,642 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #750 Loss:    Total:  5.3717e+01 (100%) 
+                         Energy:  5.3450e+01 (100%) 
+                          Force:  2.6638e-01 (  0%) 
+                             L1:  4.4023e-05 (  0%) 
+                             L2:  3.7518e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1668.08 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        23119.31              7117.33               314.10                  248.94
+    MAE:        12261.85              6830.14               113.56                  106.92
+ MAX_AE:        84980.23              8554.09              1713.57                  968.22
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:27:07,642 I - Last relative TRAIN loss change -1.32e-03/iter (averaged over last 1 step(s))
+2024-09-12 12:27:08,026 I - Iteration   #751  (1039 evals):     Loss: 5.3598e+01 | RMSE Energy(low): 23097.90 (7007.60) meV/at | Forces(low): 301.98 (246.33) meV/A | Time/eval: 1717.48 mcs/at
+2024-09-12 12:27:08,403 I - Iteration   #752  (1040 evals):     Loss: 5.3390e+01 | RMSE Energy(low): 23064.08 (6813.43) meV/at | Forces(low): 268.26 (264.10) meV/A | Time/eval: 1428.35 mcs/at
+2024-09-12 12:27:08,785 I - Iteration   #753  (1041 evals):     Loss: 5.3079e+01 | RMSE Energy(low): 23003.02 (6508.31) meV/at | Forces(low): 246.76 (258.01) meV/A | Time/eval: 1495.27 mcs/at
+2024-09-12 12:27:09,216 I - Iteration   #754  (1043 evals):     Loss: 5.2937e+01 | RMSE Energy(low): 22972.53 (6357.95) meV/at | Forces(low): 245.92 (191.12) meV/A | Time/eval: 737.74 mcs/at
+2024-09-12 12:27:09,645 I - Iteration   #755  (1044 evals):     Loss: 5.2702e+01 | RMSE Energy(low): 22934.18 (6129.08) meV/at | Forces(low): 196.46 (213.83) meV/A | Time/eval: 1870.70 mcs/at
+2024-09-12 12:27:10,111 I - Iteration   #756  (1046 evals):     Loss: 5.2549e+01 | RMSE Energy(low): 22903.80 (5999.89) meV/at | Forces(low): 182.28 (225.35) meV/A | Time/eval: 839.58 mcs/at
+2024-09-12 12:27:10,523 I - Iteration   #757  (1047 evals):     Loss: 5.2303e+01 | RMSE Energy(low): 22848.62 (5828.42) meV/at | Forces(low): 189.50 (193.29) meV/A | Time/eval: 1636.00 mcs/at
+2024-09-12 12:27:10,909 I - Iteration   #758  (1048 evals):     Loss: 5.1869e+01 | RMSE Energy(low): 22747.39 (5592.89) meV/at | Forces(low): 214.63 (168.20) meV/A | Time/eval: 1430.36 mcs/at
+2024-09-12 12:27:11,360 I - Iteration   #759  (1050 evals):     Loss: 5.1702e+01 | RMSE Energy(low): 22695.43 (5494.08) meV/at | Forces(low): 267.42 (233.53) meV/A | Time/eval: 925.77 mcs/at
+2024-09-12 12:27:11,806 I - Iteration   #760  (1051 evals):     Loss: 5.1437e+01 | RMSE Energy(low): 22623.84 (5425.35) meV/at | Forces(low): 305.95 (204.71) meV/A | Time/eval: 2222.47 mcs/at
+2024-09-12 12:27:12,242 I - Iteration   #761  (1053 evals):     Loss: 5.1300e+01 | RMSE Energy(low): 22582.25 (5414.30) meV/at | Forces(low): 335.21 (250.58) meV/A | Time/eval: 790.76 mcs/at
+2024-09-12 12:27:12,657 I - Iteration   #762  (1054 evals):     Loss: 5.1153e+01 | RMSE Energy(low): 22536.09 (5422.02) meV/at | Forces(low): 367.81 (351.03) meV/A | Time/eval: 1797.39 mcs/at
+2024-09-12 12:27:13,038 I - Iteration   #763  (1055 evals):     Loss: 5.0933e+01 | RMSE Energy(low): 22490.87 (5488.52) meV/at | Forces(low): 359.28 (436.63) meV/A | Time/eval: 1455.00 mcs/at
+2024-09-12 12:27:13,477 I - Iteration   #764  (1057 evals):     Loss: 5.0850e+01 | RMSE Energy(low): 22469.23 (5538.03) meV/at | Forces(low): 366.61 (445.91) meV/A | Time/eval: 828.39 mcs/at
+2024-09-12 12:27:13,917 I - Iteration   #765  (1058 evals):     Loss: 5.0716e+01 | RMSE Energy(low): 22438.58 (5644.16) meV/at | Forces(low): 368.59 (420.32) meV/A | Time/eval: 1620.27 mcs/at
+2024-09-12 12:27:14,299 I - Iteration   #766  (1059 evals):     Loss: 5.0482e+01 | RMSE Energy(low): 22388.30 (5826.25) meV/at | Forces(low): 363.94 (413.44) meV/A | Time/eval: 1374.80 mcs/at
+2024-09-12 12:27:14,672 I - Iteration   #767  (1060 evals):     Loss: 5.0100e+01 | RMSE Energy(low): 22310.01 (6145.78) meV/at | Forces(low): 347.33 (355.77) meV/A | Time/eval: 1414.04 mcs/at
+2024-09-12 12:27:15,120 I - Iteration   #768  (1062 evals):     Loss: 4.9856e+01 | RMSE Energy(low): 22262.81 (6354.05) meV/at | Forces(low): 329.18 (291.91) meV/A | Time/eval: 930.92 mcs/at
+2024-09-12 12:27:15,538 I - Iteration   #769  (1063 evals):     Loss: 4.9473e+01 | RMSE Energy(low): 22162.85 (6454.08) meV/at | Forces(low): 361.96 (291.04) meV/A | Time/eval: 1730.94 mcs/at
+2024-09-12 12:27:16,004 I - Iteration   #770  (1065 evals):     Loss: 4.9311e+01 | RMSE Energy(low): 22107.35 (6458.18) meV/at | Forces(low): 402.44 (436.81) meV/A | Time/eval: 973.39 mcs/at
+2024-09-12 12:27:16,442 I - Iteration   #771  (1066 evals):     Loss: 4.9011e+01 | RMSE Energy(low): 22041.02 (6449.12) meV/at | Forces(low): 399.10 (427.62) meV/A | Time/eval: 2234.17 mcs/at
+2024-09-12 12:27:16,821 I - Iteration   #772  (1067 evals):     Loss: 4.8526e+01 | RMSE Energy(low): 21937.24 (6580.97) meV/at | Forces(low): 385.33 (461.42) meV/A | Time/eval: 1382.00 mcs/at
+2024-09-12 12:27:17,263 I - Iteration   #773  (1069 evals):     Loss: 4.8383e+01 | RMSE Energy(low): 21900.78 (6661.67) meV/at | Forces(low): 393.28 (406.00) meV/A | Time/eval: 831.19 mcs/at
+2024-09-12 12:27:17,719 I - Iteration   #774  (1070 evals):     Loss: 4.8138e+01 | RMSE Energy(low): 21858.80 (6788.96) meV/at | Forces(low): 363.66 (375.59) meV/A | Time/eval: 2176.53 mcs/at
+2024-09-12 12:27:18,086 I - Iteration   #775  (1071 evals):     Loss: 4.7794e+01 | RMSE Energy(low): 21800.37 (7099.92) meV/at | Forces(low): 315.08 (275.66) meV/A | Time/eval: 1065.77 mcs/at
+2024-09-12 12:27:18,457 I - Iteration   #776  (1072 evals):     Loss: 4.7264e+01 | RMSE Energy(low): 21698.66 (7572.78) meV/at | Forces(low): 258.14 (247.92) meV/A | Time/eval: 1318.89 mcs/at
+2024-09-12 12:27:18,891 I - Iteration   #777  (1074 evals):     Loss: 4.7067e+01 | RMSE Energy(low): 21644.60 (7729.25) meV/at | Forces(low): 283.58 (263.40) meV/A | Time/eval: 949.56 mcs/at
+2024-09-12 12:27:19,394 I - Iteration   #778  (1076 evals):     Loss: 4.6953e+01 | RMSE Energy(low): 21608.42 (7805.58) meV/at | Forces(low): 310.24 (279.65) meV/A | Time/eval: 1015.32 mcs/at
+2024-09-12 12:27:19,835 I - Iteration   #779  (1077 evals):     Loss: 4.6737e+01 | RMSE Energy(low): 21544.98 (7874.58) meV/at | Forces(low): 342.97 (368.50) meV/A | Time/eval: 1267.32 mcs/at
+2024-09-12 12:27:20,399 I - Iteration   #780  (1080 evals):     Loss: 4.5986e+01 | RMSE Energy(low): 21298.17 (8153.25) meV/at | Forces(low): 481.01 (502.38) meV/A | Time/eval: 932.34 mcs/at
+2024-09-12 12:27:20,982 I - Iteration   #781  (1082 evals):     Loss: 4.5627e+01 | RMSE Energy(low): 21170.89 (8248.19) meV/at | Forces(low): 546.18 (595.36) meV/A | Time/eval: 637.26 mcs/at
+2024-09-12 12:27:21,434 I - Iteration   #782  (1083 evals):     Loss: 4.5266e+01 | RMSE Energy(low): 21002.32 (8415.15) meV/at | Forces(low): 654.34 (803.44) meV/A | Time/eval: 1899.20 mcs/at
+2024-09-12 12:27:21,996 I - Iteration   #783  (1085 evals):     Loss: 4.5087e+01 | RMSE Energy(low): 20946.69 (8470.85) meV/at | Forces(low): 669.54 (879.78) meV/A | Time/eval: 876.30 mcs/at
+2024-09-12 12:27:22,434 I - Iteration   #784  (1086 evals):     Loss: 4.4790e+01 | RMSE Energy(low): 20882.55 (8550.70) meV/at | Forces(low): 661.39 (876.70) meV/A | Time/eval: 1707.87 mcs/at
+2024-09-12 12:27:22,835 I - Iteration   #785  (1087 evals):     Loss: 4.4577e+01 | RMSE Energy(low): 20786.71 (8736.51) meV/at | Forces(low): 711.66 (841.22) meV/A | Time/eval: 1219.59 mcs/at
+2024-09-12 12:27:23,216 I - Iteration   #786  (1088 evals):     Loss: 4.4241e+01 | RMSE Energy(low): 20734.76 (8917.60) meV/at | Forces(low): 679.62 (782.81) meV/A | Time/eval: 798.80 mcs/at
+2024-09-12 12:27:23,626 I - Iteration   #787  (1089 evals):     Loss: 4.3628e+01 | RMSE Energy(low): 20675.13 (9275.25) meV/at | Forces(low): 571.32 (630.42) meV/A | Time/eval: 1213.00 mcs/at
+2024-09-12 12:27:24,159 I - Iteration   #788  (1091 evals):     Loss: 4.3325e+01 | RMSE Energy(low): 20659.15 (9547.05) meV/at | Forces(low): 488.66 (526.13) meV/A | Time/eval: 945.12 mcs/at
+2024-09-12 12:27:24,643 I - Iteration   #789  (1093 evals):     Loss: 4.3161e+01 | RMSE Energy(low): 20645.40 (9624.96) meV/at | Forces(low): 445.94 (475.78) meV/A | Time/eval: 887.54 mcs/at
+2024-09-12 12:27:25,066 I - Iteration   #790  (1094 evals):     Loss: 4.2884e+01 | RMSE Energy(low): 20619.69 (9684.59) meV/at | Forces(low): 368.10 (372.41) meV/A | Time/eval: 1490.95 mcs/at
+2024-09-12 12:27:25,583 I - Iteration   #791  (1096 evals):     Loss: 4.2734e+01 | RMSE Energy(low): 20605.77 (9703.95) meV/at | Forces(low): 318.38 (340.42) meV/A | Time/eval: 1341.67 mcs/at
+2024-09-12 12:27:26,184 I - Iteration   #792  (1098 evals):     Loss: 4.2651e+01 | RMSE Energy(low): 20594.77 (9702.76) meV/at | Forces(low): 295.35 (310.91) meV/A | Time/eval: 1589.78 mcs/at
+2024-09-12 12:27:26,851 I - Iteration   #793  (1105 evals):     Loss: 4.2516e+01 | RMSE Energy(low): 20572.66 (9679.71) meV/at | Forces(low): 266.36 (267.26) meV/A | Time/eval: 428.04 mcs/at
+2024-09-12 12:27:28,003 I - Iteration   #794  (1127 evals):     Loss: 4.2511e+01 | RMSE Energy(low): 20571.78 (9678.18) meV/at | Forces(low): 265.92 (266.62) meV/A | Time/eval: 432.53 mcs/at
+2024-09-12 12:27:28,529 I - Iteration   #795  (1129 evals):     Loss: 4.2471e+01 | RMSE Energy(low): 20565.49 (9653.69) meV/at | Forces(low): 255.90 (255.76) meV/A | Time/eval: 1031.68 mcs/at
+2024-09-12 12:27:29,015 I - Iteration   #796  (1131 evals):     Loss: 4.2169e+01 | RMSE Energy(low): 20486.25 (9373.87) meV/at | Forces(low): 272.19 (210.61) meV/A | Time/eval: 862.50 mcs/at
+2024-09-12 12:27:29,444 I - Iteration   #797  (1132 evals):     Loss: 4.1738e+01 | RMSE Energy(low): 20365.85 (8924.82) meV/at | Forces(low): 310.41 (319.53) meV/A | Time/eval: 1765.28 mcs/at
+2024-09-12 12:27:29,910 I - Iteration   #798  (1134 evals):     Loss: 4.1593e+01 | RMSE Energy(low): 20322.30 (8761.37) meV/at | Forces(low): 329.10 (376.28) meV/A | Time/eval: 892.58 mcs/at
+2024-09-12 12:27:30,323 I - Iteration   #799  (1135 evals):     Loss: 4.1323e+01 | RMSE Energy(low): 20264.21 (8537.52) meV/at | Forces(low): 309.49 (397.63) meV/A | Time/eval: 1627.15 mcs/at
+2024-09-12 12:27:30,720 I - 
+--------------------------------------------FIT STATS--------------------------------------------
+Iteration:  #800 Loss:    Total:  4.0813e+01 (100%) 
+                         Energy:  4.0654e+01 (100%) 
+                          Force:  1.5867e-01 (  0%) 
+                             L1:  5.4850e-05 (  0%) 
+                             L2:  5.7430e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:    1141.38 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        20162.79              8135.15               242.42                  313.90
+    MAE:        11444.59              8005.24               103.45                  146.28
+ MAX_AE:        86135.22              9405.23              1480.14                 1480.14
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:27:30,721 I - Last relative TRAIN loss change -1.23e-02/iter (averaged over last 1 step(s))
+2024-09-12 12:27:31,180 I - Iteration   #801  (1138 evals):     Loss: 4.0576e+01 | RMSE Energy(low): 20104.48 (7916.77) meV/at | Forces(low): 240.71 (283.99) meV/A | Time/eval: 938.38 mcs/at
+2024-09-12 12:27:31,696 I - Iteration   #802  (1140 evals):     Loss: 4.0456e+01 | RMSE Energy(low): 20066.13 (7808.12) meV/at | Forces(low): 265.24 (324.74) meV/A | Time/eval: 1177.10 mcs/at
+2024-09-12 12:27:32,115 I - Iteration   #803  (1141 evals):     Loss: 4.0352e+01 | RMSE Energy(low): 20011.52 (7692.40) meV/at | Forces(low): 336.03 (354.35) meV/A | Time/eval: 922.50 mcs/at
+2024-09-12 12:27:32,574 I - Iteration   #804  (1142 evals):     Loss: 4.0171e+01 | RMSE Energy(low): 19964.88 (7601.43) meV/at | Forces(low): 339.01 (401.42) meV/A | Time/eval: 1881.56 mcs/at
+2024-09-12 12:27:32,972 I - Iteration   #805  (1143 evals):     Loss: 3.9823e+01 | RMSE Energy(low): 19886.36 (7447.37) meV/at | Forces(low): 319.39 (406.49) meV/A | Time/eval: 1450.11 mcs/at
+2024-09-12 12:27:33,421 I - Iteration   #806  (1144 evals):     Loss: 3.9526e+01 | RMSE Energy(low): 19749.78 (7202.81) meV/at | Forces(low): 438.96 (250.80) meV/A | Time/eval: 2124.33 mcs/at
+2024-09-12 12:27:33,916 I - Iteration   #807  (1146 evals):     Loss: 3.9320e+01 | RMSE Energy(low): 19703.62 (7112.02) meV/at | Forces(low): 428.56 (243.37) meV/A | Time/eval: 889.93 mcs/at
+2024-09-12 12:27:34,339 I - Iteration   #808  (1147 evals):     Loss: 3.9041e+01 | RMSE Energy(low): 19645.04 (6984.36) meV/at | Forces(low): 407.16 (404.71) meV/A | Time/eval: 1322.48 mcs/at
+2024-09-12 12:27:34,814 I - Iteration   #809  (1149 evals):     Loss: 3.8888e+01 | RMSE Energy(low): 19616.81 (6938.41) meV/at | Forces(low): 387.40 (484.64) meV/A | Time/eval: 950.19 mcs/at
+2024-09-12 12:27:35,399 I - Iteration   #810  (1152 evals):     Loss: 3.8349e+01 | RMSE Energy(low): 19542.15 (6819.38) meV/at | Forces(low): 242.27 (189.92) meV/A | Time/eval: 1582.38 mcs/at
+2024-09-12 12:27:35,911 I - Iteration   #811  (1154 evals):     Loss: 3.8230e+01 | RMSE Energy(low): 19521.54 (6802.75) meV/at | Forces(low): 211.03 (228.62) meV/A | Time/eval: 1035.38 mcs/at
+2024-09-12 12:27:36,348 I - Iteration   #812  (1155 evals):     Loss: 3.8128e+01 | RMSE Energy(low): 19467.89 (6846.09) meV/at | Forces(low): 290.20 (315.98) meV/A | Time/eval: 1802.27 mcs/at
+2024-09-12 12:27:36,839 I - Iteration   #813  (1156 evals):     Loss: 3.7949e+01 | RMSE Energy(low): 19422.50 (6891.48) meV/at | Forces(low): 288.78 (327.84) meV/A | Time/eval: 1972.00 mcs/at
+2024-09-12 12:27:37,236 I - Iteration   #814  (1157 evals):     Loss: 3.7735e+01 | RMSE Energy(low): 19346.40 (7001.10) meV/at | Forces(low): 336.81 (342.15) meV/A | Time/eval: 1388.19 mcs/at
+2024-09-12 12:27:37,836 I - Iteration   #815  (1159 evals):     Loss: 3.7589e+01 | RMSE Energy(low): 19310.58 (7067.57) meV/at | Forces(low): 332.23 (314.40) meV/A | Time/eval: 1439.83 mcs/at
+2024-09-12 12:27:38,225 I - Iteration   #816  (1160 evals):     Loss: 3.7326e+01 | RMSE Energy(low): 19253.33 (7205.79) meV/at | Forces(low): 307.99 (364.69) meV/A | Time/eval: 1215.86 mcs/at
+2024-09-12 12:27:38,700 I - Iteration   #817  (1162 evals):     Loss: 3.7247e+01 | RMSE Energy(low): 19229.26 (7277.04) meV/at | Forces(low): 316.13 (363.22) meV/A | Time/eval: 1084.41 mcs/at
+2024-09-12 12:27:39,110 I - Iteration   #818  (1163 evals):     Loss: 3.7113e+01 | RMSE Energy(low): 19200.10 (7378.65) meV/at | Forces(low): 302.90 (382.39) meV/A | Time/eval: 1131.69 mcs/at
+2024-09-12 12:27:39,492 I - Iteration   #819  (1164 evals):     Loss: 3.6922e+01 | RMSE Energy(low): 19153.61 (7558.71) meV/at | Forces(low): 294.88 (361.63) meV/A | Time/eval: 1049.82 mcs/at
+2024-09-12 12:27:39,990 I - Iteration   #820  (1165 evals):     Loss: 3.6592e+01 | RMSE Energy(low): 19076.00 (7798.45) meV/at | Forces(low): 273.60 (322.32) meV/A | Time/eval: 2402.39 mcs/at
+2024-09-12 12:27:40,552 I - Iteration   #821  (1167 evals):     Loss: 3.6363e+01 | RMSE Energy(low): 19008.73 (7997.70) meV/at | Forces(low): 291.48 (375.27) meV/A | Time/eval: 973.99 mcs/at
+2024-09-12 12:27:40,978 I - Iteration   #822  (1168 evals):     Loss: 3.6168e+01 | RMSE Energy(low): 18900.13 (8319.75) meV/at | Forces(low): 406.22 (460.26) meV/A | Time/eval: 1518.38 mcs/at
+2024-09-12 12:27:41,425 I - Iteration   #823  (1170 evals):     Loss: 3.6024e+01 | RMSE Energy(low): 18855.03 (8449.98) meV/at | Forces(low): 417.95 (514.75) meV/A | Time/eval: 886.79 mcs/at
+2024-09-12 12:27:41,855 I - Iteration   #824  (1171 evals):     Loss: 3.5754e+01 | RMSE Energy(low): 18782.57 (8634.85) meV/at | Forces(low): 419.50 (525.13) meV/A | Time/eval: 1403.70 mcs/at
+2024-09-12 12:27:42,238 I - Iteration   #825  (1172 evals):     Loss: 3.5534e+01 | RMSE Energy(low): 18650.05 (8974.50) meV/at | Forces(low): 527.36 (564.20) meV/A | Time/eval: 990.97 mcs/at
+2024-09-12 12:27:42,768 I - Iteration   #826  (1173 evals):     Loss: 3.5085e+01 | RMSE Energy(low): 18557.08 (9259.16) meV/at | Forces(low): 489.81 (430.79) meV/A | Time/eval: 2604.76 mcs/at
+2024-09-12 12:27:43,278 I - Iteration   #827  (1175 evals):     Loss: 3.4859e+01 | RMSE Energy(low): 18496.91 (9471.40) meV/at | Forces(low): 488.59 (363.70) meV/A | Time/eval: 782.27 mcs/at
+2024-09-12 12:27:43,788 I - Iteration   #828  (1177 evals):     Loss: 3.4830e+01 | RMSE Energy(low): 18499.09 (9462.07) meV/at | Forces(low): 474.48 (375.30) meV/A | Time/eval: 914.47 mcs/at
+2024-09-12 12:27:44,297 I - Iteration   #829  (1179 evals):     Loss: 3.4600e+01 | RMSE Energy(low): 18447.39 (9668.45) meV/at | Forces(low): 458.96 (290.10) meV/A | Time/eval: 817.69 mcs/at
+2024-09-12 12:27:44,724 I - Iteration   #830  (1180 evals):     Loss: 3.4346e+01 | RMSE Energy(low): 18433.36 (9685.46) meV/at | Forces(low): 368.58 (341.88) meV/A | Time/eval: 1568.96 mcs/at
+2024-09-12 12:27:45,280 I - Iteration   #831  (1182 evals):     Loss: 3.4115e+01 | RMSE Energy(low): 18386.19 (9872.86) meV/at | Forces(low): 338.30 (376.79) meV/A | Time/eval: 844.99 mcs/at
+2024-09-12 12:27:45,896 I - Iteration   #832  (1184 evals):     Loss: 3.4008e+01 | RMSE Energy(low): 18359.89 (10014.71) meV/at | Forces(low): 332.43 (358.24) meV/A | Time/eval: 800.01 mcs/at
+2024-09-12 12:27:46,478 I - Iteration   #833  (1187 evals):     Loss: 3.4006e+01 | RMSE Energy(low): 18356.68 (10031.09) meV/at | Forces(low): 337.79 (369.08) meV/A | Time/eval: 964.91 mcs/at
+2024-09-12 12:27:47,438 I - Optimization result(success=False, status=2, message=Desired error not necessarily achieved due to precision loss., nfev=1199, njev=1187)
+2024-09-12 12:27:47,438 I - Fitting cycle finished, final statistic:
+2024-09-12 12:27:47,439 I - 
+--------------------------------------------Cycle last iteration:--------------------------------------------
+Iteration:  #834 Loss:    Total:  3.4006e+01 (100%) 
+                         Energy:  3.3697e+01 ( 99%) 
+                          Force:  3.0807e-01 (  1%) 
+                             L1:  6.0336e-05 (  0%) 
+                             L2:  6.9282e-04 (  0%) 
+Number of params./funcs:   1760/700                                  Avg. time:     964.91 mcs/at
+-------------------------------------------------------------------------------------------------
+           Energy/at, meV/at   Energy_low/at, meV/at      Force, meV/A        Force_low, meV/A   
+   RMSE:        18356.68             10031.09               337.79                  369.08
+    MAE:        12507.20              8454.03               143.11                  158.55
+ MAX_AE:        80661.39             22694.84              1535.12                 1535.12
+-------------------------------------------------------------------------------------------------
+2024-09-12 12:27:47,439 D - Update current_bbasisconfig.metadata = MapStringString{_fit_cycles: 1, _loss: 34.00560604690903, ace_evaluator_version: 2023.11.25, pacemaker_version: 0.2.7+158.g636a42a, reference_energy: {"Si": -7860.845440057512, "shift": 0}, starttime: 2024-09-12 12:21:50.216008, tensorpot_version: 0+untagged.18.g8776209.dirty, user: simonkratochvil}
+2024-09-12 12:27:47,439 I - Select best fit #1 among all available (1)
+2024-09-12 12:27:47,439 I - Best fitting attempt is #1
+2024-09-12 12:27:47,472 I - Intermediate potential saved in interim_potential_best_cycle.yaml
+2024-09-12 12:27:47,472 I - Fitting done
+2024-09-12 12:27:47,472 I - Auto core-repulsion estimation. Minimal distance calculation...
+2024-09-12 12:27:47,485 I - Minimal distance per bonds = {(0, 0): 2.142500000000001} A 
+2024-09-12 12:27:47,486 I - Inner cutoff / core-repulsion initialized with ZBL
+2024-09-12 12:27:47,486 D - Update metadata: MapStringString{_loss: 34.00560604690903, ace_evaluator_version: 2023.11.25, intermediate_time: 2024-09-12 12:27:47.439798, pacemaker_version: 0.2.7+158.g636a42a, reference_energy: {"Si": -7860.845440057512, "shift": 0}, starttime: 2024-09-12 12:21:50.216008, tensorpot_version: 0+untagged.18.g8776209.dirty, user: simonkratochvil}
+2024-09-12 12:27:47,518 I - Final potential is saved to output_potential.yaml
+2024-09-12 12:27:47,518 I - Making predictions
+2024-09-12 12:27:47,518 I - For train data
+2024-09-12 12:27:51,379 I - Computing nearest neighbours distances from 'tp_atoms'
+2024-09-12 12:27:51,383 I - Predictions are saved into train_pred.pckl.gzip (2.3KiB)
+2024-09-12 12:27:51,383 I - Ploting validation graphs

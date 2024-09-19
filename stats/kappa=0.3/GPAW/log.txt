@@ -1,0 +1,7 @@
+2024-09-08 00:19:16,852 I - Start pacemaker
+2024-09-08 00:19:16,852 I - Hostname: Simons-MacBook-Air.local
+2024-09-08 00:19:16,852 I - Username: simonkratochvil
+2024-09-08 00:19:16,853 I - pacemaker/pyace version: 0.2.7+158.g636a42a
+2024-09-08 00:19:16,854 I - ace_evaluator   version: 2023.11.25
+2024-09-08 00:19:16,854 I - Loading input.yaml... 
+2024-09-08 00:19:16,861 I - Set numpy random seed to 42
