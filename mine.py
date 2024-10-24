@@ -92,6 +92,7 @@ for i,item in enumerate(response_json['data']):
                     'system': {
                         'atoms': '*'
                     },
+                    'method': '*' ,
                     'calculation': {
                         'energy': {
                             'total' : '*'
@@ -119,6 +120,15 @@ for i,item in enumerate(response_json['data']):
         # Just take every 50-th (or first and last if shorter)
         if i % 50 != 0 and i != len(calculations) - 1:
             continue
+
+        # We don't want a charged system so just skip if we have non-zero charge 
+        try:
+            charge = response_json['data']['archive']['run'][0]['method'][0]['electronic']['charge']
+            if charge != 0.0:
+                print("Charged system")
+                continue
+        except (KeyError, TypeError):
+            pass
 
         #forces
         try:
