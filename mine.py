@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import requests
 import json
 from ase import Atoms
@@ -31,6 +33,10 @@ myjson={
             },
             'results.method.simulation.dft.xc_functional_names': {
                 'all': ['GGA_C_PBE', 'GGA_X_PBE']
+            },
+            # skip single atoms, there is nothing to train there
+            'results.material.structural_type': {
+                'none' : ['atom']
             }
         },
         'pagination': {
@@ -72,8 +78,11 @@ structures = []
 energies = []
 forces = []
 
+print("Found {} entries".format(len(response_json['data'])))
+
 # Iterate over the intry ids and try to extract the values we need.
-for item in response_json['data']:
+for i,item in enumerate(response_json['data']):
+    print("Parsing item {}".format(i))
     first_entry_id = item['entry_id']
     response = requests.post(
         f'{base_url}/entries/{first_entry_id}/archive/query',
@@ -107,7 +116,7 @@ for item in response_json['data']:
 
     for i,c in enumerate(calculations):
         # there is no point in taking every step of longer relax or MD trajectories... they will be highly correclated anyway
-        # Just take every 50-th (or first and last of shorter)
+        # Just take every 50-th (or first and last if shorter)
         if i % 50 != 0 and i != len(calculations) - 1:
             continue
 
@@ -115,7 +124,7 @@ for item in response_json['data']:
         try:
             forces_total = response_json['data']['archive']['run'][0]['calculation'][i]['forces']['total']['value'] * ureg.newton
         except (KeyError, TypeError):
-            print("foces not found")
+            #print("foces not found")
             try:
                 forces_total = response_json['data']['archive']['run'][0]['calculation'][i]['forces']['total']['value_raw'] * ureg.newton
             except (KeyError, TypeError):
@@ -156,10 +165,10 @@ for item in response_json['data']:
         structures.append(ase_atoms)
         energies.append(energy_total_eV)
         forces.append(forces_total.to("eV/angstrom").m)
-        continue
-    continue
 
 reference_energy = 0
+
+print("Mined {} configurations".format(len(energies)))
 
 data = {'energy': energies,
         'forces': forces,
