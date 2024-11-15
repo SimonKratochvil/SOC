@@ -23,7 +23,11 @@ args = parser.parse_args()
 
 print(args.c, args.k, args.b, args.sp, args.sk, args.st, args.pc, args.ac)
 
-base_url = 'http://nomad-lab.eu/prod/v1/api/v1'
+base_url = 'http://rosat.physics.muni.cz/nomad-oasis/api/v1'
+
+response = requests.get(
+    'http://rosat.physics.muni.cz/nomad-oasis/api/v1/auth/token', params=dict(username='FIXME', password='FIXME'))
+token = response.json()['access_token']
 
 # Find first 10 Si calculations that are using PBE functional
 myjson={
@@ -40,11 +44,12 @@ myjson={
             }
         },
         'pagination': {
-            'page_size': 10000
+            'page_size': 11000
         },
         'required': {
             'include': ['entry_id'],
-        }
+        },
+        'owner': 'all',
     }
 
 if args.c:
@@ -71,7 +76,7 @@ if args.pc:
 if args.ac:
     myjson['query']['results.method.simulation.precision.apw_cutoff'] = {'gte': args.ac}
 
-response = requests.post(f'{base_url}/entries/query', json=myjson)
+response = requests.post(f'{base_url}/entries/query', json=myjson, headers={'Authorization': f'Bearer {token}'})
 response_json = response.json()
 
 structures = []
@@ -86,6 +91,7 @@ for i,item in enumerate(response_json['data']):
     first_entry_id = item['entry_id']
     response = requests.post(
         f'{base_url}/entries/{first_entry_id}/archive/query',
+        headers={'Authorization': f'Bearer {token}'},
         json={
             'required': {
                 'run': {
@@ -97,9 +103,7 @@ for i,item in enumerate(response_json['data']):
                         'energy': {
                             'total' : '*'
                         },
-                        'forces': {
-                            'total' : '*'
-                        }
+                        'forces': '*',
                     }
                 }
             }
@@ -138,8 +142,11 @@ for i,item in enumerate(response_json['data']):
             try:
                 forces_total = response_json['data']['archive']['run'][0]['calculation'][i]['forces']['total']['value_raw'] * ureg.newton
             except (KeyError, TypeError):
-                print("No forces detected, skipping to next entry.")
-                continue
+                try:
+                    forces_total = response_json['data']['archive']['run'][0]['calculation'][i]['forces']['free']['value'] * ureg.newton
+                except (KeyError, TypeError):
+                    print("No forces detected, skipping to next entry.")
+                    continue
 
         #system
         atoms = response_json['data']['archive']['run'][0]['system'][i]['atoms']
@@ -152,7 +159,7 @@ for i,item in enumerate(response_json['data']):
 
         m4 = atoms.get('lattice_vectors')
 
-        if m1 is None or m2 is None or m3 is None or m4 is None:
+        if m1 is None or m2 is None or m3 is None or (m4 is None or  m3[0] is False):
             print("Missing data, skipping to the next entry.")
             continue
 
@@ -161,7 +168,10 @@ for i,item in enumerate(response_json['data']):
         periodic = response_json['data']['archive']['run'][0]['system'][i]['atoms']['periodic']
 
         lattice_vectors = np.array(response_json['data']['archive']['run'][0]['system'][i]['atoms']['lattice_vectors']) * 1e10
-        ase_atoms = Atoms(labels, positions=positions, pbc=periodic, cell=lattice_vectors)
+        if m4 is not None:
+            ase_atoms = Atoms(labels, positions=positions, pbc=periodic, cell=lattice_vectors)
+        else:
+            ase_atoms = Atoms(labels, pbc=periodic, cell=lattice_vectors)
 
         #energy
         try:
