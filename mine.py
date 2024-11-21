@@ -44,7 +44,7 @@ myjson={
             }
         },
         'pagination': {
-            'page_size': 11000
+            'page_size': 10000
         },
         'required': {
             'include': ['entry_id'],
@@ -189,6 +189,7 @@ for i,item in enumerate(response_json['data']):
 reference_energy = 0
 
 print("Mined {} configurations".format(len(energies)))
+print("Mined {} atoms".format(sum([len(i) for i in structures])))
 
 data = {'energy': energies,
         'forces': forces,
