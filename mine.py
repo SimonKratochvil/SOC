@@ -159,25 +159,33 @@ for i,item in enumerate(response_json['data']):
 
         m4 = atoms.get('lattice_vectors')
 
-        if m1 is None or m2 is None or m3 is None or (m4 is None or  m3[0] is False):
-            print("Missing data, skipping to the next entry.")
+        if m1 is None or m2 is None or m3 is None or (m4 is None and m3[0] is True):
+            print("Missing data, skipping to the next entry.", m1, m2, m3, m4)
             continue
 
         labels = response_json['data']['archive']['run'][0]['system'][i]['atoms']['labels']
         positions = np.array(response_json['data']['archive']['run'][0]['system'][i]['atoms']['positions']) * 1e10
         periodic = response_json['data']['archive']['run'][0]['system'][i]['atoms']['periodic']
 
-        lattice_vectors = np.array(response_json['data']['archive']['run'][0]['system'][i]['atoms']['lattice_vectors']) * 1e10
         if m4 is not None:
+            lattice_vectors = np.array(response_json['data']['archive']['run'][0]['system'][i]['atoms']['lattice_vectors']) * 1e10
             ase_atoms = Atoms(labels, positions=positions, pbc=periodic, cell=lattice_vectors)
         else:
-            ase_atoms = Atoms(labels, pbc=periodic, cell=lattice_vectors)
+            ase_atoms = Atoms(labels, positions=positions, pbc=periodic)
 
         #energy
         try:
             energy_total = response_json['data']['archive']['run'][0]['calculation'][i]['energy']['total']['value']
         except (KeyError, TypeError):
-            print("No energies detected, skipping to the neyt entry.")
+            print("No energies detected, skipping to the next entry.")
+            continue
+
+        if ase_atoms.get_cell().handedness == -1:
+            print("Pacemaker can't handle left handed cells, skip it")
+            continue
+
+        if len(ase_atoms) != len(forces_total):
+            print("Inconsistent number of atoms and forces")
             continue
 
         energy_total_eV = energy_total * 6.24150907 * (10**18)
