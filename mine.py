@@ -29,6 +29,8 @@ response = requests.get(
     'http://rosat.physics.muni.cz/nomad-oasis/api/v1/auth/token', params=dict(username='FIXME', password='FIXME'))
 token = response.json()['access_token']
 
+mined_ids=[]
+
 # Find first 10 Si calculations that are using PBE functional
 myjson={
         'query': {
@@ -44,7 +46,7 @@ myjson={
             }
         },
         'pagination': {
-            'page_size': 10000
+            'page_size': 1000
         },
         'required': {
             'include': ['entry_id'],
@@ -76,19 +78,29 @@ if args.pc:
 if args.ac:
     myjson['query']['results.method.simulation.precision.apw_cutoff'] = {'gte': args.ac}
 
-response = requests.post(f'{base_url}/entries/query', json=myjson, headers={'Authorization': f'Bearer {token}'})
-response_json = response.json()
+# collect the entry_ids in a loop to get around the pagination limits
+while True:
+    response = requests.post(f'{base_url}/entries/query', json=myjson, headers={'Authorization': f'Bearer {token}'})
+    response_json = response.json()
+
+    for data in response_json['data']:
+        mined_ids.append(data['entry_id'])
+
+    next_value = response_json['pagination'].get('next_page_after_value')
+    if not next_value:
+        break
+    myjson['pagination']['page_after_value'] = next_value
 
 structures = []
 energies = []
 forces = []
 
-print("Found {} entries".format(len(response_json['data'])))
+print("Found {} entries".format(len(mined_ids)))
 
 # Iterate over the intry ids and try to extract the values we need.
-for i,item in enumerate(response_json['data']):
+for i,item in enumerate(mined_ids):
     print("Parsing item {}".format(i))
-    first_entry_id = item['entry_id']
+    first_entry_id = item
     response = requests.post(
         f'{base_url}/entries/{first_entry_id}/archive/query',
         headers={'Authorization': f'Bearer {token}'},
