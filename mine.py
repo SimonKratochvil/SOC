@@ -15,6 +15,7 @@ parser.add_argument('-c', help='Program name', type=str)
 parser.add_argument('-k', help='K line density', type=np.float64)
 parser.add_argument('-b', help='Basis set type', type=str)
 parser.add_argument('-sp', help='Spin polarized', type=bool)
+parser.add_argument('-s', help='Structural type', type=str)
 parser.add_argument('-sk', help='Smearing kind', type=str)
 parser.add_argument('-st', help='Scf threshold energy change', type=np.float64)
 parser.add_argument('-pc', help='Planewave cutoff', type=np.float64)
@@ -71,6 +72,9 @@ if args.sk:
 
 if args.st:
     myjson['query']['results.method.simulation.dft.scf_threshold_energy_change'] = {'lte': args.st}
+
+if args.s:
+    myjson['query']['results.material.structural_type'] = {'all' : [args.s]}
 
 if args.pc:
     myjson['query']['results.method.simulation.precision.planewave_cutoff'] = {'gte': args.pc}
