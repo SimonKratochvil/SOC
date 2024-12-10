@@ -11,7 +11,12 @@ import statistics
 import math
 
 calc = PyACECalculator('output_potential.yaml')
-#calc.set_active_set("output_potential.asi")
+have_active_set = False
+try:
+    calc.set_active_set("output_potential.asi")
+    have_active_set = True
+except:
+    pass
 
 # add all other tasks Caclulations -> GGA Structure Optimization -> pick the latest one and add mp code below...
     # we have 40 materials project calculations
@@ -62,6 +67,8 @@ with MPRester(api_key="ByjiPidDAqBLRBjr0gbAiYq1SOIL03u5") as mpr:
     )
     ace_energies = []
     mp_energies = []
+    ids = []
+    uncertainties = []
 
     for task in tasks_doc:
         #print(task.output)
@@ -80,9 +87,12 @@ with MPRester(api_key="ByjiPidDAqBLRBjr0gbAiYq1SOIL03u5") as mpr:
         n_atoms = len(struct_init)
 
         final_energy_ace = struct_init.get_potential_energy()
-        ace_energies.append(final_energy_ace / n_atoms)
+        if have_active_set:
+            uncertainties.append(max(calc.results['gamma']))
 
+        ace_energies.append(final_energy_ace / n_atoms)
         mp_energies.append(task.output.energy / n_atoms)
+        ids.append(task.task_id)
 
     min_val_ace = min(ace_energies)
     min_val_mp = min(mp_energies)
@@ -94,6 +104,10 @@ with MPRester(api_key="ByjiPidDAqBLRBjr0gbAiYq1SOIL03u5") as mpr:
         print("Not consistent number of energies!")
 
     final_stats = np.array(ace_energies_final) - np.array(mp_energies_final)
+
+    if have_active_set:
+        for i,dif in enumerate(final_stats):
+            print(f"{ids[i]}: mp above hull: {mp_energies_final[i]}, ace abode hull: {ace_energies_final[i]}, diff: {dif}, gamma: {uncertainties[i]}")
 
     #print(final_stats)
 
