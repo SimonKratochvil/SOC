@@ -59,7 +59,7 @@ if args.c:
     myjson['query']['results.method.simulation.program_name'] = {'all': [args.c]}
 
 if args.k:
-    myjson['query']['results.method.simulation.precision.k_line_density'] = {'gte': args.k}
+    myjson['query']['results.method.simulation.precision.k_line_density'] = {'gte': args.k * 1e-10}
 
 if args.b:
     myjson['query']['results.method.simulation.dft.basis_set_type'] = {'all': [args.b]}

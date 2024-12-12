@@ -105,9 +105,11 @@ with MPRester(api_key="ByjiPidDAqBLRBjr0gbAiYq1SOIL03u5") as mpr:
 
     final_stats = np.array(ace_energies_final) - np.array(mp_energies_final)
 
-    if have_active_set:
-        for i,dif in enumerate(final_stats):
+    for i,dif in enumerate(final_stats):
+        if have_active_set:
             print(f"{ids[i]}: mp above hull: {mp_energies_final[i]}, ace abode hull: {ace_energies_final[i]}, diff: {dif}, gamma: {uncertainties[i]}")
+        else:
+            print(f"{ids[i]}: mp above hull: {mp_energies_final[i]}, ace abode hull: {ace_energies_final[i]}, diff: {dif}")
 
     #print(final_stats)
 
