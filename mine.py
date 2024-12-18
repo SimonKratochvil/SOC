@@ -58,8 +58,8 @@ myjson={
 if args.c:
     myjson['query']['results.method.simulation.program_name'] = {'all': [args.c]}
 
-if args.k:
-    myjson['query']['results.method.simulation.precision.k_line_density'] = {'gte': args.k * 1e-10}
+#if args.k:
+#    myjson['query']['results.method.simulation.precision.k_line_density'] = {'gte': args.k * 1e-10}
 
 if args.b:
     myjson['query']['results.method.simulation.dft.basis_set_type'] = {'all': [args.b]}
@@ -76,8 +76,8 @@ if args.st:
 if args.s:
     myjson['query']['results.material.structural_type'] = {'all' : [args.s]}
 
-if args.pc:
-    myjson['query']['results.method.simulation.precision.planewave_cutoff'] = {'gte': args.pc}
+#if args.pc:
+#    myjson['query']['results.method.simulation.precision.planewave_cutoff'] = {'gte': args.pc * 1.602177e-19}
 
 if args.ac:
     myjson['query']['results.method.simulation.precision.apw_cutoff'] = {'gte': args.ac}
@@ -121,6 +121,9 @@ for i,item in enumerate(mined_ids):
                         },
                         'forces': '*',
                     }
+                },
+                'results': {
+                    'method': '*'
                 }
             }
         })
@@ -134,6 +137,25 @@ for i,item in enumerate(mined_ids):
     if len(calculations) != len(systems):
         print("Number of calculations and systems not consistent.")
         continue
+
+    try:
+        rmethod = response_json['data']['archive']['results']['method']
+        try:
+            if rmethod['simulation']['precision']['planewave_cutoff'] < args.pc * 1.602177e-19:
+                print("Planewave cutoff too low")
+                continue
+        except:
+            pass
+        try:
+            if rmethod['simulation']['precision']['k_line_density'] < args.k * 1e-10:
+                print("number of k-points cutoff too low")
+                continue
+        except:
+            pass
+    except:
+        print("No results method section")
+        continue
+
 
     for i,c in enumerate(calculations):
         # there is no point in taking every step of longer relax or MD trajectories... they will be highly correclated anyway
