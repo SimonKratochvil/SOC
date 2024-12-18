@@ -22,7 +22,7 @@ except:
     # we have 40 materials project calculations
 with MPRester(api_key="ByjiPidDAqBLRBjr0gbAiYq1SOIL03u5") as mpr:
     tasks_doc = mpr.materials.tasks.search(
-        ["mp-2683378",
+        task_ids=["mp-2683378",
          "mp-2678018",
          "mp-1261619",
          "mp-1203790",
@@ -62,8 +62,8 @@ with MPRester(api_key="ByjiPidDAqBLRBjr0gbAiYq1SOIL03u5") as mpr:
          "mp-2390380",
          "mp-2351833",
          "mp-2350974",
-         ]
-#       fields=["task_id", "orig_inputs", "calcs_reversed", "output", "last_updated"]
+         ],
+         fields=["task_id", "orig_inputs", "calcs_reversed", "output", "last_updated"]
     )
     ace_energies = []
     mp_energies = []
