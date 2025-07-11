@@ -32,19 +32,28 @@ token = response.json()['access_token']
 
 mined_ids=[]
 
-# Find first 10 Si calculations that are using PBE functional
 myjson={
         'query': {
-            'results.material.elements_exclusive': {
-                'all': ['Si']
-            },
-            'results.method.simulation.dft.xc_functional_names': {
-                'all': ['GGA_C_PBE', 'GGA_X_PBE']
-            },
-            # skip single atoms, there is nothing to train there
-            'results.material.structural_type': {
-                'none' : ['atom']
-            }
+            'and': [
+                {
+                    'results.material.elements_exclusive': {
+                        'all': ['Si']
+                    },
+                },
+                {
+                    'results.method.simulation.dft.xc_functional_names': ['GGA_C_PBE', 'GGA_X_PBE']
+                },
+                {
+                    'not': {
+                        'results.method.simulation.dft.xc_functional_names': ['HF_X']
+                    }
+                },
+                {
+                    'results.material.structural_type': {
+                        'none' : ['atom']
+                    }
+                },
+            ],
         },
         'pagination': {
             'page_size': 1000
@@ -163,7 +172,7 @@ for i,item in enumerate(mined_ids):
         if i % 50 != 0 and i != len(calculations) - 1:
             continue
 
-        # We don't want a charged system so just skip if we have non-zero charge 
+        # We don't want a charged system so just skip if we have non-zero charge
         try:
             charge = response_json['data']['archive']['run'][0]['method'][0]['electronic']['charge']
             if charge != 0.0:
@@ -245,27 +254,3 @@ data = {'energy': energies,
 df = pd.DataFrame(data)
 
 df.to_pickle('my_test_data.pckl.gzip', compression='gzip', protocol=4)
-
-    # In general one entry can contain more calculations and system settings which we could extract,
-    # right now, just look at the first one...
-
-    # Check that we have all the values that we need, specifically:
-    # OK - forces in calculations (value or value_raw)
-    # OK - system (we need labels and positions, if periodic is [true,true,true] than we also need the lattice_vectors)
-    # OK   if periodic is [false, false, false], than it is just a cluster/molecule and no lattice parameters are needed
-    # OK - energy total in calculations
-    # OK if we are missing something, skip to the next nomad entry
-
-    # Convert:
-    # OK energy from joules to eV
-    # OK  forces from newtons to eV/Angstrom
-    # OK? system needs to be converted to ase Atoms format, see https://wiki.fysik.dtu.dk/ase/ase/atoms.html
-    #
-    # OK? Iterate over calculations if multiple present
-
-
-    # when the conversion are done append the converted energy, forces and ase Atoms to energies, forces and structures lists respectivelly
-
-    # output everything to pacemaker format
-
-    #print(json.dumps(response_json, indent=2))
