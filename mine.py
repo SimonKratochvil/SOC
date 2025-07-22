@@ -27,7 +27,7 @@ print(args.c, args.k, args.b, args.sp, args.sk, args.st, args.pc, args.ac)
 base_url = 'http://rosat.physics.muni.cz/nomad-oasis/api/v1'
 
 response = requests.get(
-    'http://rosat.physics.muni.cz/nomad-oasis/api/v1/auth/token', params=dict(username='FIXME', password='FIXME'))
+    'http://rosat.physics.muni.cz/nomad-oasis/api/v1/auth/token', params=dict(username='Kratochvil', password='mT69-nEBr)@$Xm8'))
 token = response.json()['access_token']
 
 mined_ids=[]
@@ -49,8 +49,8 @@ myjson={
                     }
                 },
                 {
-                    'results.material.structural_type': {
-                        'none' : ['atom']
+                    'not': {
+                        'results.material.structural_type': ['atom']
                     }
                 },
             ],
@@ -185,7 +185,7 @@ for i,item in enumerate(mined_ids):
         try:
             forces_total = response_json['data']['archive']['run'][0]['calculation'][i]['forces']['total']['value'] * ureg.newton
         except (KeyError, TypeError):
-            #print("foces not found")
+            #print("forces not found")
             try:
                 forces_total = response_json['data']['archive']['run'][0]['calculation'][i]['forces']['total']['value_raw'] * ureg.newton
             except (KeyError, TypeError):
