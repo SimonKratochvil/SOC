@@ -4,8 +4,10 @@ from ase import Atom
 from pyace import PyACECalculator
 import numpy as np
 from ase.io import read
+from quippy.potential import Potential
 
-calc = PyACECalculator('output_potential.yaml')
+calc = Potential(init_args='Potential xml_label="GAP_2017_6_17_60_4_3_56_165"',
+                                               param_filename='gp_iter6_sparse9k.xml')
 
 perfect = read('Si.vasp')
 perfect.calc = calc

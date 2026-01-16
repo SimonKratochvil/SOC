@@ -5,8 +5,10 @@ from ase.eos import EquationOfState
 from pyace import PyACECalculator
 from tqdm.notebook import tqdm
 import numpy as np
+from quippy.potential import Potential
 
-calc = PyACECalculator('Si_npj_CompMat2021.ace')
+calc = Potential(init_args='Potential xml_label="GAP_2017_6_17_60_4_3_56_165"',
+                                               param_filename='gp_iter6_sparse9k.xml')
 
 dia = bulk('Si', 'diamond', a=5.431, cubic=True)
 

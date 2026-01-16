@@ -54,8 +54,6 @@ def apply_strain(strain_3x3_tensor, initial):
 deformed = apply_strain(strain_tensor, diamond_struct)
 deformed.get_volume()/diamond_struct.get_volume()
 
-calc = PyACECalculator('Si_npj_CompMat2021.ace')
-
 deformed.calc = calc
 stress = deformed.get_stress() * 160.22 # convert to eV/A^3 to GPa
 diamond_struct.calc=calc
@@ -86,7 +84,6 @@ strains = get_ULICS(max_eps=magnitude)
 strains = np.concatenate((strains, -strains))
 
 data = []
-calc = PyACECalculator('Si_npj_CompMat2021.ace')
 for i, strain in enumerate(tqdm(strains)):
     deformed = apply_strain(voigt_6_to_full_3x3_strain(strain), diamond_struct)
     deformed.calc = calc
@@ -148,7 +145,6 @@ strain_energy = S('1/2')*(C*strain_mono).T*strain_mono
 simplify(strain_energy)
 
 data = []
-calc = PyACECalculator('Si_npj_CompMat2021.ace')
 for i, delta in enumerate(tqdm(np.linspace(-0.010, 0.010, 9))):
     voigt_strain = np.array([delta, -delta,  delta**2/(1-delta**2), 0, 0, 0])
     strain = voigt_6_to_full_3x3_strain(voigt_strain)
@@ -166,7 +162,6 @@ C11C12 = quad_fit[0]/diamond_struct.cell.volume*160.2
 linsolve([C11+2*C12-3*B0_fit, C11-C12-C11C12], C11, C12)
 
 data = []
-calc = PyACECalculator('Si_npj_CompMat2021.ace')
 for i, delta in enumerate(tqdm(np.linspace(-0.010, 0.010, 9))):
     voigt_strain = np.array([ 0, 0,  delta**2/(4-delta**2), 0, 0, delta])
     strain = voigt_6_to_full_3x3_strain(voigt_strain)
